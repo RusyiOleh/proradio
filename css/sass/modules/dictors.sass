@@ -1,0 +1,84 @@
+.speakers-grid
+	padding-top: 50px
+	
+	@media (min-width: 1601px)
+		.col-lg-3
+			+col-width(20%) 
+
+
+	.speaker-card
+		margin-bottom: 30px 
+		
+		
+	.pagination
+		margin-top: 50px 
+		
+
+
+.pagination
+	display: block
+	margin: 0 auto
+	width: 230px
+	position: relative
+	
+
+	.current-page
+		display: flex
+		align-items: center
+		justify-content: center
+		position: relative
+		width: 100%
+		
+		span
+			width: 90px
+			height: 90px
+			display: flex
+			align-items: center
+			justify-content: center
+			border-radius: 50%
+			border: 1px dashed $blue
+			font-size: 30px
+			color: #222225 
+			
+		.prev-page-link,
+		.next-page-link
+			font-size: 30px
+			color: #222225
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) 
+			
+		.prev-page-link
+			left: 0
+			
+		.next-page-link
+			right: 0
+			
+
+	.prev-pages,
+	.next-pages
+		font-size: 18px
+		position: absolute
+		transform: translateY(-50%) 
+		top: 50%
+		display: flex
+		align-items: center
+		
+		a
+			color: #222225
+		
+	.prev-pages
+		right: 100%
+		padding-right: 70px 
+		justify-content: flex-end
+
+		.page-link
+			margin-left: 50px 
+		
+	.next-pages
+		left: 100%
+		padding-left: 70px 
+		justify-content: flex-start
+
+		.page-link
+			margin-right: 50px 

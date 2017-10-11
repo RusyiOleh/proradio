@@ -2106,6 +2106,8 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #text; font-size: 
 
 .section { padding: 90px 0; }
 
+.section__title { font-size: 36px; color: #040404; margin-bottom: 40px; padding-left: 60px; font-weight: normal; }
+
 ::-webkit-input-placeholder { opacity: 1; }
 
 :-moz-placeholder { opacity: 1; }
@@ -2119,6 +2121,8 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #text; font-size: 
 .button--transparent { border-color: #d62595; background-color: transparent; }
 
 .button--white { color: #34294c; background-color: #fff; }
+
+.button--centered { display: block; margin: 75px auto 0; }
 
 .social { position: absolute; left: 40px; width: 20px; text-align: center; }
 

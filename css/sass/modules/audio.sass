@@ -1,0 +1,137 @@
+.hidden
+  display: none
+
+.audioPlayer
+    opacity: 1 
+    font-size: 14px 
+    &--wide
+        width: 100% 
+        display: flex
+        flex-wrap: wrap 
+        align-items: stretch
+    &__current
+        width: 60% 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 0 30px 
+        height: 80px 
+        div
+            *
+                display: inline-block
+                vertical-align: middle
+        .title
+            font-size: 21px 
+    &__next
+        width: 26%
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        background-color: #F1F4FF 
+        padding: 0 30px 
+        .next
+            margin-left: 25px
+        &__title
+            margin-left: 30px 
+    &__volume
+        width: 14%
+        display: flex
+        align-items: center
+        justify-content: center 
+    a[download]
+        color: #41117d 
+    button
+        background: transparent 
+        background-repeat: no-repeat
+        background-position: 50% 50% 
+        border: none
+        box-shadow: none
+        color: #41117d 
+        background-size: 100% 100% 
+        cursor: pointer
+        &.play
+            width: 40px
+            height: 40px
+            background-image: url(../images/play.png)
+            &.pause
+                background-image: url(../images/pause.png)
+                
+.audioPlayer__image
+  width: 85px
+  height: 85px 
+  .cover
+    width: 100%
+    
+.audioPlayer__info 
+    width: calc(100% - 85px) 
+    display: flex
+    flex-wrap: wrap
+
+.audioPlayer__volume 
+    div
+        float: left
+        width: 3px
+        height: 20px  
+        background-color: #d62595 
+        margin: 0 3px 0 0
+        cursor: pointer
+        transition: all .2s 
+        &:last-child
+            margin-right: 0
+    &[data-loud="1"]
+        div
+            &:nth-child(n + 2)
+                background-color: #ffc8eb  
+    &[data-loud="2"]
+        div
+            &:nth-child(n + 3)
+                background-color: #ffc8eb 
+    &[data-loud="3"]
+        div
+            &:nth-child(n + 4)
+                background-color: #ffc8eb 
+    &[data-loud="4"]
+        div
+            &:nth-child(n + 5)
+                background-color: #ffc8eb 
+    &[data-loud="5"]
+        div
+            &:nth-child(n + 6)
+                background-color: #ffc8eb 
+    &[data-loud="6"]
+        div
+            &:nth-child(n + 7)
+                background-color: #ffc8eb 
+    &[data-loud="7"]
+        div
+            &:nth-child(n + 8)
+                background-color: #ffc8eb 
+    &[data-loud="8"]
+        div
+            &:nth-child(n + 9)
+                background-color: #ffc8eb 
+    &[data-loud="9"]
+        div
+            &:nth-child(n + 10)
+                background-color: #ffc8eb 
+    &[data-loud="10"]
+        div
+            &:nth-child(n + 11)
+                background-color: #ffc8eb 
+
+
+.audioPlayer__tracker
+    position: relative
+    width: 100%
+    display: block
+    height: 5px 
+    background-color: #000 
+    background: url(../images/progress.png) 
+    background-size: 100% 100%
+    background-repeat: no-repeat 
+    .progress-bar 
+        background-color: #000 
+        height: 100%
+        width: 100%
+        margin: 0 0 0 auto  
+        transition: all 3s ease

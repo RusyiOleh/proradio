@@ -1,6 +1,7 @@
 .offer
-	height: 800px
+	height: 1100px
 	max-height: 100%
+	min-height: 660px 
 	+flex($d: column, $ai: center, $j: center)
 	
 	background-image: url("../images/offer-main.jpg")
@@ -8,12 +9,24 @@
 	-webkit-background-size: cover
 	-o-background-size: cover
 	background-size: cover
-	
+	color: 	#fff 
+
 	h1
-		margin-bottom: 40px
-		font-size: 70px
-		color: #FFF
-		text-shadow: 0 0 2px rgba(0,0,0,.2)
+		font-size: 	102px
+		font-family: 	$v
+		text-transform: uppercase
+		span
+			color: 	$blue 
+			display: inline-block	
+			border-bottom: 	5px solid $rose 
+	
+	&__info
+		font-size: 	24px 
+		small
+			font-style: italic	
+		button
+			display: block	
+			margin-top: 30px 
 
 
 .offer--slider

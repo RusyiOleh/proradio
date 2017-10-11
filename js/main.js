@@ -86,6 +86,11 @@ jQuery(document).ready(function($) {
     });
 
 
+    $('.quoteSlider__slider').slick({
+        arrows: false,
+        dots: true
+    });
+
 
     /*---------------------------
                                   Fancybox

@@ -2,16 +2,34 @@
     padding: 90px
     background-color: #4aaee8
     color: #fff   
+    position: relative
+    
+    &:before
+        content: ""
+        display: block
+        width: 80px
+        height: 100%   
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        margin: auto 
+        background-color: #1D638C
+        opacity: .15  
     h2
         font-size: 30px
         text-align: center
         text-transform: uppercase 
         font-weight: 400 
+        letter-spacing: .5em
     .wrapper
         width: 1300px 
         
     &__slider
+        margin-top: 50px 
         .quoteSlider__slide
+            +flex($d: column, $ai: center, $j: center)
+            min-height: 380px 
             p
                 text-transform: uppercase
                 font-family: $v
@@ -19,3 +37,35 @@
             small
                 display: block
                 font-size: 14px 
+        
+        .slick-dots li button
+            font-size: 18px
+            color: #9CDBFF  
+            &:before
+                display: none
+                
+    .quoteSlider__sliderNav
+        width: 660px
+        margin: 50px auto 0
+        font-size: 18px
+        color: #9CDBFF  
+        text-align: center
+        div
+            min-height: 38px
+            position: relative
+        i
+            cursor: pointer
+            font-style: normal
+            position: absolute
+            left: 0
+            bottom: 0
+            line-height: 1 
+            width: 100%
+            text-align: center 
+        .slick-track
+            min-width: 100% 
+        .slick-center
+            font-size: 30px 
+            color: #FFF 
+            i
+                line-height: .8 

@@ -88,9 +88,35 @@ jQuery(document).ready(function($) {
 
     $('.quoteSlider__slider').slick({
         arrows: false,
-        dots: true
+        dots: false,
+        asNavFor: '.quoteSlider__sliderNav',
+        speed: 1000,
+        autoplay: true,
+        pauseOnHover: false
     });
 
+    $('.quoteSlider__sliderNav').slick({
+        centerMode: true,
+        slidesToShow: 5,
+        asNavFor: '.quoteSlider__slider',
+        focusOnSelect: true,
+        arrows: false,
+        dots: false,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 5
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 3
+              }
+            }
+        ]
+    });
 
     /*---------------------------
                                   Fancybox

@@ -1,24 +1,52 @@
-.button 
-	background-color: peru
-	width: 180px
-	height: 60px
-	line-height: 60px
-	text-align: center
-	text-transform: uppercase
-	color: #fff
-	font-weight: 500
-	font-size: 16px
-	display: inline-block
-	border: none
-	cursor: pointer
+.button
+    min-width: 260px
+    padding:    0 40px 
+    text-transform: uppercase
+    font-family: $v
+    font-size: 30px
+    color: #fff
+    height: 70px
+    line-height: 70px  
+    background: $gray
+    border: 1px solid $gray
+    cursor: pointer
+    &--transparent
+        border-color: $rose
+        background-color:   transparent  
+    &--white
+        color:  $velvet
+        background-color:   #fff  
 
-	&:disabled
-		opacity: 0.5
-
-	@media (max-width: 1500px) 
-		width: 160px
-		height: 50px
-		line-height: 50px
+// Social links
+.social
+    position: absolute
+    left: 40px
+    width: 20px
+    text-align: center 
+    a
+        display: block
+        color: #FFF
+        margin: 20px 0  
+        opacity: .25
+        transition: all .2s 
+        &:hover
+            opacity: 1 
+            
+// Page anchors
+.page-links
+    position: absolute
+    right: 40px
+    text-align: right 
+    a
+        display: block
+        color: #FFF
+        margin: 36px 0  
+        transition: all .2s 
+        font-size: 18px 
+        &.active,
+        &:hover
+            opacity: .25
+            
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */

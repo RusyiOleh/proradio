@@ -18,7 +18,14 @@
 		display: inline-block
 		vertical-align: middle
 
-
+.menu-toggle
+	img,
+	span
+		display: inline-block
+		vertical-align: middle
+	img
+		margin-right: 4px 
+		
 .languages
 	list-style-type: none
 	display: inline-block
@@ -29,8 +36,12 @@
 	li
 		display: inline-block
 		vertical-align: middle
+		margin-left: 8px 
 		a
 			color: #FFF 
+			transition: all .2s
+			&:hover
+				opacity: .25 
 /* ------------------------------------ */
 /*  NAV STYLES  */
 

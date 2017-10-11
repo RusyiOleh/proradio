@@ -126,6 +126,29 @@ jQuery(document).ready(function($) {
     });
 
 
+    /*---------------------------
+                                  Speakers-slider
+    ---------------------------*/
+    $('.speakers-slider').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+
+        responsive: [
+        {
+            breakpoint: 1601,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1
+            }
+        }
+      ]
+    })
+
+
+
+
     /**
      *
      * Open popup

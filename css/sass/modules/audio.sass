@@ -21,7 +21,8 @@
                 display: inline-block
                 vertical-align: middle
         .title
-            font-size: 21px 
+            font-size: 21px
+            margin-left: 20px  
     &__next
         width: 26%
         display: flex
@@ -33,11 +34,19 @@
             margin-left: 25px
         &__title
             margin-left: 30px 
-    &__volume
+    &__volumeControls
         width: 14%
         display: flex
         align-items: center
         justify-content: center 
+        .silence
+            margin-right: 12px 
+            cursor: pointer
+            img 
+                width: 18px
+                display: block 
+            &.active
+                opacity: .8 
     a[download]
         color: #41117d 
     button
@@ -78,6 +87,12 @@
         transition: all .2s 
         &:last-child
             margin-right: 0
+             
+    &[data-loud="0"],
+    &.disabled
+        div
+            &:nth-child(n + 1)
+                background-color: #ffc8eb  
     &[data-loud="1"]
         div
             &:nth-child(n + 2)

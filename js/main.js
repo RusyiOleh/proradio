@@ -365,6 +365,22 @@ jQuery(document).ready(function($) {
 
         $('.audioPlayer__volume').attr('data-loud', vol);
         songs[au.currentSong].volume = vol / 10;
+        $('.audioPlayer__volume').removeClass('disabled');
+        $('.silence').removeClass('active');
+    });
+
+    //Volume control
+    $('.silence').click(function(){
+        var au = initiateVars($(this));
+        if($(this).hasClass('active')) {
+            songs[au.currentSong].volume = au.volume;
+            $(this).removeClass('active');
+            $('.audioPlayer__volume').removeClass('disabled');
+        } else {
+            songs[au.currentSong].volume = 0.0;
+            $(this).addClass('active');
+            $('.audioPlayer__volume').addClass('disabled');
+        }
     });
 
     //Time/Duration

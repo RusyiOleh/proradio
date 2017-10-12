@@ -1,0 +1,72 @@
+.speaker-section
+	padding-top: 30px 
+
+.speaker-content
+	width: 68.75%
+	padding-right: 30px 
+	padding-left: 190px 
+	
+	.content-block
+		background-color: #F1F4FF 
+	
+.speaker-sidebar
+	width: 31.25%
+	
+
+
+.content-block
+	&__header
+		padding: 40px 50px
+		display: flex
+		position: relative
+		
+		.return-back
+			position: absolute
+			top: 50%
+			left: -190px
+			transform: translateY(-50%) 
+			font-size: 14px
+			font-family: $os
+			color: #202020
+			
+			&:hover
+				text-decoration: underline
+				
+		.share
+			position: absolute
+			top: 50%
+			right: 50px
+			transform: translateY(-50%) 
+			color: #424349 
+			font-size: 14px
+			font-family: $os  
+			
+			&:hover
+				text-decoration: underline
+			
+			.fa
+				font-size: 18px
+				vertical-align: middle 
+				
+				&:before
+					display: block
+					
+
+		h2
+			font-size: 36px
+			color: #040404  
+			
+
+		&:after
+			content: ''
+			width: 60%
+			height: 1px
+			position: absolute
+			left: 0
+			bottom: 0
+			background-color: #25A2D6 
+			
+
+
+	&__body
+		padding: 30px 50px 50px

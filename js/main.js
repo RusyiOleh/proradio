@@ -352,7 +352,9 @@ jQuery(document).ready(function($) {
             songs[au.currentSong].pause();
             $(this).removeClass('pause');
         } else {
-            songs[au.currentSong].volume = au.volume;
+            if (au.volume) {
+                songs[au.currentSong].volume = au.volume;
+            }
             songs[au.currentSong].play();
             showDuration(songs[au.currentSong]);
             $(this).addClass('pause');

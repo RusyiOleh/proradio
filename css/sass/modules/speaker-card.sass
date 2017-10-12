@@ -18,9 +18,10 @@
 		position: relative
 		margin-bottom: 15px 
 		
-		a
+		.play
 			display: block
 			position: relative
+			cursor: pointer
 			
 			.fa
 				width: 36px
@@ -38,6 +39,19 @@
 				color: #fff
 				transition: all 0.3s ease
 				opacity: 0
+				padding-left: 2px 
+				
+				&.fa-pause
+					display: none
+			&.pause
+				.fa
+					opacity: 1
+				&:after
+				 	opacity: 0.85
+				.fa-pause
+					display: flex
+				.fa-play
+					display: none
 				
 			&:after
 				content: ''

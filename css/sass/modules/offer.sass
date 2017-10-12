@@ -4,10 +4,8 @@
 	min-height: 660px 
 	+flex($d: column, $ai: center, $j: center)
 	
-	background-image: url("")
+	background-image: url("../images/offer-main.jpg")
 	background-position: 50% 50%
-	-webkit-background-size: cover
-	-o-background-size: cover
 	background-size: cover
 	background-color: #000
 	color: 	#fff 
@@ -19,18 +17,37 @@
 		span
 			color: 	$blue 
 			display: inline-block	
-			border-bottom: 	5px solid $rose 
+			border-bottom: 	5px solid $rose
 	
 	&__info
 		font-size: 	24px 
 		padding-left: 30px 
 		small
-			font-style: italic	
+			font-style: italic
 		button
 			display: block	
 			margin-top: 30px 
-
-
+.offer
+    small
+        display: block
+    h1
+        display: inline-block
+        position: relative
+        &:before
+            content: ''
+            display: block
+            position: absolute
+            left: 86.5%
+            top: 0
+            bottom: 0
+            margin: auto 
+            width: 410px
+            height: 560px
+            background-image: url("../images/microphone.png")
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            
 .img-info
     display: flex
     justify-content: flex-start 

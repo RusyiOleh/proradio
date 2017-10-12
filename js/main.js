@@ -154,6 +154,7 @@ jQuery(document).ready(function($) {
         arrows: true,
         dots: false,
         lazyLoad: 'ondemand',
+        infinite: false
     })
 
 

@@ -2224,7 +2224,7 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #373737; font-size
 /*  MENU BUTTON  */
 .menu-button { display: none; position: fixed; left: auto; right: 10px; top: 15px; bottom: auto; background: white; border-radius: 50%; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); cursor: pointer; -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: .5s ease-in-out; -o-transition: .5s ease-in-out; transition: .5s ease-in-out; cursor: pointer; }
 
-.offer { height: 1100px; max-height: 100%; min-height: 660px; display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; -moz-justify-content: center; justify-content: center; -webkit-flex-direction: column; -ms-flex-direction: column; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; background-image: url(""); background-position: 50% 50%; -webkit-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #000; color: #fff; }
+.offer { height: 1100px; max-height: 100%; min-height: 660px; display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; -moz-justify-content: center; justify-content: center; -webkit-flex-direction: column; -ms-flex-direction: column; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; background-image: url("../images/offer-main.jpg"); background-position: 50% 50%; background-size: cover; background-color: #000; color: #fff; }
 
 .offer h1 { font-size: 102px; font-family: "BebasNeueBold"; text-transform: uppercase; }
 
@@ -2235,6 +2235,12 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #373737; font-size
 .offer__info small { font-style: italic; }
 
 .offer__info button { display: block; margin-top: 30px; }
+
+.offer small { display: block; }
+
+.offer h1 { display: inline-block; position: relative; }
+
+.offer h1:before { content: ''; display: block; position: absolute; left: 86.5%; top: 0; bottom: 0; margin: auto; width: 410px; height: 560px; background-image: url("../images/microphone.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; }
 
 .img-info { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; background-image: url("../images/sound_wave.png"); background-repeat: no-repeat; background-position: 100% 30%; font-family: "Open Sans"; }
 

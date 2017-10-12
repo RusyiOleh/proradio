@@ -170,7 +170,9 @@ jQuery(document).ready(function($) {
     $('.fade-slider').slick({
         arrows: false,
         dots: false,
-        fade: true
+        fade: true,
+        autoplay: true,
+        speed: 3000
     })
 
 
@@ -186,7 +188,7 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.length-slider').each(function(index, el) {
         var slider = $(this);
-        var holder = slider.parents('.cf-wrap').find('.audio-length');
+        var holder = slider.parents('.slider').find('.audio-length');
         var input = slider.siblings('input');
         slider.slider({
             min: slider.attr('data-min')*1,
@@ -217,6 +219,40 @@ jQuery(document).ready(function($) {
                 var val = $(this).attr('data-val')*1;
                 slider.slider( "value", val );
             });
+        });
+    });
+
+    /*---------------------------
+                                  Range
+    ---------------------------*/
+    $('.range-slider').each(function(index, el) {
+        var slider = $(this);
+        var holder = slider.parents('.slider').find('.audio-length');
+        var input = slider.siblings('input');
+        slider.slider({
+            min: slider.attr('data-min')*1,
+            max: slider.attr('data-max')*1,
+            values: [ 10, 30 ],
+            range: true,
+            step: slider.attr('data-step')*1,
+            change: function( event, ui ) {
+                var value = ui.values;
+                var length;
+                switch (value[1]) {
+                    case 50:
+                        length = value[0] + ' - ' + holder.attr('data-more');
+                        break;
+                    default:
+                        length = value[0] + ' - ' + value[1] + ' ' + holder.attr('data-label');
+                }
+                holder.text( length );
+                input.val( value[0]+'|'+ value[1]).trigger('change');
+            }
+        });    
+
+        slider.siblings('.labels').find('.ls-label').each(function(index, el) {
+            var count = slider.siblings('.labels').find('.ls-label').length - 1;
+            $(this).css('left', (index*100)/count + '%');
         });
     });
     

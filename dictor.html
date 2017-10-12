@@ -100,10 +100,10 @@
                                 <h4>Примеры аудиороликов:</h4>
                             </div>
                             <div class="play-list__body">
-                                <div class="audio">
+                                <div class="audio is-playing">
                                     <button class="play-button">
-                                        <i class="fa fa-play" aria-hidden="true"></i>
-                                        <i class="fa fa-pause hidden" aria-hidden="true"></i>
+                                        <i class="fa fa-play hidden" aria-hidden="true"></i>
+                                        <i class="fa fa-pause" aria-hidden="true"></i>
                                     </button>
 
                                     <p class="audio-title">Louis Vuitton Presents Small Is Beautiful</p>
@@ -386,10 +386,9 @@
                     </div>
 
                     <div class="cf-row">
-                        <div class="cf-wrap">
-                            <label>Длительность аудиролика: <span class="audio-length" data-label="секунд" data-more="более 1.5 мин">60 секунд</span></label>
-                            
+                        <div class="cf-wrap">                           
                             <div class="slider">
+                                <label>Длительность аудиролика: <span class="audio-length" data-label="секунд" data-more="более 1.5 мин">60 секунд</span></label>
                                 <div class="length-slider" data-min="0" data-max="100" data-step="10"></div>
                                 <div class="labels">
                                     <span class="ls-label" data-val="0">0 с.</span>
@@ -405,6 +404,24 @@
                                     <span class="ls-label" data-val="100">более 1,5 мин</span>
                                 </div>
                                 <input type="hidden" name="audio-length" value="60 секунд">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <div class="slider">
+                                <label>Диапазон цен: <span class="audio-length" data-label="AZN" data-more="более 40 AZN">10 - 30 AZN</span></label>
+                                <div class="range-slider" data-min="0" data-max="50" data-step="10"></div>
+                                <div class="labels">
+                                    <span class="ls-label" data-val="0">0 AZN</span>
+                                    <span class="ls-label" data-val="10">10 AZN</span>
+                                    <span class="ls-label" data-val="20">20 AZN</span>
+                                    <span class="ls-label" data-val="30">30 AZN</span>
+                                    <span class="ls-label" data-val="40">40 AZN</span>
+                                    <span class="ls-label" data-val="50">более 40 AZN</span>
+                                </div>
+                                <input type="hidden" name="price-range" value="10|30">
                             </div>
                         </div>
                     </div>

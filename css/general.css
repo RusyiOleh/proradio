@@ -2476,6 +2476,10 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #373737; font-size
 
 .audio .audio-title { width: -webkit-calc(100% - 40px); width: calc(100% - 40px); padding-left: 20px; font-size: 22px; color: #000; white-space: nowrap; -o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden; }
 
+.audio.is-playing .play-button { background: -webkit-linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); background: -o-linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); background: linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); }
+
+.audio.is-playing .play-button:after { background: -webkit-linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); background: -o-linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); background: linear-gradient(225deg, #d62595 0%, #ae00ff 50%, #40117e 100%); }
+
 .dictor-slider { padding: 0 120px; }
 
 @media (max-width: 1600px) { .dictor-slider { padding: 0 40px; } }
@@ -2550,13 +2554,21 @@ html, body { height: 100%; font-family: 'Baskerville'; color: #373737; font-size
 
 .select--dark select option:disabled { color: #a6a6a6; }
 
-.slider { width: 930px; max-width: 100%; padding-top: 8px; padding-bottom: 16px; }
+.slider { width: 930px; max-width: 100%; padding-bottom: 16px; }
+
+.slider label { padding-bottom: 8px; }
 
 .slider .labels { width: 100%; position: relative; padding-top: 45px; font-family: "Open Sans"; }
 
 .slider .labels .ls-label { position: absolute; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); white-space: nowrap; cursor: pointer; line-height: 16px; font-size: 12px; }
 
 .slider .labels .ls-label:after { content: ''; width: 1px; height: 20px; background-color: #fff; position: absolute; top: -30px; left: 50%; }
+
+.range-slider { height: 5px; background-color: #41117D; position: relative; }
+
+.range-slider .ui-slider-handle { height: 25px; width: 25px; border-radius: 50%; background-color: #25a2d6; cursor: pointer; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); top: 50%; position: absolute; z-index: 5; }
+
+.range-slider .ui-slider-range { height: 100%; position: absolute; background-color: #25a2d6; }
 
 .length-slider { height: 5px; background-color: #41117D; position: relative; }
 

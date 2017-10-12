@@ -146,6 +146,15 @@ jQuery(document).ready(function($) {
       ]
     })
 
+    /*---------------------------
+                                  Speaker gallery slider
+    ---------------------------*/
+    $('.dictor-slider').slick({
+        arrows: true,
+        dots: false,
+        lazyLoad: 'ondemand',
+    })
+
 
 
 

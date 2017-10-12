@@ -70,3 +70,119 @@
 
 	&__body
 		padding: 30px 50px 50px
+		
+		&__languages
+			font-family: $os
+			 
+			strong
+				font-weight: 600
+				  
+			p
+				display: inline-block
+				vertical-align: middle
+				white-space: nowrap 
+				
+				img,
+				span
+					display: inline-block
+					vertical-align: middle
+					
+				img
+					width: 22px
+					margin-right: 6px
+					filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, .2)); 
+					
+			.lang-item
+				padding-left: 22px 
+				color: #373737
+				
+		&__demo
+			padding: 40px 0 35px
+			
+
+		&__article
+			font-family: $os 
+			font-size: 14px
+			line-height: 1.7em
+			margin-bottom: 60px 
+			
+			p:not(:last-of-type),
+			.projects-list
+				margin-bottom: 1.7em 
+				
+			.projects-list
+				p
+					margin-bottom: 0
+					color: #d62595  
+					font-weight: 600
+					
+				li
+					font-size: 20px
+					line-height: 1.8em
+					list-style: none  
+					
+					a
+						color: inherit
+						
+						&:hover
+							text-decoration: underline
+
+
+
+
+
+.demo-audio
+	display: flex
+	align-items: center
+	
+	.play-button
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		color: #fff
+		border: 0
+		background-color: #393939 
+		cursor: pointer
+		transition: all 0.3s ease
+		position: relative
+		z-index: 1 
+		
+		&:after
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			border-radius: 50%
+			background-color: #393939  
+			transition: all 0.3s ease
+			opacity: 0
+			z-index: -1 
+			
+		&:hover:after
+			transform: scale(1.1)
+			opacity: 0.5
+			
+	.audio-title
+		width: -webkit-calc(100% - 40px)
+		width: calc(100% - 40px)
+		padding-left: 20px
+		font-size: 22px
+		color: #000
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden 
+		
+
+
+
+.dictor-slider
+	padding: 0 120px
+	
+	.slide
+		a
+			display: block
+		img
+			display: block
+			width: 100%

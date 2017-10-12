@@ -139,9 +139,7 @@
 
                 </div>
             </div>
-        </section>
-
-
+        </section> <!-- end speaker-section -->
 
 
 
@@ -352,8 +350,128 @@
 
                 <a href="#" class="button">View all speakers</a>
             </div>
+        </section> <!-- end speakers-slider-section -->
 
-        </section>
+
+
+        <section class="calculator">
+
+            <div class="wrapper wrapper--wide">
+                <h2>Калькулятор</h2>
+            </div>
+
+            <div class="calculator-form">
+                <form action="">
+
+                    <div class="cf-row cf-header">
+                        <div class="cf-wrap">
+                            <h3>Рассчитать стоимость аудиоролика с данным диктором</h3>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <label>Диктор:</label>
+
+                            <div class="select">
+                                <select name="" id="">
+                                    <option>Выберите диктора</option>
+                                    <option value="1">Диктор 1</option>
+                                    <option value="1">Диктор 2</option>
+                                    <option value="1">Диктор 3</option>
+                                    <option value="1">Диктор 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <label>Длительность аудиролика: <span class="audio-length" data-label="секунд" data-more="более 1.5 мин">60 секунд</span></label>
+                            
+                            <div class="slider">
+                                <div class="length-slider" data-min="0" data-max="100" data-step="10"></div>
+                                <div class="labels">
+                                    <span class="ls-label" data-val="0">0 с.</span>
+                                    <span class="ls-label" data-val="10">10 с.</span>
+                                    <span class="ls-label" data-val="20">20 с.</span>
+                                    <span class="ls-label" data-val="30">30 с.</span>
+                                    <span class="ls-label" data-val="40">40 с.</span>
+                                    <span class="ls-label" data-val="50">50 с.</span>
+                                    <span class="ls-label" data-val="60">60 с.</span>
+                                    <span class="ls-label" data-val="70">70 с.</span>
+                                    <span class="ls-label" data-val="80">80 с.</span>
+                                    <span class="ls-label" data-val="90">90 с.</span>
+                                    <span class="ls-label" data-val="100">более 1,5 мин</span>
+                                </div>
+                                <input type="hidden" name="audio-length" value="60 секунд">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <div class="radio-group">
+                                <p class="label">
+                                    <img src="images/script.svg" alt="">
+                                    <span>Сценарий:</span>
+                                </p>
+                                <label class="radio">
+                                    <input type="radio" name="script" value="0" checked>
+                                    <span class="indicator"></span>
+                                    <span class="text">Имеется</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="script" value="1">
+                                    <span class="indicator"></span>
+                                    <span class="text">Производство</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <div class="radio-group">
+                                <p class="label">
+                                    <img src="images/melody.svg" alt="">
+                                    <span>Фоновая музыка:</span>
+                                </p>
+                                <label class="radio">
+                                    <input type="radio" name="music" value="0" checked>
+                                    <span class="indicator"></span>
+                                    <span class="text">Имеется</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="music" value="1">
+                                    <span class="indicator"></span>
+                                    <span class="text">Выбор из библиотеки</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row cf-footer">
+                        <div class="cf-wrap">
+                            <div class="cf-result">
+                                <p class="cf-result-label">Рассчетная цена:</p>
+                                <p class="cf-result-value">
+                                    <span class="number">350</span>
+                                    <span class="unit">AZN</span>
+                                </p>
+                            </div>
+
+                            <div class="cf-submit">
+                                <button class="button">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div> <!-- end calculator-form -->
+
+        </section> <!-- end calculator -->
+
 
 
         <footer class="footer">

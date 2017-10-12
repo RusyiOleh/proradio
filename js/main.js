@@ -158,6 +158,46 @@ jQuery(document).ready(function($) {
     })
 
 
+    /*---------------------------
+                                  Audio length slider
+    ---------------------------*/
+    $('.length-slider').each(function(index, el) {
+        var slider = $(this);
+        var holder = slider.parents('.cf-wrap').find('.audio-length');
+        var input = slider.siblings('input');
+        slider.slider({
+            min: slider.attr('data-min')*1,
+            max: slider.attr('data-max')*1,
+            value: 60,
+            step: slider.attr('data-step')*1,
+            change: function( event, ui ) {
+                var value = ui.value;
+                var length;
+                switch (value) {
+                    case 100:
+                        length = holder.attr('data-more');
+                        break;
+                    default:
+                        length = value + ' ' + holder.attr('data-label');
+                }
+                holder.text( length );
+                input.val( value ).trigger('change');
+            }
+        });    
+
+        slider.siblings('.labels').find('.ls-label').each(function(index, el) {
+            var count = slider.siblings('.labels').find('.ls-label').length - 1;
+            $(this).css('left', (index*100)/count + '%');
+
+            $(this).on('click', function(event) {
+                event.preventDefault();
+                var val = $(this).attr('data-val')*1;
+                slider.slider( "value", val );
+            });
+        });
+    });
+    
+
 
 
     /**

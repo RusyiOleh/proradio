@@ -92,7 +92,8 @@ jQuery(document).ready(function($) {
         asNavFor: '.quoteSlider__sliderNav',
         speed: 1000,
         autoplay: true,
-        pauseOnHover: false
+        pauseOnHover: false,
+        fade: true
     });
 
     $('.quoteSlider__sliderNav').slick({
@@ -360,7 +361,9 @@ jQuery(document).ready(function($) {
             songs[au.currentSong].pause();
             $(this).removeClass('pause');
         } else {
-            songs[au.currentSong].volume = au.volume;
+            if (au.volume) {
+                songs[au.currentSong].volume = au.volume;
+            }
             songs[au.currentSong].play();
             showDuration(songs[au.currentSong]);
             $(this).addClass('pause');

@@ -1,5 +1,5 @@
 .quoteSlider
-    padding: 90px
+    padding: 90px 0
     background-color: #4aaee8
     color: #fff   
     position: relative
@@ -29,11 +29,57 @@
         margin-top: 50px 
         .quoteSlider__slide
             +flex($d: column, $ai: center, $j: center)
-            min-height: 380px 
+            min-height: 360px 
+            position: relative  
+            padding-bottom: 20px 
+            padding-top: 20px 
+            &:before
+                display: block
+                content: ""
+                width: calc((100% - 1300px) / 2)
+                height: 1px
+                background-color: #8ed0ea 
+                position: absolute  
+                left: 0px
+                top: 0px
+                bottom: 0
+                margin:     auto 
+            &:after
+                display: block
+                content: ""
+                width: calc((100% - 1300px) / 2)
+                height: 1px
+                background-color: #8ed0ea 
+                position: absolute  
+                right: 0px
+                bottom: 0
             p
                 text-transform: uppercase
                 font-family: $v
                 font-size: 72px  
+                position: relative  
+                display: inline-block   
+                &:before
+                    display: block
+                    content: ""
+                    width: 140px
+                    height: 120px
+                    background-image: url("../images/quotes.png")
+                    background-size: 100% 100%    
+                    position: absolute  
+                    left: -70px
+                    top: -10px
+                    transform:  rotate(180deg) 
+                &:after
+                    display: block
+                    content: ""
+                    width: 140px
+                    height: 120px
+                    background-image: url("../images/quotes.png")
+                    background-size: 100% 100%    
+                    position: absolute  
+                    right: -70px
+                    top: -10px
             small
                 display: block
                 font-size: 14px 
@@ -46,7 +92,7 @@
                 
     .quoteSlider__sliderNav
         width: 660px
-        margin: 50px auto 0
+        margin: 30px auto 0
         font-size: 18px
         color: #9CDBFF  
         text-align: center

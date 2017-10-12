@@ -19,6 +19,9 @@ body
 .section
     padding: 90px 0 
     position: relative
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: 50% 50%  
     &__title
         font-size: 36px
         color: #040404
@@ -30,6 +33,21 @@ body
         background-color: $velvet
         .section__title
             color: #FFF   
+    &--circle
+        &:before
+            content: ""
+            display: block
+            background-color: #FFF
+            opacity: .05
+            width: 480px
+            height: 480px
+            border-radius: 50% 
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto      
 .corners
     i
         display: block

@@ -54,7 +54,8 @@
         transition: all .2s 
         &:hover
             color: #41117d 
-    button
+    .prev,
+    .next
         background: transparent 
         background-repeat: no-repeat
         background-position: 50% 50% 
@@ -63,12 +64,12 @@
         color: #41117d 
         background-size: 100% 100% 
         cursor: pointer
-        &.play
-            width: 40px
-            height: 40px
-            background-image: url(../images/play.png)
-            &.pause
-                background-image: url(../images/pause.png)
+    button.play
+        width: 40px
+        height: 40px
+        background-image: url(../images/play.png)
+        &.pause
+            background-image: url(../images/pause.png)
                 
 .audioPlayer__image
   width: 85px

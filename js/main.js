@@ -92,7 +92,8 @@ jQuery(document).ready(function($) {
         asNavFor: '.quoteSlider__sliderNav',
         speed: 1000,
         autoplay: true,
-        pauseOnHover: false
+        pauseOnHover: false,
+        fade: true
     });
 
     $('.quoteSlider__sliderNav').slick({

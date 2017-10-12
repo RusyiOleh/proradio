@@ -1,5 +1,13 @@
 .speaker-section
 	padding-top: 30px 
+	background-image: url(../images/dictor-bg.svg)
+	background-size: 100%
+	background-position: 50% 30px 
+	background-repeat: no-repeat 
+	padding-bottom: 0
+	
+	& + .speakers-slider-section
+		padding-top: 40px 
 
 .speaker-content
 	width: 68.75%
@@ -180,9 +188,49 @@
 .dictor-slider
 	padding: 0 120px
 	
+	@media (max-width: 1600px)
+		padding: 0 40px
+	
 	.slide
 		a
 			display: block
 		img
 			display: block
 			width: 100%
+			
+
+	.slick-arrow
+		background-color: transparent
+		width: auto
+		height: auto
+		font-size: 0
+		background-image: none 
+		@extend .fa
+		
+		&.slick-disabled
+			opacity: 0.5
+		
+		&:after
+			font-size: 36px
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			background-image: linear-gradient(to bottom, rgba(37,161,214,1) 0%, rgba(214,37,149,1) 100%);
+
+		
+	.slick-next
+		right: 35px
+		
+		@media (max-width: 1600px)
+			right: 0
+			
+		&:after
+			content: '\f105'
+			
+	.slick-prev
+		left: 35px
+		
+		@media (max-width: 1600px)
+			left: 0
+			
+		&:after
+			content: '\f104'

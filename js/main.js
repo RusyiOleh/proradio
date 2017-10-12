@@ -130,6 +130,13 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Speakers-slider
     ---------------------------*/
+    // On before slide change
+    $('.speakers-slider').on('init', function(event, slick){
+        slick.$slider.css({
+            visibility: 'visible',
+            opacity: '1'
+        });
+    });
     $('.speakers-slider').slick({
         dots: false,
         arrows: true,
@@ -156,6 +163,22 @@ jQuery(document).ready(function($) {
         lazyLoad: 'ondemand',
         infinite: false
     })
+
+    /*---------------------------
+                                  Speaker gallery slider
+    ---------------------------*/
+    $('.fade-slider').slick({
+        arrows: false,
+        dots: false,
+        fade: true
+    })
+
+
+    /*---------------------------
+                                  Input mask
+    ---------------------------*/
+    $('input[type="tel"]').mask('+000 00 000 00 00');
+
 
 
     /*---------------------------

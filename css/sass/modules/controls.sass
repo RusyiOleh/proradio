@@ -10,12 +10,37 @@
     background: $gray
     border: 1px solid $gray
     cursor: pointer
+    position: relative
+    z-index: 1 
+    
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 50%
+        width: 0
+        height: 100%
+        opacity: 0
+        visibility: hidden
+        transform: translateX(-50%) 
+        transition: all 0.3s ease
+        z-index: -1 
+        
+    &:hover:after
+        width: 100%
+        opacity: 1
+        visibility: visible
+    
+
     &--transparent
         border-color: $rose
         background-color:   transparent  
+        
     &--white
-        color:  $velvet
-        background-color:   #fff  
+        color: $velvet
+        background-color: #fff  
+        
     &--centered
         display: block
         margin: 75px auto 0 
@@ -24,6 +49,14 @@
         background-color: $blue
         color: #fff 
         border-color: $blue
+        
+    &--pink-border
+        background-color: transparent
+        color: #fff 
+        border-color: $rose
+        
+        &:after
+            background-color: $rose 
 
 // Social links
 .social

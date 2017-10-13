@@ -55,41 +55,48 @@
     position: relative
     z-index: 2
     margin-top: 100vh          
+    
+.parallax
+    .layer
+        transition: all .1s 
 .img-info
     display: flex
     justify-content: flex-start 
-    background-image: url("../images/sound_wave.png")
-    background-repeat: no-repeat
-    background-position: 100% 30%
     font-family: $os 
-    &__text
-        padding-top: 230px 
-        padding-right: 30px
-        line-height: 1.6  
-       
-    &--type2
-    	background-image: url("../images/film_image.png")
-    	background-repeat: no-repeat
-    	background-position: 100% 100%
-    	.img-info__text
-    		padding-top: 60px 
-
-.img-decorated
-    padding-top: 30px
-    padding-left: 30px  
     position: relative
-    img
-    	position: relative
-    	z-index: 2 
-    &:after 
-        content: ""
-        display: block
+    height: 330px 
+    &__text
+        top: 230px
+        right: 0
+        width: 590px 
+        line-height: 1.6 
+        position: absolute 
+    &__img
+        padding-top: 30px
+        padding-left: 30px  
+        position: relative
+        img
+            position: absolute
+            left: 30px
+            top: 30px
+            z-index: 2 
+    &__bg
         position: absolute
-        top: 0
-        left: 0
-        width: 60px
-        height: calc(100% - 30px)   
-        background-color: $bluel 
+        top: 40px
+        right: 0
+    &--type2
+        .img-info__bg
+            top: 160px
+        .img-info__text
+            top: 60px
+            
+.img-info__shape
+    top: 0
+    left: 0
+    width: 60px
+    position: absolute
+    height: calc(100% - 30px)   
+    background-color: $bluel 
 
 .offer--slider
 	height: 590px

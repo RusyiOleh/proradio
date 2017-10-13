@@ -362,6 +362,62 @@ jQuery(document).ready(function($) {
     }
 
 
+    $('.parallax .layer').each(function(i, el) {
+        var initialLeft = $(el).css('left');
+        var initialTop = $(el).css('top');
+        $(this).attr('data-left', initialLeft);
+        $(this).attr('data-top', initialTop);
+    });
+
+    // PARALLAX
+    var currentY = '';
+    var currentX = '';
+    var movementConstant = .015;
+    $('.parallax').mousemove(function(e) {
+        if (currentX == '') {
+            currentX = e.pageX;
+        }
+        var xdiff = e.pageX - currentX;
+        currentX = e.pageX;
+        if (currentY == '') currentY = e.pageY;
+        var ydiff = e.pageY - currentY;
+        currentY = e.pageY;
+
+        $(this).find('.layer-1').each(function(i, el) {
+            var movement = (i + 5) * (xdiff * movementConstant);
+            var movementy = (i + 5) * (ydiff * movementConstant);
+            var newX = $(el).position().left + movement;
+            var newY = $(el).position().top + movementy;
+            $(el).css('left', newX + 'px');
+            $(el).css('top', newY + 'px');
+        });
+        $(this).find('.layer-2').each(function(i, el) {
+            var movement = (i + 10) * (xdiff * movementConstant);
+            var movementy = (i + 10) * (ydiff * movementConstant);
+            var newX = $(el).position().left + movement;
+            var newY = $(el).position().top + movementy;
+            $(el).css('left', newX + 'px');
+            $(el).css('top', newY + 'px');
+        });
+        $(this).find('.layer-3').each(function(i, el) {
+            var movement = (i + 15) * (xdiff * movementConstant);
+            var movementy = (i + 15) * (ydiff * movementConstant);
+            var newX = $(el).position().left + movement;
+            var newY = $(el).position().top + movementy;
+            $(el).css('left', newX + 'px');
+            $(el).css('top', newY + 'px');
+        });
+    });
+
+    $('.parallax').mouseleave(function(e) {
+        $('.parallax .layer').each(function(i, el) {
+            var initialLeft = $(el).data('left');
+            var initialTop = $(el).data('top');
+            $(el).css('left', initialLeft);
+            $(el).css('top', initialTop);
+        });
+    });
+
     // AUDIOPLAYERS with songs
     var players = {};
     $('.audioGroup').each(function(){

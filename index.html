@@ -72,6 +72,8 @@
 
         </section><!-- end offer section --> 
 
+        <div class="fix-over">
+
         <section class="section">
             <div class="wrapper">
                 <h2 class="section__title">Audio ad recording</h2>
@@ -177,60 +179,54 @@
         </div>
 
 
-                <!-- start audio player-->
-                <div class="audioPlayer audioPlayer--wide">
-                    <div class="audioPlayer__image">
-                        <img class="cover">
-                    </div>
-                    <!-- end song cover-->
-                    <div class="audioPlayer__info">
-                        <div class="audioPlayer__tracker">
-                            <div class="progress-bar"></div>
-                        </div>
-                        <!-- current song progress line-->
-                        <div class="audioPlayer__current">
-                            <div>
-                                <button class="play"></button>
-                                <span class="title"></span>
-                                <a href="#" download> <i class="fa fa-long-arrow-down" aria-hidden="true"></i> </a>
-                            </div>
-                            <div>
-                                <span class="audioPlayer__current__duration">0:00</span> /
-                                <span class="audioPlayer__current__time">0:00</span>
-                            </div>
-                        </div>
-                        <!-- current song title + time-->
-                        <div class="audioPlayer__next">
-                            <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
-                            <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
-                            <span class="audioPlayer__next__title">Next Song Name</span>
-                        </div>
-                        <!-- controls + next song title-->
-                        <div class="audioPlayer__volumeControls">
-                            <div class="silence"><img src="images/sound-off.svg" alt=""></div>
-                            <div class="audioPlayer__volume" data-loud='5'>
-                                <div data-volume='1'></div>
-                                <div data-volume='2'></div>
-                                <div data-volume='3'></div>
-                                <div data-volume='4'></div>
-                                <div data-volume='5'></div>
-                                <div data-volume='6'></div>
-                                <div data-volume='7'></div>
-                                <div data-volume='8'></div>
-                                <div data-volume='9'></div>
-                                <div data-volume='10'></div>
-                            </div>
-                        </div>
-                        <!-- end songs volume controls-->
-                    </div>
-                    <!-- end songs info-->
-                    <ul class="audioPlayer__list hidden">
-                        <li song="media/dire.mp3" cover="images/covers/cover1.jpg"  id="song-1">Dire Straits - Once upon a time in the west</li>
-                        <li song="media/oscar.mp3" cover="images/covers/cover2.jpg" id="song-2">Oscar Peterson - Angel Eyes</li>
-                        <li song="media/dave.mp3" cover="images/covers/cover3.jpg" id="song-3">Dave Brubeck - Take Five</li>
-                    </ul>
-                    <!-- end songs list-->
+        <!-- start audio player-->
+        <div class="audioPlayer audioPlayer--wide">
+            <div class="audioPlayer__image">
+                <img class="cover">
+            </div>
+            <!-- end song cover-->
+            <div class="audioPlayer__info">
+                <div class="audioPlayer__tracker">
+                    <div class="progress-bar"></div>
                 </div>
+                <!-- current song progress line-->
+                <div class="audioPlayer__current">
+                    <div>
+                        <button class="audioPlayer__play"></button>
+                        <span class="title"></span>
+                        <a href="#" download> <i class="fa fa-long-arrow-down" aria-hidden="true"></i> </a>
+                    </div>
+                    <div>
+                        <span class="audioPlayer__current__duration">0:00</span> /
+                        <span class="audioPlayer__current__time">0:00</span>
+                    </div>
+                </div>
+                <!-- current song title + time-->
+                <div class="audioPlayer__next">
+                    <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                    <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                    <span class="audioPlayer__next__title">Next Song Name</span>
+                </div>
+                <!-- controls + next song title-->
+                <div class="audioPlayer__volumeControls">
+                    <div class="silence"><img src="images/sound-off.svg" alt=""></div>
+                    <div class="audioPlayer__volume" data-loud='5'>
+                        <div data-volume='1'></div>
+                        <div data-volume='2'></div>
+                        <div data-volume='3'></div>
+                        <div data-volume='4'></div>
+                        <div data-volume='5'></div>
+                        <div data-volume='6'></div>
+                        <div data-volume='7'></div>
+                        <div data-volume='8'></div>
+                        <div data-volume='9'></div>
+                        <div data-volume='10'></div>
+                    </div>
+                </div>
+                <!-- end songs volume controls-->
+            </div>
+            <!-- end songs info-->
+        </div>
                 
 
 
@@ -247,7 +243,7 @@
                 <div class="speakers-slider">
                     
                     <div class="slide">
-                        <div class="speaker-card speaker-card--female audioPlayer">
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/spaeker-2.jpg" alt="">
@@ -263,19 +259,21 @@
                                 <p>от $400</p>
                             </div>
                             <div class="speaker-card__name">
-                                <span class="first-name">Jane</span>
+                                <span class="first-name">Jane 111</span>
                                 <span class="last-name">Doe</span>
                             </div>
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/oscar.mp3" id="song-12"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/dave.mp3" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg">Jane Doe (song 1)</li>
+                                <li song="media/oscar.mp3" id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg">Jane Doe (song 2)</li>
+                                <li song="media/dire.mp3" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg">Jane Doe (song 3)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--male audioPlayer">
+                        <div class="speaker-card speaker-card--male audioGroup" id="johndoe">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/male-no-photo.jpg" alt="">
@@ -296,13 +294,13 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/dave.mp3" id="song-13"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/dave.mp3" id="johndoe-1">John 1</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--female audioPlayer">
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe2">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/female-no-photo.jpg" alt="">
@@ -324,13 +322,13 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/dire.mp3" id="song-14"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/dire.mp3" id="janedoe2-1">Jane</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--male audioPlayer">
+                        <div class="speaker-card speaker-card--male audioGroup" id="johndoe2">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/spaeker-1.jpg" alt="">
@@ -352,13 +350,13 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/oscar.mp3" id="song-15"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/oscar.mp3" id="johndoe2-1">John</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--female audioPlayer">
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe3">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/spaeker-2.jpg" alt="">
@@ -380,13 +378,13 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/oscar.mp3" id="song-16"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/oscar.mp3" id="janedoe3-1">Jane</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--male audioPlayer">
+                        <div class="speaker-card speaker-card--male audioGroup" id="johndoe3">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/male-no-photo.jpg" alt="">
@@ -407,13 +405,13 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/oscar.mp3" id="song-17"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/oscar.mp3" id="johndoe3-1">John</li>
                             </ul>
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="speaker-card speaker-card--female audioPlayer">
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe4">
                             <div class="speaker-card__image">
                                 <div class="play">
                                     <img src="images/female-no-photo.jpg" alt="">
@@ -435,8 +433,8 @@
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
-                            <ul class="audioPlayer__list hidden">
-                                <li song="media/oscar.mp3" id="song-18"></li>
+                            <ul class="audioGroup__songs hidden">
+                                <li song="media/oscar.mp3" id="janedoe4-1">Jane</li>
                             </ul>
                         </div>
                     </div>
@@ -446,9 +444,6 @@
             </div>
 
         </section>
-
-
-
 
         <footer class="footer">
 
@@ -483,6 +478,8 @@
             </div> <!-- end footer-bottom -->
 
         </footer> <!-- end footer -->
+
+        </div>
 
         <div id="modal-popup" class="fncb-hide zoom-anim-dialog popup"></div>
 

@@ -1,6 +1,5 @@
 .offer
-	height: 1100px
-	max-height: 100%
+	height: 100%
 	min-height: 660px 
 	+flex($d: column, $ai: center, $j: center)
 	
@@ -28,6 +27,10 @@
 			display: block	
 			margin-top: 30px 
 .offer
+    position: fixed
+    left: 0
+    top: 0
+    width: 100% 
     small
         display: block
     h1
@@ -47,7 +50,11 @@
             background-size: cover
             background-repeat: no-repeat
             background-position: 50% 50%
-            
+.fix-over
+    background-color: #FFF
+    position: relative
+    z-index: 2
+    margin-top: 100vh          
 .img-info
     display: flex
     justify-content: flex-start 

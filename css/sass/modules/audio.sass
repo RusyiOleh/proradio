@@ -4,6 +4,16 @@
 .audioPlayer
     opacity: 1 
     font-size: 14px 
+    position: fixed
+    left: 0
+    bottom: 0
+    z-index: 100
+    width: 100%
+    background-color: #FFF  
+    transform: translateY(100%) 
+    transition: all .4s ease-out 
+    &.pause
+        transform: translateY(0%) 
     &--wide
         width: 100% 
         display: flex
@@ -64,11 +74,15 @@
         color: #41117d 
         background-size: 100% 100% 
         cursor: pointer
-    button.play
+    &__play
         width: 40px
         height: 40px
         background-image: url(../images/play.png)
-        &.pause
+        background-color: transparent
+        border: none
+        cursor: pointer 
+    &.pause
+        .audioPlayer__play
             background-image: url(../images/pause.png)
                 
 .audioPlayer__image

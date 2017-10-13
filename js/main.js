@@ -263,40 +263,280 @@ jQuery(document).ready(function($) {
     }
 
 
-    // AUDIO 
-    var songs = {};
+    // AUDIOPLAYERS with songs
+    var players = {};
+    $('.audioGroup').each(function(){
+        var playerId = $(this).attr('id');
+        players[playerId] = {};
+    });
 
     // create songs objects
-    $('.audioPlayer__list li').each(function(){
-        var audioId = $(this).attr('id'),
-            song = $(this).attr('song');
+    $('.audioGroup__songs li').each(function(){
+        var playerId = $(this).closest('.audioGroup').attr('id');
+            audioId = $(this).attr('id'),
+            song = $(this).attr('song'),
+            title = $(this).text(),
+            cover = $(this).attr('cover');
 
-        songs[audioId] = new Audio(song);
-        songs[audioId].volume = 0.5;
+        players[playerId][audioId] = {};
+        players[playerId][audioId].songObject = new Audio(song);
+        players[playerId][audioId].songObject.volume = 0.5,
+        players[playerId][audioId].name = title;
+        players[playerId][audioId].cover = cover;
+        players[playerId][audioId].file = song;
+
+        if($(this).is(':first-child')) {
+            $(this).addClass('active');
+        }
     });
 
+    // INITIATE OBJECT WITH REQUIRED PROPERTIES
+    function initVars(group) {
+        var s = this;
+        s.audioGroupId = group.attr('id'),
+        s.audioGroup = players[s.audioGroupId],
+        s.volume = parseFloat($('.audioPlayer__volume').attr('data-loud') / 10);
+
+        s.activeLi =  $('#' + s.audioGroupId + ' .audioGroup__songs li.active'),
+        s.activeLiId = s.activeLi.attr('id'),
+        s.activeSong = players[s.audioGroupId][s.activeLiId],
+        s.activeSongObject = s.activeSong.songObject;
+
+        if(s.activeLi.next().length > 0){
+            s.nextLi = s.activeLi.next();
+            s.nextLiId = s.nextLi.attr('id'),
+            s.nextLiSong = s.audioGroup[s.nextLiId],
+            s.nextLiSongOb = s.nextLiSong.songObject;
+        }
+
+        if(s.activeLi.prev().length > 0){
+            s.prevLi = s.activeLi.prev();
+            s.prevLiId = s.prevLi.attr('id'),
+            s.prevLiSong = s.audioGroup[s.prevLiId],
+            s.prevLiSongOb = s.prevLiSong.songObject;
+        }
+
+        s.firstLi = $('#' + s.audioGroupId + ' .audioGroup__songs li:first-child'),
+        s.firstLiId = s.firstLi.attr('id'),
+        s.firstSong = s.audioGroup[s.firstLiId],
+        s.firstSongOb = s.firstSong.songObject,
+
+        s.lastLi = $('#' + s.audioGroupId + ' .audioGroup__songs li:last-child'),
+        s.lastLiId = s.lastLi.attr('id'),
+        s.lastSong = s.audioGroup[s.lastLiId],
+        s.lastSongOb = s.lastSong.songObject;
+
+    }
+
+    var showNextTitle = function(group) {
+        var active = group.find('.audioGroup__songs li.active'),
+            nextTitle = '';
+        if(active.next().length > 0){
+            nextTitle = active.next('li').text();
+        } else {
+            nextTitle = group.find('.audioGroup__songs li:first-child').text();
+        }
+        $('.audioPlayer__next__title').text(nextTitle);
+    };
+
+    // PLAY / PAUSE SONG
+    $('.play').click(function(){
+        var au = new initVars( $(this).closest('.audioGroup') );
+            showNextTitle($(this).closest('.audioGroup'));
+        if ($(this).hasClass('pause')) { // if song is playing
+            au.activeSongObject.pause();
+            $(this).removeClass('pause');
+            $('.audioPlayer').removeClass('pause');
+        } else {
+            $('.play').removeClass('pause');
+            // set  active li-song info
+            setSongInfo(au.activeSong, au.audioGroupId, au.activeLiId, au);
+            // play active li-song 
+            au.activeSongObject.play();
+            // show active li-song time and duration
+            showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
+            $(this).addClass('pause');
+            $('.audioPlayer').addClass('pause');
+        }
+    });    
+
+    // NEXT SONG
+    $('.audioPlayer .next').click(function(){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        au.activeSongObject.pause();
+        au.activeLi.removeClass('active');
+        au.activeSongObject.currentTime = 0;
+
+        if(au.nextLi){ // if have next song/li
+            // new active li
+            au.nextLi.addClass('active');
+            // set new song info
+            setSongInfo(au.nextLiSong, au.audioGroupId, au.nextLiId);
+            // new song time and duration
+            showSongTime(au.nextLiSongOb); showDuration(au.nextLiSongOb);
+
+            au.nextLiSongOb.play();
+        } else {
+            // first li become active
+            au.firstLi.addClass('active');
+            // set first song info
+            setSongInfo(au.firstSong, au.audioGroupId, au.firstLiId, au);
+            // first song time and duration
+            showSongTime(au.firstSongOb); showDuration(au.firstSongOb);
+
+            au.firstSongOb.play();
+        }
+        showNextTitle(activeGroup);
+    });    
+
+    // PREVIOUSE SONG
+    $('.audioPlayer .prev').click(function(){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        au.activeSongObject.pause();
+        au.activeLi.removeClass('active');
+        au.activeSongObject.currentTime = 0;
+
+        if(au.prevLi){ // if have prev song / li
+            // new active li
+            au.prevLi.addClass('active');
+            // set new song info
+            setSongInfo(au.prevLiSong, au.audioGroupId, au.prevLiId);
+            // new song time and duration
+            showSongTime(au.prevLiSongOb); showDuration(au.prevLiSongOb);
+            au.prevLiSongOb.play();
+            $('.audioPlayer__next__title').text(au.prevLiSong.name);
+        } else {
+            // last li become active
+            au.lastLi.addClass('active');
+            // set last song info
+            setSongInfo(au.lastSong, au.audioGroupId, au.lastLiId, au);
+            // last song time and duration
+            showSongTime(au.lastSongOb); showDuration(au.lastSongOb);
+            au.lastSongOb.play();
+        }
+        showNextTitle(activeGroup);
+    });    
+
+    // NEXT SONG
+    $('.audioPlayer__play').click(function(){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        if ($('.audioPlayer').hasClass('pause')) { // if song is playing
+            au.activeSongObject.pause();
+            $('.audioPlayer').removeClass('pause');
+            $('.play').removeClass('pause');
+        } else {
+            $('.play').removeClass('pause');
+            // set  active li-song info
+            setSongInfo(au.activeSong, au.audioGroupId, au.activeLiId, au);
+            // play active li-song 
+            au.activeSongObject.play();
+            // show active li-song time and duration
+            showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
+            $('.audioPlayer').addClass('pause');
+            activeGroup.find('.play').addClass('pause');
+        }
+    });      
+
+    //Duration
+    var showSongTime = function(song) {
+        var s, m;
+
+        s = parseInt(song.duration % 60);
+        m = parseInt(song.duration / 60) % 60;
+
+        if(s < 10){
+            s = '0'+s;
+        }
+        $('.audioPlayer__current__time').html(m + ':'+ s);
+    };
+
+    //Time
+    var showDuration = function (song){
+        $(song).bind('timeupdate', function(){
+            //Get hours and minutes
+            var s = parseInt(song.currentTime % 60);
+            var m = parseInt(song.currentTime / 60) % 60;
+            if(s < 10){
+                s = '0'+s;
+            }
+            $('.audioPlayer__current__duration').html(m + ':'+ s);
+            var value = 0;
+            if(song.currentTime > 0){
+                value = Math.floor((100 / song.duration) * song.currentTime);
+            }
+            $('.audioPlayer__tracker .progress-bar').css('width', (100 - value) + '%');
+        });
+    };
+
+    // Set song Info into player
+    var setSongInfo = function(song, playerId, songId, au) {
+        var player = $('.audioPlayer'),
+            audioGroupId = playerId,
+            asongId = songId,
+            currentAudioGroup = player.attr('data-playerId'),
+            currentSong = player.attr('data-songId'),
+            nextSongTitle = player.find('.audioPlayer__next__title');
+
+        if (currentAudioGroup) {
+            players[currentAudioGroup][currentSong].songObject.pause();
+        } 
+
+        player.attr('data-playerId', audioGroupId);
+        player.attr('data-songId', asongId);
+
+        player.find('.title').text(song.name);
+        player.find('.cover').attr('src', song.cover);
+        player.find('a[download]').attr('href', song.file);
+    };
+
+    //Volume control
+    $('.audioPlayer__volume div').click(function(){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup),
+            vol = $(this).attr('data-volume');
+
+        $('.audioPlayer__volume').attr('data-loud', vol);
+        au.activeSongObject.volume = vol / 10;
+        $('.audioPlayer__volume').removeClass('disabled');
+        $('.silence').removeClass('active');
+    });
+    $('.silence').click(function(){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        if($(this).hasClass('active')) {
+            au.activeSongObject.volume = au.volume;
+            $(this).removeClass('active');
+            $('.audioPlayer__volume').removeClass('disabled');
+        } else {
+            au.activeSongObject.volume = 0.0;
+            $(this).addClass('active');
+            $('.audioPlayer__volume').addClass('disabled');
+        }
+    });
+
+
+/*
     //-------------------------------------------------------------------------------
     // set song info in player
-    $('.audioPlayer').each(function(){
-        var el = $(this).find('.audioPlayer__list li:first-child'),
-            nextSongTitle = $(this).find('.audioPlayer__list li:nth-child(2)').text();
 
-        el.addClass('active');
-        setSongInfo(el);
-        $(this).find('.audioPlayer__next__title').text(nextSongTitle);
-    });
-
-        function setSongInfo(el) {
-            var song =  el.attr('song'),
-                title = el.text(),
-                cover = el.attr('cover');
-            //Insert audio info
-            el.closest('.audioPlayer').find('.title').text(title);
-            //Insert song cover
-            el.closest('.audioPlayer').find('img.cover').attr('src', cover);
-            //Insert link
-            el.closest('.audioPlayer').find('a[download]').attr('href', song);
-        }
+    function setSongInfo(el) {
+        var song =  el.attr('song'),
+            title = el.text(),
+            cover = el.attr('cover');
+        //Insert audio info
+        el.closest('.audioPlayer').find('.title').text(title);
+        //Insert song cover
+        el.closest('.audioPlayer').find('img.cover').attr('src', cover);
+        //Insert link
+        el.closest('.audioPlayer').find('a[download]').attr('href', song);
+    }
 
     //-------------------------------------------------------------------------------
     // initiate vars
@@ -466,6 +706,6 @@ jQuery(document).ready(function($) {
             }
             $('.audioPlayer__tracker .progress-bar').css('width', (100 - value) + '%');
         });
-    }
+    } */
 
 }); // end file

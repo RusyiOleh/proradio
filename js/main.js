@@ -172,6 +172,7 @@ jQuery(document).ready(function($) {
         dots: false,
         fade: true,
         autoplay: true,
+        autoplaySpeed: 4000,
         speed: 3000
     })
 
@@ -361,7 +362,7 @@ jQuery(document).ready(function($) {
         googleMap_initialize();
     }
 
-
+    // parallax
     var initialLeft = '',
         initialTop = '';
 
@@ -391,6 +392,7 @@ jQuery(document).ready(function($) {
         });
 
     });
+    // ========== end parallax
 
     // AUDIOPLAYERS with songs
     var players = {};

@@ -160,6 +160,12 @@
 		position: relative
 		z-index: 1 
 		
+		.fa-play
+			display: block
+			
+		.fa-pause
+			display: none
+		
 		&:after
 			content: ''
 			width: 100%
@@ -191,6 +197,12 @@
 	&.is-playing
 		.play-button
 			background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
+			
+			.fa-play
+				display: none
+				
+			.fa-pause
+				display: block
 			
 			&:after
 				background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
@@ -278,3 +290,26 @@
 			&-title
 				color: #fff
 				font-size: 18px 
+				
+	&--double &__body
+		display: flex
+		align-items: stretch
+		justify-content: flex-start
+		flex-wrap: wrap
+		
+		.audio
+			width: -webkit-calc(50% - 90px)
+			width: calc(50% - 90px)
+			margin-right: 90px 
+			
+			&:nth-child(4n),
+			&:nth-child(4n-1)
+				background-color: #202020
+				
+			&:nth-child(4n-2),
+			&:nth-child(4n-3)
+				background-color: #1A1A1A
+				
+			&.is-playing
+				border-radius: 40px
+				background-color: #000 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="10.5" viewBox="0 0 8 10.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #25a2d6;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="play_triangle" data-name="play triangle" class="cls-1" d="M291.058,1737.5l-8,5.26v-10.52Z" transform="translate(-283.063 -1732.25)"/>
+</svg>

@@ -6,6 +6,7 @@
 	.right-side
 		position: relative
 		width: 50%
+		overflow: hidden
 		
 
 .of-header
@@ -24,23 +25,106 @@
 			
 
 .of-body
-	padding: 55px 50px 225px 50px
-	
+	padding: 55px 50px
 
 	form
+		max-width: 100%
+		margin: 0 auto 
+		
+	.step-1
+		width: 610px
+		max-width: 100%
+		margin: 0 auto  
+		
+
+	.step-2
 		width: 450px
 		max-width: 100%
 		margin: 0 auto 
+		
+
+.form-step
+	transition: all 0.5s ease
+	
+	&.step-1
+		transform: translateX(0)
+		
+		& + .step-2
+			display: none
+			transform: translateX(50px)
+			
+			&.active
+				transform: translateX(0)
+				
+		&.not-active
+			transform: translateX(-50px)
+	
+
+.audio-radio-group
+	padding-top: 15px
+
+	.radio
+		margin-left: 0
+		margin-right: 0
+		width: 100%  
+		color: $text
+		font-family: $os
+		
+		&:not(:last-child)
+			margin-bottom: 20px 
+		
+		.indicator
+			border-color: #CACACA
+		
+		input
+			&:checked + .indicator
+				background-color: #41117D 	
+				
+		.text
+			width: -webkit-calc(100% - 58px)
+			width: calc(100% - 58px)
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+				
+	.play-button
+		margin-right: 10px 
+		width: 24px
+		height: 24px
+		background-color: transparent
+		border: 1px solid #41117D
+		color: #41117D 
+		font-size: 10px
+		padding: 0
+		border-radius: 50% 
+		display: flex
+		align-items: center
+		justify-content: center
+		cursor: pointer
+		
+		&.male
+			border-color: $blue
+			color: $blue
+			
+		&.female
+			border-color: $rose 
+			color: $rose
+		
+		.fa-play
+			display: block
+			
+		.fa-pause
+			display: none
+
 
 .form-group
+	margin-bottom: 30px
+	
 	.label
 		display: block
 		color: $text
 		font-family: $os
 		margin-bottom: 10px 
-		
-	&:not(:last-of-type)
-		margin-bottom: 30px 
 		 
 
 .form-control
@@ -55,6 +139,13 @@
 	
 	+placeholder
 		color: #a6a6a6
+		
+
+textarea.form-control
+	height: 230px
+	resize: none
+	padding-top: 14px
+	padding-bottom: 14px  
 		
 .button-group
 	margin-top: 50px 

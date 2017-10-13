@@ -183,6 +183,17 @@ jQuery(document).ready(function($) {
     $('input[type="tel"]').mask('+000 00 000 00 00');
 
 
+    /*---------------------------
+                                  Order form next step
+    ---------------------------*/
+    $('.js-order-next-step').on('click', function(event) {
+        event.preventDefault();
+        $(this).parents('.form-step').addClass('not-active').fadeOut('300', function() {
+            $(this).siblings('.step-2').fadeIn('300').addClass('active');
+        });
+    });
+
+
 
     /*---------------------------
                                   Audio length slider

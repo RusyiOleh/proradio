@@ -170,6 +170,7 @@
 	display: flex
 	align-items: center
 	justify-content: flex-start
+	flex-wrap: wrap
 	
 	.label
 		font-size: 14px
@@ -182,35 +183,6 @@
 		img
 			width: 24px
 			margin-right: 8px
-			
-
-	.radio
-		margin-bottom: 0 
-		margin-right: 35px
-		color: #fff
-		display: flex
-		align-items: center
-		justify-content: flex-start
-		cursor: pointer
-		
-		&:first-of-type
-			margin-left: 35px 
-			
-		.indicator
-			width: 16px
-			height: 16px
-			border: 2px solid #fff
-			background-color: transparent
-			transition: all 0.3s ease 
-			margin-right: 8px 
-			border-radius: 50%
-			
-		input
-			display: none
-			
-			&:checked + .indicator
-				background-color: $blue 
-			
 			
 
 .cf-result

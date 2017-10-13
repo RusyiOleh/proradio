@@ -1,108 +1,108 @@
 .button
-    min-width: 260px
-    padding:    0 40px 
-    text-transform: uppercase
-    font-family: $v
-    font-size: 30px
-    color: #fff
-    height: 70px
-    line-height: 70px  
-    background: $gray
-    border: 1px solid $gray
-    cursor: pointer
-    position: relative
-    z-index: 1 
-    
-    &:after
-        content: ''
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 50%
-        width: 0
-        height: 100%
-        opacity: 0
-        visibility: hidden
-        transform: translateX(-50%) 
-        transition: all 0.3s ease
-        z-index: -1 
-        
-    &:hover:after
-        width: 100%
-        opacity: 1
-        visibility: visible
-    
+	min-width: 260px
+	padding:	0 40px 
+	text-transform: uppercase
+	font-family: $v
+	font-size: 30px
+	color: #fff
+	height: 70px
+	line-height: 70px  
+	background: $gray
+	border: 1px solid $gray
+	cursor: pointer
+	position: relative
+	z-index: 1 
+	
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 50%
+		width: 0
+		height: 100%
+		opacity: 0
+		visibility: hidden
+		transform: translateX(-50%) 
+		transition: all 0.3s ease
+		z-index: -1 
+		
+	&:hover:after
+		width: 100%
+		opacity: 1
+		visibility: visible
+	
 
-    &--transparent
-        border-color: $rose
-        background-color: transparent  
-        
-        &:after
-            background-color: $rose 
-        
-    &--white
-        color: $velvet
-        background-color: #fff  
-        
-    &--centered
-        display: block
-        margin: 75px auto 0 
-        
-    &--blue
-        background-color: $blue
-        color: #fff 
-        border-color: $blue
-        
-    &--pink-border
-        background-color: transparent
-        color: #fff 
-        border-color: $rose
-        
-        &:after
-            background-color: $rose 
-            
-    &--white-border
-        background-color: transparent
-        color: #fff 
-        border-color: #fff
-        transition: color 0.3s ease
-        
-        &:after
-            background-color: #fff
-            
-        &:hover
-            color: $text
+	&--transparent
+		border-color: $rose
+		background-color: transparent  
+		
+		&:after
+			background-color: $rose 
+		
+	&--white
+		color: $velvet
+		background-color: #fff  
+		
+	&--centered
+		display: block
+		margin: 75px auto 0 
+		
+	&--blue
+		background-color: $blue
+		color: #fff 
+		border-color: $blue
+		
+	&--pink-border
+		background-color: transparent
+		color: #fff 
+		border-color: $rose
+		
+		&:after
+			background-color: $rose 
+			
+	&--white-border
+		background-color: transparent
+		color: #fff 
+		border-color: #fff
+		transition: color 0.3s ease
+		
+		&:after
+			background-color: #fff
+			
+		&:hover
+			color: $text
 
 // Social links
 .social
-    position: absolute
-    left: 40px
-    width: 20px
-    text-align: center 
-    a
-        display: block
-        color: #FFF
-        margin: 20px 0  
-        opacity: .25
-        transition: all .2s 
-        &:hover
-            opacity: 1 
-            
+	position: absolute
+	left: 40px
+	width: 20px
+	text-align: center 
+	a
+		display: block
+		color: #FFF
+		margin: 20px 0  
+		opacity: .25
+		transition: all .2s 
+		&:hover
+			opacity: 1 
+			
 // Page anchors
 .page-links
-    position: absolute
-    right: 40px
-    text-align: right 
-    a
-        display: block
-        color: #FFF
-        margin: 36px 0  
-        transition: all .2s 
-        font-size: 18px 
-        &.active,
-        &:hover
-            opacity: .25
-            
+	position: absolute
+	right: 40px
+	text-align: right 
+	a
+		display: block
+		color: #FFF
+		margin: 36px 0  
+		transition: all .2s 
+		font-size: 18px 
+		&.active,
+		&:hover
+			opacity: .25
+			
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
@@ -154,47 +154,103 @@
 
 
 .input.file
-    position: relative
-    padding: 0!important
+	position: relative
+	padding: 0!important
 
-    &:after
-        content: '';
-        width: 38px;
-        height: 38px;
-        border-radius: 6px
-        background-color: #fdbf2d
-        background-size: 20px;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-image: url(../images/upload.svg);
-        position: absolute;
-        top: 50%;
-        right: 21px;
-        -webkit-transform: translate(50%, -50%);
-        -ms-transform: translate(50%, -50%);
-        -o-transform: translate(50%, -50%);
-        transform: translate(50%, -50%);
-        pointer-events: none;
+	&:after
+		content: '';
+		width: 38px;
+		height: 38px;
+		border-radius: 6px
+		background-color: #fdbf2d
+		background-size: 20px;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-image: url(../images/upload.svg);
+		position: absolute;
+		top: 50%;
+		right: 21px;
+		-webkit-transform: translate(50%, -50%);
+		-ms-transform: translate(50%, -50%);
+		-o-transform: translate(50%, -50%);
+		transform: translate(50%, -50%);
+		pointer-events: none;
 
-    input[type="file"] 
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0
-        bottom: 0
-        z-index: 2;
-        opacity: 0;
-        cursor: pointer;
+	input[type="file"] 
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0
+		bottom: 0
+		z-index: 2;
+		opacity: 0;
+		cursor: pointer;
 
-        &::-webkit-file-upload-button
-            cursor: pointer;
+		&::-webkit-file-upload-button
+			cursor: pointer;
 
 
-    span
-        +textEnd();
-        display: block
-        height: 100%
-        padding: 0 55px 0 15px
-        text-align: left
+	span
+		+textEnd();
+		display: block
+		height: 100%
+		padding: 0 55px 0 15px
+		text-align: left
+		
+
+
+.radio
+	margin-bottom: 0 
+	margin-right: 35px
+	color: #fff
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	cursor: pointer
+	
+	&:first-of-type
+		margin-left: 35px 
+		
+	.indicator
+		width: 16px
+		height: 16px
+		border: 2px solid #fff
+		background-color: transparent
+		transition: all 0.3s ease 
+		margin-right: 8px 
+		border-radius: 50%
+		
+	input
+		display: none
+		
+		&:checked + .indicator
+			background-color: $blue 
+			
+
+
+[data-tooltip]
+	position: relative
+	
+	&:after
+		content: attr(data-tooltip)
+		position: absolute
+		bottom: 100%
+		left: 50%
+		transform: translate(-50%, -3px)
+		width: 100px
+		padding: 6px
+		border-radius: 4px
+		background-color: rgba(0, 0, 0, .8)
+		opacity: 0
+		visibility: hidden
+		transition: all 0.3s ease
+		z-index: 2 
+		color: #fff
+		font-size: 11px 
+		text-align: center
+		
+	&:hover:after
+		opacity: 1
+		visibility: visible

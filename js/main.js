@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
         $(this).toggleClass('is-active');
-        $(this).siblings('header').toggleClass('open');
+        $('.site-navigation').toggleClass('open');
     });
 
 
@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
             }
         }
       ]
-    })
+    });
 
     /*---------------------------
                                   Speaker gallery slider
@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
         dots: false,
         lazyLoad: 'ondemand',
         infinite: false
-    })
+    });
 
     /*---------------------------
                                   Speaker gallery slider
@@ -174,7 +174,7 @@ jQuery(document).ready(function($) {
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 3000
-    })
+    });
 
 
     /*---------------------------
@@ -393,13 +393,13 @@ jQuery(document).ready(function($) {
             topDif = initialTop - e.pageY;
 
         $(this).removeClass('notActive').find('.layer-1').css({
-            transform:'translateX(' + leftDif / 12 + 'px) translateY(' + topDif / 10 + 'px)'
-        });
-        $(this).find('.layer-2').css({
             transform:'translateX(' + leftDif / 24 + 'px) translateY(' + topDif / 10 + 'px)'
         });
+        $(this).find('.layer-2').css({
+            transform:'translateX(' + leftDif / 48 + 'px) translateY(' + topDif / 10 + 'px)'
+        });
         $(this).find('.layer-3').css({
-            transform:'translateX(' + leftDif / 36 + 'px) translateY(' + topDif / 10 + 'px)'
+            transform:'translateX(' + leftDif / 72 + 'px) translateY(' + topDif / 10 + 'px)'
         });
 
     });

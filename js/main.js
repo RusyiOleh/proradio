@@ -178,6 +178,42 @@ jQuery(document).ready(function($) {
 
 
     /*---------------------------
+                                  Steps slider
+    ---------------------------*/
+    $('.help-slider').on('init', function(event, slick) {
+        event.preventDefault();
+        $('.os-item').eq(slick.currentSlide).addClass('active');
+    });
+    $('.help-slider').on('afterChange', function(event, slick, currentSlide){
+        $('.os-item').removeClass('active');
+        $('.os-item').eq(slick.currentSlide).addClass('active');
+    });
+    $('.os-item').on('mouseenter', function(event) {
+        event.preventDefault();
+        var index = $(this).attr('data-index')*1;
+        $('.help-slider').slick('slickGoTo', index);
+        $('.help-slider').slick('slickPause');
+    });
+    $('.os-item').on('click', function(event) {
+        event.preventDefault();
+        var index = $(this).attr('data-index')*1;
+        $('.help-slider').slick('slickGoTo', index);
+    });
+    $('.os-item').on('mouseleave', function(event) {
+        event.preventDefault();
+        $('.help-slider').slick('slickPlay');
+    });
+    $('.help-slider').slick({
+        fade: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        speed: 0,
+        pauseOnHover: false
+    })
+
+
+    /*---------------------------
                                   Input mask
     ---------------------------*/
     $('input[type="tel"]').mask('+000 00 000 00 00');
@@ -188,7 +224,8 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.js-order-next-step').on('click', function(event) {
         event.preventDefault();
-        $(this).parents('.form-step').addClass('not-active').fadeOut('300', function() {
+        $(this).parents('.form-step').addClass('not-active');
+        $(this).parents('.form-step').fadeOut('300', function() {
             $(this).siblings('.step-2').fadeIn('300').addClass('active');
         });
     });

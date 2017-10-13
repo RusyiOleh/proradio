@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
         $(this).toggleClass('is-active');
-        $(this).siblings('header').toggleClass('open');
+        $('.site-navigation').toggleClass('open');
     });
 
 
@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
             }
         }
       ]
-    })
+    });
 
     /*---------------------------
                                   Speaker gallery slider
@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
         dots: false,
         lazyLoad: 'ondemand',
         infinite: false
-    })
+    });
 
     /*---------------------------
                                   Speaker gallery slider
@@ -174,7 +174,7 @@ jQuery(document).ready(function($) {
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 3000
-    })
+    });
 
 
     /*---------------------------

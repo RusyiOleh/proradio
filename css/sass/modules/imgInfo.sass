@@ -1,0 +1,42 @@
+
+.parallax
+    &.notActive
+        .layer
+            transition: all .4s         
+.img-info
+    display: flex
+    justify-content: flex-start 
+    font-family: $os 
+    position: relative
+    .img-info__bg
+        position: absolute
+        top: 40px
+        right: 0
+    &__text
+        padding-top: 230px 
+        padding-right: 30px
+        line-height: 1.6  
+       
+    &--type2
+        .img-info__bg
+            position: absolute
+            bottom: 0
+            right: 0
+            top: auto
+        .img-info__text
+            padding-top: 60px 
+
+.img-decorated
+    padding-top: 30px
+    padding-left: 30px  
+    position: relative
+    img
+        position: relative
+        z-index: 2 
+    &__shape
+        width: 60px
+        height: calc(100% - 30px)   
+        background-color: $bluel 
+        position: absolute
+        left: 0
+        top: 0

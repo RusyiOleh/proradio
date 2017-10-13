@@ -28,7 +28,18 @@
 		vertical-align: middle
 	img
 		margin-right: 4px 
+		&:last-of-type
+			display: none
+			width: 17px 
+	&.is-active
+		img
+			&:first-of-type
+				display: none
+			&:last-of-type
+				display: inline-block
 		
+/* ------------------------------------ */
+/*  LANGUAGES  */		
 .languages
 	list-style-type: none
 	display: inline-block
@@ -45,8 +56,9 @@
 			transition: all .2s
 			&:hover
 				opacity: .25 
+				
 /* ------------------------------------ */
-/*  NAV STYLES  */
+/*  PAGE ANCHORS  */
 
 .page-menu
 	ul
@@ -62,15 +74,86 @@
 				text-transform: uppercase
 
 /* ------------------------------------ */
-/*  MENU BUTTON  */
-
-.menu-button
-	display: none
-	+position(fixed, 15px, 10px, auto, auto)
-	background: white
-	border-radius: 50%
-	box-shadow: 0 5px 10px rgba(black, 0.5)
+/*  SITE NAV  */
+.menu-toggle
+	position: absolute
+	z-index: 101 
 	cursor: pointer
-	transform: rotate(0deg)
-	transition: .5s ease-in-out
-	cursor: pointer
+	
+.site-navigation
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%  
+	background-color: #000 
+	padding: 0 10.5% 
+	transform: translateY(-100%)
+	opacity: 0 
+	transition: all .3s ease-out 
+	&.open
+		transform: translateY(0%)
+		opacity: 1 
+	ul
+		list-style-type: none
+		display: -webkit-flex
+		display: flex
+		height: 100% 
+		li
+			flex: 1
+			height: 100%
+			position: relative
+			background-size: 100% 100%
+			background-position: 0 0  
+			&:first-child
+				a
+					border: none 
+			&:after
+				display: block
+				content: ''
+				left: 0
+				top: 0
+				position: absolute
+				width: 100% 
+				height: 100% 
+				background-size: 100% 100%
+				background-position: 0 0  
+				opacity: 0
+				transition: all .2s ease-out  
+			a
+				display: block
+				height: 100%
+				padding-top: 70vh 
+				text-align: left
+				position: relative
+				z-index: 2 
+				border-left: 1px solid rgba(255,255,255, .15)
+				span 
+					color: #FFF  
+					text-transform: uppercase
+					font-family: $v
+					font-size: 30px  
+					padding-left: 10%
+			&:nth-of-type(1)
+				background-image: url("../images/menu-1-b.jpg")
+				&:after
+					background-image: url("../images/menu-1.jpg")
+			&:nth-of-type(2)
+				background-image: url("../images/menu-2-b.jpg")
+				&:after
+					background-image: url("../images/menu-2.jpg")
+			&:nth-of-type(3)
+				background-image: url("../images/menu-3-b.jpg")
+				&:after
+					background-image: url("../images/menu-3.jpg")
+			&:nth-of-type(4)
+				background-image: url("../images/menu-4-b.jpg")
+				&:after
+					background-image: url("../images/menu-4.jpg")
+			&:nth-of-type(5)
+				background-image: url("../images/menu-5-b.jpg")
+				&:after
+					background-image: url("../images/menu-5.jpg")
+			&:hover
+				&:after
+					opacity: 1 

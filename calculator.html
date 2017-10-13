@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/general.css">
+    </head>
+    <body>
+
+        <!-- Header and offer will be here -->
+
+        
+
+        <section class="calculator">
+
+            <div class="wrapper wrapper--wide">
+                <h2>Калькулятор</h2>
+            </div>
+
+            <div class="calculator-form">
+                <form action="">
+
+                    <div class="cf-row cf-header">
+                        <div class="cf-wrap">
+                            <h3>Рассчитать стоимость аудиоролика с данным диктором</h3>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <label>Диктор:</label>
+
+                            <div class="select">
+                                <select name="" id="">
+                                    <option>Выберите диктора</option>
+                                    <option value="1">Диктор 1</option>
+                                    <option value="1">Диктор 2</option>
+                                    <option value="1">Диктор 3</option>
+                                    <option value="1">Диктор 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <label>Длительность аудиролика: <span class="audio-length" data-label="секунд" data-more="более 1.5 мин">60 секунд</span></label>
+                            
+                            <div class="slider">
+                                <div class="length-slider" data-min="0" data-max="100" data-step="10"></div>
+                                <div class="labels">
+                                    <span class="ls-label" data-val="0">0 с.</span>
+                                    <span class="ls-label" data-val="10">10 с.</span>
+                                    <span class="ls-label" data-val="20">20 с.</span>
+                                    <span class="ls-label" data-val="30">30 с.</span>
+                                    <span class="ls-label" data-val="40">40 с.</span>
+                                    <span class="ls-label" data-val="50">50 с.</span>
+                                    <span class="ls-label" data-val="60">60 с.</span>
+                                    <span class="ls-label" data-val="70">70 с.</span>
+                                    <span class="ls-label" data-val="80">80 с.</span>
+                                    <span class="ls-label" data-val="90">90 с.</span>
+                                    <span class="ls-label" data-val="100">более 1,5 мин</span>
+                                </div>
+                                <input type="hidden" name="audio-length" value="60 секунд">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <div class="radio-group">
+                                <p class="label">
+                                    <img src="images/script.svg" alt="">
+                                    <span>Сценарий:</span>
+                                </p>
+                                <label class="radio">
+                                    <input type="radio" name="script" value="0" checked>
+                                    <span class="indicator"></span>
+                                    <span class="text">Имеется</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="script" value="1">
+                                    <span class="indicator"></span>
+                                    <span class="text">Производство</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row">
+                        <div class="cf-wrap">
+                            <div class="radio-group">
+                                <p class="label">
+                                    <img src="images/melody.svg" alt="">
+                                    <span>Фоновая музыка:</span>
+                                </p>
+                                <label class="radio">
+                                    <input type="radio" name="music" value="0" checked>
+                                    <span class="indicator"></span>
+                                    <span class="text">Имеется</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="music" value="1">
+                                    <span class="indicator"></span>
+                                    <span class="text">Выбор из библиотеки</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cf-row cf-footer">
+                        <div class="cf-wrap">
+                            <div class="cf-result">
+                                <p class="cf-result-label">Рассчетная цена:</p>
+                                <p class="cf-result-value">
+                                    <span class="number">350</span>
+                                    <span class="unit">AZN</span>
+                                </p>
+                            </div>
+
+                            <div class="cf-submit">
+                                <button class="button">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div> <!-- end calculator-form -->
+        </section> <!-- end calculator -->
+
+
+
+        <section class="order">
+
+            <div class="left-side">
+
+                <div class="order-form">
+
+                    <div class="of-header">
+                        <h2>Быстрый заказ аудиоролика</h2>
+                        <p>У вас нет сценария? Закажите его у нас.</p>
+                    </div> <!-- end of-header -->
+
+                    <div class="of-body">
+                        <form action="">
+                            <div class="form-step step-2">
+                                <div class="form-group">
+                                    <label class="label">Вид аудиоролика:</label>
+                                    <div class="select select--dark">
+                                        <select name="" id="" required="">
+                                            <option disabled selected>Выберите диктора</option>
+                                            <option value="1">Диктор 1</option>
+                                            <option value="1">Диктор 2</option>
+                                            <option value="1">Диктор 3</option>
+                                            <option value="1">Диктор 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Ваше имя:</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Имя">
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Электронная почта:</label>
+                                    <input type="email" class="form-control" name="email" placeholder="thisisfor@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Номер телефона:</label>
+                                    <input type="tel" class="form-control" name="phone" placeholder="+994 55 814 41 91">
+                                </div>
+
+                                <div class="button-group">
+                                    <button class="button button--blue">Далее</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div> <!-- end of-body -->
+
+                </div> <!-- end order-form -->
+
+            </div> <!-- end left-slide -->
+
+            <div class="right-side">
+                <div class="fade-slider">
+                    <div class="slide" style="background-image: url(images/fade-slide-1.jpg);"></div>
+                    <div class="slide" style="background-image: url(images/fade-slide-2.jpg);"></div>
+                    <div class="slide" style="background-image: url(images/fade-slide-3.jpg);"></div>
+                </div>
+            </div> <!-- end right-side -->
+
+        </section> <!-- end order -->
+
+
+
+        <footer class="footer">
+
+            <div class="footer-top">
+                <div class="wrapper wrapper--wide">
+                    <div class="row middle-xs">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <nav class="footer-menu">
+                                <ul>
+                                    <li class="menu-item"><a href="#">Samples</a></li>
+                                    <li class="menu-item"><a href="#">Calculator</a></li>
+                                    <li class="menu-item"><a href="#">Prices</a></li>
+                                    <li class="menu-item"><a href="#">Speakers</a></li>
+                                    <li class="menu-item"><a href="#">Contacts</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="studio">
+                                <span>Realisation by</span>
+                                <a href="http://gamidov.com" target="_blank"><img src="images/gamidov-logo.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div> <!-- end footer-top -->
+
+            <div class="footer-bottom">
+                <div class="wrapper">
+                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+            </div> <!-- end footer-bottom -->
+
+        </footer> <!-- end footer -->
+
+
+
+
+        <div id="modal-popup" class="fncb-hide zoom-anim-dialog popup"></div>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB8OI63bD1KAI4MAo0yz7p0Fj-RiPEZYPk"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -13,6 +13,7 @@
 	width: 68.75%
 	padding-right: 30px 
 	padding-left: 190px 
+	margin-top: -60px 
 	
 	.content-block
 		background-color: #F1F4FF 
@@ -37,8 +38,12 @@
 			font-family: $os
 			color: #202020
 			
+			.fa
+				transition: all 0.3s ease
+			
 			&:hover
-				text-decoration: underline
+				.fa
+					transform: translateX(-10px)
 				
 		.share
 			position: absolute
@@ -139,7 +144,7 @@
 
 
 
-.demo-audio
+.audio
 	display: flex
 	align-items: center
 	
@@ -182,6 +187,13 @@
 		text-overflow: ellipsis
 		overflow: hidden 
 		
+
+	&.is-playing
+		.play-button
+			background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
+			
+			&:after
+				background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
 
 
 
@@ -234,3 +246,35 @@
 			
 		&:after
 			content: '\f104'
+			
+
+
+.play-list
+	&__header
+		text-align: center
+		background-color: #000
+		padding: 40px 30px
+		
+		h4
+			font-size: 24px
+			color: #fff 
+			font-weight: normal 
+			
+	&__body
+		.audio
+			padding: 20px 30px
+			
+			&:nth-child(odd)
+				background-color: #1A1A1A
+				
+			&:nth-child(even) 
+				background-color: #202020 
+				
+			.play-button
+				background-color: #393939
+				&:after
+					background-color: #393939
+					
+			&-title
+				color: #fff
+				font-size: 18px 

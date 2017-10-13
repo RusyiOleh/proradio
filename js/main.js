@@ -130,6 +130,13 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Speakers-slider
     ---------------------------*/
+    // On before slide change
+    $('.speakers-slider').on('init', function(event, slick){
+        slick.$slider.css({
+            visibility: 'visible',
+            opacity: '1'
+        });
+    });
     $('.speakers-slider').slick({
         dots: false,
         arrows: true,
@@ -157,6 +164,98 @@ jQuery(document).ready(function($) {
         infinite: false
     })
 
+    /*---------------------------
+                                  Speaker gallery slider
+    ---------------------------*/
+    $('.fade-slider').slick({
+        arrows: false,
+        dots: false,
+        fade: true,
+        autoplay: true,
+        speed: 3000
+    })
+
+
+    /*---------------------------
+                                  Input mask
+    ---------------------------*/
+    $('input[type="tel"]').mask('+000 00 000 00 00');
+
+
+
+    /*---------------------------
+                                  Audio length slider
+    ---------------------------*/
+    $('.length-slider').each(function(index, el) {
+        var slider = $(this);
+        var holder = slider.parents('.slider').find('.audio-length');
+        var input = slider.siblings('input');
+        slider.slider({
+            min: slider.attr('data-min')*1,
+            max: slider.attr('data-max')*1,
+            value: 60,
+            step: slider.attr('data-step')*1,
+            change: function( event, ui ) {
+                var value = ui.value;
+                var length;
+                switch (value) {
+                    case 100:
+                        length = holder.attr('data-more');
+                        break;
+                    default:
+                        length = value + ' ' + holder.attr('data-label');
+                }
+                holder.text( length );
+                input.val( value ).trigger('change');
+            }
+        });    
+
+        slider.siblings('.labels').find('.ls-label').each(function(index, el) {
+            var count = slider.siblings('.labels').find('.ls-label').length - 1;
+            $(this).css('left', (index*100)/count + '%');
+
+            $(this).on('click', function(event) {
+                event.preventDefault();
+                var val = $(this).attr('data-val')*1;
+                slider.slider( "value", val );
+            });
+        });
+    });
+
+    /*---------------------------
+                                  Range
+    ---------------------------*/
+    $('.range-slider').each(function(index, el) {
+        var slider = $(this);
+        var holder = slider.parents('.slider').find('.audio-length');
+        var input = slider.siblings('input');
+        slider.slider({
+            min: slider.attr('data-min')*1,
+            max: slider.attr('data-max')*1,
+            values: [ 10, 30 ],
+            range: true,
+            step: slider.attr('data-step')*1,
+            change: function( event, ui ) {
+                var value = ui.values;
+                var length;
+                switch (value[1]) {
+                    case 50:
+                        length = value[0] + ' - ' + holder.attr('data-more');
+                        break;
+                    default:
+                        length = value[0] + ' - ' + value[1] + ' ' + holder.attr('data-label');
+                }
+                holder.text( length );
+                input.val( value[0]+'|'+ value[1]).trigger('change');
+            }
+        });    
+
+        slider.siblings('.labels').find('.ls-label').each(function(index, el) {
+            var count = slider.siblings('.labels').find('.ls-label').length - 1;
+            $(this).css('left', (index*100)/count + '%');
+        });
+    });
+    
 
 
 

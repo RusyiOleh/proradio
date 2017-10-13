@@ -382,13 +382,13 @@ jQuery(document).ready(function($) {
             topDif = initialTop - e.pageY;
 
         $(this).removeClass('notActive').find('.layer-1').css({
-            transform:'translateX(' + leftDif / 12 + 'px) translateY(' + topDif / 10 + 'px)'
-        });
-        $(this).find('.layer-2').css({
             transform:'translateX(' + leftDif / 24 + 'px) translateY(' + topDif / 10 + 'px)'
         });
+        $(this).find('.layer-2').css({
+            transform:'translateX(' + leftDif / 48 + 'px) translateY(' + topDif / 10 + 'px)'
+        });
         $(this).find('.layer-3').css({
-            transform:'translateX(' + leftDif / 36 + 'px) translateY(' + topDif / 10 + 'px)'
+            transform:'translateX(' + leftDif / 72 + 'px) translateY(' + topDif / 10 + 'px)'
         });
 
     });

@@ -172,6 +172,7 @@ jQuery(document).ready(function($) {
         dots: false,
         fade: true,
         autoplay: true,
+        autoplaySpeed: 4000,
         speed: 3000
     })
 
@@ -361,62 +362,37 @@ jQuery(document).ready(function($) {
         googleMap_initialize();
     }
 
+    // parallax
+    var initialLeft = '',
+        initialTop = '';
 
-    $('.parallax .layer').each(function(i, el) {
-        var initialLeft = $(el).css('left');
-        var initialTop = $(el).css('top');
-        $(this).attr('data-left', initialLeft);
-        $(this).attr('data-top', initialTop);
+    $('.parallax').mouseenter(function(event) {
+        initialLeft = event.pageX;
+        initialTop = event.pageY;
     });
 
-    // PARALLAX
-    var currentY = '';
-    var currentX = '';
-    var movementConstant = .015;
+    $('.parallax').mouseleave(function() {
+        $(this).addClass('notActive').find('.layer').css({
+            transform:'translateX(0px) translateY(0px)'
+        });
+    });
+
     $('.parallax').mousemove(function(e) {
-        if (currentX == '') {
-            currentX = e.pageX;
-        }
-        var xdiff = e.pageX - currentX;
-        currentX = e.pageX;
-        if (currentY == '') currentY = e.pageY;
-        var ydiff = e.pageY - currentY;
-        currentY = e.pageY;
+        var leftDif = initialLeft - e.pageX,
+            topDif = initialTop - e.pageY;
 
-        $(this).find('.layer-1').each(function(i, el) {
-            var movement = (i + 5) * (xdiff * movementConstant);
-            var movementy = (i + 5) * (ydiff * movementConstant);
-            var newX = $(el).position().left + movement;
-            var newY = $(el).position().top + movementy;
-            $(el).css('left', newX + 'px');
-            $(el).css('top', newY + 'px');
+        $(this).removeClass('notActive').find('.layer-1').css({
+            transform:'translateX(' + leftDif / 12 + 'px) translateY(' + topDif / 10 + 'px)'
         });
-        $(this).find('.layer-2').each(function(i, el) {
-            var movement = (i + 10) * (xdiff * movementConstant);
-            var movementy = (i + 10) * (ydiff * movementConstant);
-            var newX = $(el).position().left + movement;
-            var newY = $(el).position().top + movementy;
-            $(el).css('left', newX + 'px');
-            $(el).css('top', newY + 'px');
+        $(this).find('.layer-2').css({
+            transform:'translateX(' + leftDif / 24 + 'px) translateY(' + topDif / 10 + 'px)'
         });
-        $(this).find('.layer-3').each(function(i, el) {
-            var movement = (i + 15) * (xdiff * movementConstant);
-            var movementy = (i + 15) * (ydiff * movementConstant);
-            var newX = $(el).position().left + movement;
-            var newY = $(el).position().top + movementy;
-            $(el).css('left', newX + 'px');
-            $(el).css('top', newY + 'px');
+        $(this).find('.layer-3').css({
+            transform:'translateX(' + leftDif / 36 + 'px) translateY(' + topDif / 10 + 'px)'
         });
-    });
 
-    $('.parallax').mouseleave(function(e) {
-        $('.parallax .layer').each(function(i, el) {
-            var initialLeft = $(el).data('left');
-            var initialTop = $(el).data('top');
-            $(el).css('left', initialLeft);
-            $(el).css('top', initialTop);
-        });
     });
+    // ========== end parallax
 
     // AUDIOPLAYERS with songs
     var players = {};

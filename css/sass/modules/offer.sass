@@ -1,9 +1,8 @@
 .offer
-	height: 100%
 	min-height: 660px 
 	+flex($d: column, $ai: center, $j: center)
 	
-	background-image: url("../images/offer-main.jpg")
+	background-image: url("../images/first-section-bg.jpg")
 	background-position: 50% 50%
 	background-size: cover
 	background-color: #000
@@ -31,6 +30,10 @@
     left: 0
     top: 0
     width: 100% 
+    height: 100%
+    .wrapper
+        position: relative
+        z-index: 2 
     small
         display: block
     h1
@@ -50,53 +53,83 @@
             background-size: cover
             background-repeat: no-repeat
             background-position: 50% 50%
+
+#waves-circle
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    margin: auto        
+    path
+        animation: colorchange 12s infinite 
+
+@keyframes colorchange
+    20
+        fill: #41117d
+    50%
+        fill: #25A2D6
+    80%
+        fill: #CC238E
+    
 .fix-over
     background-color: #FFF
     position: relative
     z-index: 2
-    margin-top: 100vh          
+    margin-top: 100vh  
+    &--waves
+        margin-top: 112vh 
+    .waves-img
+        position: absolute
+        left: 0
+        top: 0
+        width: 100% 
+        z-index: 2 
+        transform: translateY(-50%)
+        & + .section
+            padding-top: 160px 
     
 .parallax
-    .layer
-        transition: all .1s 
+    &.notActive
+        .layer
+            transition: all .4s         
 .img-info
     display: flex
     justify-content: flex-start 
     font-family: $os 
     position: relative
-    height: 330px 
-    &__text
-        top: 230px
-        right: 0
-        width: 590px 
-        line-height: 1.6 
-        position: absolute 
-    &__img
-        padding-top: 30px
-        padding-left: 30px  
-        position: relative
-        img
-            position: absolute
-            left: 30px
-            top: 30px
-            z-index: 2 
-    &__bg
+    .img-info__bg
         position: absolute
         top: 40px
         right: 0
+    &__text
+        padding-top: 230px 
+        padding-right: 30px
+        line-height: 1.6  
+       
     &--type2
-        .img-info__bg
-            top: 160px
-        .img-info__text
-            top: 60px
-            
-.img-info__shape
-    top: 0
-    left: 0
-    width: 60px
-    position: absolute
-    height: calc(100% - 30px)   
-    background-color: $bluel 
+    	.img-info__bg
+            position: absolute
+            bottom: 0
+            right: 0
+            top: auto
+    	.img-info__text
+    		padding-top: 60px 
+
+.img-decorated
+    padding-top: 30px
+    padding-left: 30px  
+    position: relative
+    img
+    	position: relative
+    	z-index: 2 
+    &__shape
+        width: 60px
+        height: calc(100% - 30px)   
+        background-color: $bluel 
+        position: absolute
+        left: 0
+        top: 0
 
 .offer--slider
 	height: 590px

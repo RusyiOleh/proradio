@@ -44,6 +44,8 @@
                 top: 0px
                 bottom: 0
                 margin:     auto 
+                transition: .2s ease-out 
+                transform:  translateX(calc((100% - 1300px) / 2))
             &:after
                 display: block
                 content: ""
@@ -53,12 +55,17 @@
                 position: absolute  
                 right: 0px
                 bottom: 0
+                transition: .2s ease-out 
+                transform:  translateX( calc((100% - 1300px) / 2 * -1 ) )
             p
                 text-transform: uppercase
                 font-family: $v
                 font-size: 72px  
                 position: relative  
                 display: inline-block   
+                transform: translateY(80px)
+                opacity: 0
+                transition: all .4s ease-out 
                 &:before
                     display: block
                     content: ""
@@ -83,6 +90,20 @@
             small
                 display: block
                 font-size: 14px 
+                transform: translateY(80px)
+                opacity: 0
+                transition: all .4s ease-out 
+            
+            &.slick-current
+                p,
+                small
+                    transition: 1s all .4s 
+                    transform: translateY(0)
+                    opacity: 1 
+                &:before,
+                &:after
+                    transition: .8s all .4s ease-out 
+                    transform: translateX(0)
         
         .slick-dots li button
             font-size: 18px

@@ -373,6 +373,9 @@
 			
 			@media (max-width: 991px)
 				padding: 20px
+				
+			@media (max-width: 575px)
+				padding: 10px
 			
 			&:nth-child(odd)
 				background-color: #1A1A1A
@@ -405,13 +408,23 @@
 			width: calc(50% - 90px)
 			margin-right: 90px 
 			
-			&:nth-child(4n),
-			&:nth-child(4n-1)
-				background-color: #202020
+			@media (max-width: 1200px)
+				margin-right: 40px 
+				width: -webkit-calc(50% - 40px)
+				width: calc(50% - 40px)
 				
-			&:nth-child(4n-2),
-			&:nth-child(4n-3)
-				background-color: #1A1A1A
+			@media (max-width: 991px)
+				width: 100%
+				margin-right: 0 
+			
+			@media (min-width: 992px)
+				&:nth-child(4n),
+				&:nth-child(4n-1)
+					background-color: #202020
+					
+				&:nth-child(4n-2),
+				&:nth-child(4n-3)
+					background-color: #1A1A1A
 				
 			&.is-playing
 				border-radius: 40px

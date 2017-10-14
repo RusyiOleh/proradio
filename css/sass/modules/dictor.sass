@@ -15,11 +15,32 @@
 	padding-left: 190px 
 	margin-top: -60px 
 	
+	@media (max-width: 1600px)
+		padding-left: 150px 
+		
+	@media (max-width: 1200px)
+		margin-top: 0 
+		padding-left: 15px 
+		width: 66.66%
+		
+	@media (max-width: 1020px)
+		width: 100%
+		padding: 0 15px
+	
 	.content-block
 		background-color: #F1F4FF 
 	
 .speaker-sidebar
 	width: 31.25%
+	
+	@media (max-width: 1200px)
+		width: 33.33%
+		padding-right: 15px
+		
+	@media (max-width: 1020px)
+		width: 100%
+		margin-top: 30px  
+		padding: 0 15px
 	
 
 
@@ -28,6 +49,13 @@
 		padding: 40px 50px
 		display: flex
 		position: relative
+		flex-wrap: wrap
+		
+		@media (max-width: 1200px)
+			padding: 30px
+			
+		@media (max-width: 767px)
+			padding: 30px 15px
 		
 		.return-back
 			position: absolute
@@ -37,6 +65,17 @@
 			font-size: 14px
 			font-family: $os
 			color: #202020
+			
+			@media (max-width: 1600px)
+				left: -150px
+				
+			@media (max-width: 1200px)
+				position: static
+				transform: none
+				margin-bottom: 15px 
+				
+			@media (max-width: 767px)
+				font-size: 12px 
 			
 			.fa
 				transition: all 0.3s ease
@@ -54,11 +93,21 @@
 			font-size: 14px
 			font-family: $os  
 			
+			
+			@media (max-width: 1200px)
+				transform: none
+				top: 30px
+				right: 30px
+
+			@media (max-width: 767px)
+				font-size: 12px 
+				right: 15px
+			
 			&:hover
 				text-decoration: underline
 			
 			.fa
-				font-size: 18px
+				font-size: 1.25em
 				vertical-align: middle 
 				
 				&:before
@@ -68,6 +117,10 @@
 		h2
 			font-size: 36px
 			color: #040404  
+			width: 100%
+			
+			@media (max-width: 767px)
+				font-size: 24px 
 			
 
 		&:after
@@ -84,8 +137,17 @@
 	&__body
 		padding: 30px 50px 50px
 		
+		@media (max-width: 1200px)
+			padding: 30px
+			
+		@media (max-width: 767px)
+			padding: 30px 15px
+		
 		&__languages
 			font-family: $os
+			
+			@media (max-width: 767px)
+				font-size: 12px 
 			 
 			strong
 				font-weight: 600
@@ -94,6 +156,10 @@
 				display: inline-block
 				vertical-align: middle
 				white-space: nowrap 
+				padding-right: 22px 
+				
+				@media (max-width: 767px)
+					padding-right: 15px 
 				
 				img,
 				span
@@ -105,12 +171,18 @@
 					margin-right: 6px
 					filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, .2)); 
 					
+					@media (max-width: 767px)
+						width: 18px
+						margin-right: 5px 
+					
 			.lang-item
-				padding-left: 22px 
 				color: #373737
 				
 		&__demo
 			padding: 40px 0 35px
+			
+			@media (max-width: 767px)
+				padding: 25px 0
 			
 
 		&__article
@@ -122,6 +194,9 @@
 			p:not(:last-of-type),
 			.projects-list
 				margin-bottom: 1.7em 
+				
+			@media (max-width: 767px)
+				margin-bottom: 25px 
 				
 			.projects-list
 				p
@@ -160,6 +235,10 @@
 		position: relative
 		z-index: 1 
 		
+		@media (max-width: 767px)
+			width: 32px
+			height: 32px
+		
 		.fa-play
 			display: block
 			
@@ -193,6 +272,12 @@
 		text-overflow: ellipsis
 		overflow: hidden 
 		
+		@media (max-width: 767px)
+			width: -webkit-calc(100% - 32px)
+			width: calc(100% - 32px)
+			padding-left: 15px
+			font-size: 18px  
+		
 
 	&.is-playing
 		.play-button
@@ -214,6 +299,10 @@
 	
 	@media (max-width: 1600px)
 		padding: 0 40px
+		
+	@media (max-width: 767px)
+		padding: 0 25px
+		
 	
 	.slide
 		a
@@ -267,14 +356,23 @@
 		background-color: #000
 		padding: 40px 30px
 		
+		@media (max-width: 991px)
+			padding: 25px
+		
 		h4
 			font-size: 24px
 			color: #fff 
 			font-weight: normal 
 			
+			@media (max-width: 991px)
+				font-size: 22px 
+			
 	&__body
 		.audio
 			padding: 20px 30px
+			
+			@media (max-width: 991px)
+				padding: 20px
 			
 			&:nth-child(odd)
 				background-color: #1A1A1A
@@ -290,6 +388,11 @@
 			&-title
 				color: #fff
 				font-size: 18px 
+				
+				@media (max-width: 991px)
+					font-size: 16px 
+				@media (max-width: 767px)
+					font-size: 14px 
 				
 	&--double &__body
 		display: flex

@@ -1,5 +1,5 @@
 .offer
-	min-height: 600px 
+	min-height: 660px 
 	+flex($d: column, $ai: center, $j: center)
 	
 	background-image: url("../images/first-section-bg.jpg")
@@ -15,7 +15,7 @@
 		span
 			color: 	$blue 
 			display: inline-block	
-			border-bottom: 	6px solid $rose
+			border-bottom: 	5px solid $rose
 	
 	&__info
 		font-size: 	24px 
@@ -24,71 +24,35 @@
 			font-style: italic
 		button
 			display: block	
-			margin-top: 40px 
-    
+			margin-top: 30px 
 .offer
     position: fixed
     left: 0
     top: 0
     width: 100% 
     height: 100%
-    padding: 100px 0 
     .wrapper
         position: relative
         z-index: 2 
-    img
-        display: block
     small
         display: block
-        font-size: 100% 
     h1
         display: inline-block
         position: relative
-    .rounded
-        box-shadow: 0 0 30px rgba(0,0,0,.8)  
-        width: 160px
-        height: 160px  
-        margin-bottom: 40px 
-    &--main
-        h1
-            &:before
-                content: ''
-                display: block
-                position: absolute
-                left: 86.5%
-                top: 0
-                bottom: 0
-                margin: auto 
-                width: 410px
-                height: 560px
-                background-image: url("../images/microphone.png")
-                background-size: cover
-                background-repeat: no-repeat
-                background-position: 50% 50%
-    &--center
-        height: auto 
-        text-align: center
-        background-position: 50% 0%
-        h1 + *
-            margin-top: 20px 
-        img
-            margin: 10px auto 20px
-        .button
+        &:before
+            content: ''
             display: block
-            margin-left: auto
-            margin-right: auto
-            margin-top: 30px 
-    &--small
-        position: static
-        padding-bottom: 70px 
-        h1
-            font-size: 72px   
-        .offer__info
-            font-size: 18px 
-
-.rounded
-    border-radius: 50%
-    display: block
+            position: absolute
+            left: 86.5%
+            top: 0
+            bottom: 0
+            margin: auto 
+            width: 410px
+            height: 560px
+            background-image: url("../images/microphone.png")
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: 50% 50%
 
 #waves-circle
     position: absolute

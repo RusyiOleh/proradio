@@ -144,14 +144,35 @@ jQuery(document).ready(function($) {
         slidesToScroll: 1,
 
         responsive: [
-        {
-            breakpoint: 1601,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1
+            {
+                breakpoint: 1601,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 1021,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 501,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        }
-      ]
+        ]
     });
 
     /*---------------------------

@@ -44,12 +44,28 @@
 			justify-content: flex-start
 			margin: 0 -35px
 			
+			@media (max-width: 1200px)
+				margin: 0 -15px
+				
+			@media (max-width: 991px)
+				flex-wrap: wrap
+			
 		.menu-item
 			margin: 0 35px
 			list-style: none 
 			
+			@media (max-width: 1200px)
+				margin: 0 15px
+				
+			@media (max-width: 991px)
+				width: 100%
+				margin-bottom: 10px 
+			
 			a
 				color: inherit
+				
+				@media (max-width: 991px)
+					font-size: 16px 
 				
 				&:hover
 					text-decoration: underline

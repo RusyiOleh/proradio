@@ -9,10 +9,21 @@ body
     padding: 0 15px
     margin: 0 auto
     max-width: 100%   
+    
+    @media (max-width: 1020px)
+        width: 960px
+    @media (max-width: 991px)
+        width: 720px
+    @media (max-width: 767px)
+        width: 540px
+    @media (max-width: 575px)
+        width: 100%
+
     &--wide
-        width: 1600px 
-        
-        @media (max-width: 1600px)
+        @media (min-width: 1601px)
+            width: 1600px 
+            
+        @media (min-width: 1201px)
             width: 1200px
         
 .section

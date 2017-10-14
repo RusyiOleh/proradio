@@ -10,9 +10,23 @@
 		
 	@media (max-width: 1600px)
 		margin: 0 -15px  
+		
+	@media (max-width: 1300px)
+		margin: 0 30px
+		
+	@media (max-width: 767px)
+		margin: 0 20px
 	
 	.slide
 		padding: 0 15px
+		
+		@media (max-width: 767px)
+			padding: 0 10px
+			
+		@media (max-width: 500px)
+			.speaker-card
+				max-width: 300px
+				margin: 0 auto 
 		
 	.slick-arrow
 		@extend .fa
@@ -31,10 +45,20 @@
 		&:after
 			content: '\f105'
 			
+		@media (max-width: 1300px)
+			right: -30px
+		@media (max-width: 767px)
+			right: -20px
+			
 	.slick-prev
 		left: -35px
 		&:after
 			content: '\f104'
+			
+		@media (max-width: 1300px)
+			left: -30px
+		@media (max-width: 767px)
+			left: -20px
 			
 
 	& + .button

@@ -211,59 +211,6 @@
             </div>
 
 
-            <!-- start audio player-->
-            <div class="audioPlayer audioPlayer--wide">
-                <div class="audioPlayer__image">
-                    <img class="cover">
-                </div>
-                <!-- end song cover-->
-                <div class="audioPlayer__info">
-                    <div class="audioPlayer__tracker">
-                        <div class="progress-bar"></div>
-                    </div>
-                    <!-- current song progress line-->
-                    <div class="audioPlayer__current">
-                        <div>
-                            <button class="audioPlayer__play"></button>
-                            <span class="title"></span>
-                            <a href="#" download> <i class="fa fa-long-arrow-down" aria-hidden="true"></i> </a>
-                        </div>
-                        <div>
-                            <span class="audioPlayer__current__duration">0:00</span> /
-                            <span class="audioPlayer__current__time">0:00</span>
-                        </div>
-                    </div>
-                    <!-- current song title + time-->
-                    <div class="audioPlayer__next">
-                        <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
-                        <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
-                        <span class="audioPlayer__next__title">Next Song Name</span>
-                    </div>
-                    <!-- controls + next song title-->
-                    <div class="audioPlayer__volumeControls">
-                        <div class="silence"><img src="images/sound-off.svg" alt=""></div>
-                        <div class="audioPlayer__volume" data-loud='5'>
-                            <div data-volume='1'></div>
-                            <div data-volume='2'></div>
-                            <div data-volume='3'></div>
-                            <div data-volume='4'></div>
-                            <div data-volume='5'></div>
-                            <div data-volume='6'></div>
-                            <div data-volume='7'></div>
-                            <div data-volume='8'></div>
-                            <div data-volume='9'></div>
-                            <div data-volume='10'></div>
-                        </div>
-                    </div>
-                    <!-- end songs volume controls-->
-                </div>
-                <!-- end songs info-->
-            </div>
-
-      	    <!-- //////////////////////////////////////////////////////////////////////// -->
-
-
-
             <section class="get-started">
                 <div class="wrapper wrapper--wide">
                     <div class="row middle-xs">
@@ -288,7 +235,29 @@
                     <div class="speakers-slider">
                         
                         <div class="slide">
-                            <div class="speaker-card speaker-card--female audioGroup" id="janedoe">
+                            <!-- AUDIO GENERAL MARKUP
+
+                            single play button with hidden playlist
+
+                                class="audioGroup" id="..."
+                                    class="play"
+                                    class="audioGroup__songs hidden"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+
+                            if each song has own play button
+
+                                class="audioGroup" id="..."
+                                    class="audioGroup__songs"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+                                            class="play-button play"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+                                            class="play-button play"
+                                        class="song" id="..." song="path to file" cover="path to cover image"
+                                            class="play-button play"
+                            -->
+                            <div class="speaker-card speaker-card--female audioGroup" id="janedoe"> 
                                 <div class="speaker-card__image">
                                     <div class="play">
                                         <img src="images/spaeker-2.jpg" alt="">
@@ -311,9 +280,9 @@
                                     <button>Make order</button>
                                 </div>
                                 <ul class="audioGroup__songs hidden">
-                                    <li class="song" song="media/dave.mp3" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg"><span class="audio-title">Jane Doe (song 1)</span></li>
-                                    <li class="song" song="media/oscar.mp3" id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg"><span class="audio-title">Jane Doe (song 2)</span></li>
-                                    <li class="song" song="media/dire.mp3" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg"><span class="audio-title">Jane Doe (song 3)</span></li>
+                                    <li class="song" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg"><span class="audio-title">Jane Doe (song 1)</span></li>
+                                    <li class="song"  id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg"><span class="audio-title">Jane Doe (song 2)</span></li>
+                                    <li class="song" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg"><span class="audio-title">Jane Doe (song 3)</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -368,7 +337,7 @@
                                     <button>Make order</button>
                                 </div>
                                 <ul class="audioGroup__songs hidden">
-                                    <li class="song" song="media/dire.mp3" id="janedoe2-1"><span class="audio-title"><span class="audio-title">Jane</span></span></li>
+                                    <li class="song" song="media/dire.mp3" id="janedoe2-1"><span class="audio-title">Jane</span></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -523,6 +492,55 @@
                 </div> <!-- end footer-bottom -->
 
             </footer> <!-- end footer -->
+
+            <!-- start audio player-->
+            <div class="audioPlayer audioPlayer--wide">
+                <div class="audioPlayer__image">
+                    <img class="cover">
+                </div>
+                <!-- end song cover-->
+                <div class="audioPlayer__info">
+                    <div class="audioPlayer__tracker">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <!-- current song progress line-->
+                    <div class="audioPlayer__current">
+                        <div>
+                            <button class="audioPlayer__play"></button>
+                            <span class="title"></span>
+                            <a href="#" download> <i class="fa fa-long-arrow-down" aria-hidden="true"></i> </a>
+                        </div>
+                        <div>
+                            <span class="audioPlayer__current__duration">0:00</span> /
+                            <span class="audioPlayer__current__time">0:00</span>
+                        </div>
+                    </div>
+                    <!-- current song title + time-->
+                    <div class="audioPlayer__next">
+                        <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                        <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                        <span class="audioPlayer__next__title">Next Song Name</span>
+                    </div>
+                    <!-- controls + next song title-->
+                    <div class="audioPlayer__volumeControls">
+                        <div class="silence"><img src="images/sound-off.svg" alt=""></div>
+                        <div class="audioPlayer__volume" data-loud='5'>
+                            <div data-volume='1'></div>
+                            <div data-volume='2'></div>
+                            <div data-volume='3'></div>
+                            <div data-volume='4'></div>
+                            <div data-volume='5'></div>
+                            <div data-volume='6'></div>
+                            <div data-volume='7'></div>
+                            <div data-volume='8'></div>
+                            <div data-volume='9'></div>
+                            <div data-volume='10'></div>
+                        </div>
+                    </div>
+                    <!-- end songs volume controls-->
+                </div>
+                <!-- end songs info-->
+            </div>
 
         </div>
 

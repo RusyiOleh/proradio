@@ -4,11 +4,40 @@
 	&-title
 		background-color: #000
 		padding: 30px 50px 110px 50px
+		@media (max-width: 1200px)
+			padding-left: 0
+			padding-right: 0  
+			
+		@media (max-width: 991px)
+			padding-bottom: 60px 
+			
+		@media (max-width: 767px)
+			text-align: center
+			padding-top: 30px
+			padding-bottom: 30px  
 		
-		h2
-			font-size: 37px
+		.section__title
 			color: #fff 
 			font-weight: normal 
+			padding-left: 0 
+			
+			@media (max-width: 1200px)
+				width: 1020px
+				margin: 0 auto
+				padding-left: 15px
+				padding-right: 15px  
+				
+			@media (max-width: 1020px)
+				width: 960px
+			@media (max-width: 991px)
+				width: 720px
+			@media (max-width: 767px)
+				width: 540px
+			@media (max-width: 575px)
+				width: 100%
+		
+		
+			
 			
 
 	&-header
@@ -20,6 +49,15 @@
 		
 		@media (max-width: 1600px)
 			margin-top: -75px 
+			
+		@media (max-width: 991px)
+			margin-top: -50px 
+			margin-bottom: 50px 
+			
+		@media (max-width: 767px)
+			margin-top: 20px
+			text-align: center 
+			width: 100%
 		
 		h3
 			color: #1A1919
@@ -32,6 +70,19 @@
 			
 			@media (max-width: 1600px)
 				font-size: 135px 
+				
+			@media (max-width: 1200px)
+				font-size: 120px 
+				
+			@media (max-width: 991px)
+				font-size: 90px 
+				
+			@media (max-width: 767px)
+				font-size: 70px 
+				display: inline-block
+				
+			@media (max-width: 757px)
+				font-size: 60px 
 			
 			&:before,
 			&:after
@@ -47,6 +98,9 @@
 				
 				@media (max-width: 1600px)
 					transform: translateX(-3px)
+					
+				@media (max-width: 991px)
+					transform: translateX(-2px)
 				
 			&:after
 				color: $rose
@@ -55,6 +109,8 @@
 				
 				@media (max-width: 1600px)
 					transform: translateX(3px)
+				@media (max-width: 991px)
+					transform: translateX(2px)
 				
 		img
 			position: absolute
@@ -67,6 +123,17 @@
 			@media (max-width: 1600px)
 				width: 400px
 				transform: translate(-50px, 25px)
+				
+			@media (max-width: 1200px)
+				width: 250px
+				transform: translate(-30px, 10px)
+				
+			@media (max-width: 991px)
+				width: 180px
+				transform: translate(-40px, -20px)
+				
+			@media (max-width: 767px)
+				display: none
 			
 
 		small
@@ -76,10 +143,17 @@
 			font-size: 14px
 			color: #b2b2b2  
 			
+			@media (max-width: 767px)
+				text-align: center
+				font-size: 12px 
+			
 
 
 	&-footer
 		padding: 60px 0
+		
+		@media (max-width: 991px)
+			padding: 30px 0
 		
 		.button
 			display: block
@@ -106,6 +180,10 @@
 	@media (min-width: 1601px)
 		padding-left: 160px
 		padding-right: 160px  
+		
+	@media (max-width: 991px)
+		padding-top: 50px 
+		text-align: center
 	
 	
 	p
@@ -115,6 +193,12 @@
 	
 
 .service-item
+	max-width: 450px
+	margin: 0 auto
+
+	@media (max-width: 991px)
+		margin-bottom: 30px
+
 	&__image
 		position: relative
 		overflow: hidden 
@@ -131,9 +215,15 @@
 			padding: 0 30px
 			color: #fff
 			font-size: 30px
+			width: 100%
+			text-align: left
 			
 			@media (max-width: 1600px)
 				font-size: 22px 
+				
+			@media (max-width: 1200px)
+				bottom: 15px
+				padding: 0 15px
 			
 	&:hover &__image
 		img
@@ -146,6 +236,7 @@
 		align-items: center
 		padding: 25px 65px 25px 30px
 		position: relative
+		text-align: left
 		
 		.play-button
 			width: 22px
@@ -205,11 +296,12 @@
 
 
 .order-audio
-	padding: 170px 0 180px
+	@media (min-width: 1601px)
+		padding: 170px 0 180px
 	
-	h2
+	.section__title
 		text-align: center
-		font-size: 36px
+		padding-left: 0 
 		color: #040404
 		font-weight: normal  
 		margin-bottom: 45px 

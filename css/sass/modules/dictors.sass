@@ -21,6 +21,9 @@
 	width: 230px
 	position: relative
 	
+	@media (max-width: 991px)
+		width: 100px
+	
 
 	.current-page
 		display: flex
@@ -39,6 +42,11 @@
 			border: 1px dashed $blue
 			font-size: 30px
 			color: #222225 
+			
+			@media (max-width: 991px)
+				width: 50px
+				height: 50px
+				font-size: 24px 
 			
 		.prev-page-link,
 		.next-page-link
@@ -71,14 +79,26 @@
 		right: 100%
 		padding-right: 70px 
 		justify-content: flex-end
+		
+		@media (max-width: 991px)
+			padding-right: 25px 
 
 		.page-link
 			margin-left: 50px 
+			
+			@media (max-width: 991px)
+				margin-left: 15px 
 		
 	.next-pages
 		left: 100%
 		padding-left: 70px 
 		justify-content: flex-start
+		
+		@media (max-width: 991px)
+			padding-left: 25px 
 
 		.page-link
 			margin-right: 50px 
+			
+			@media (max-width: 991px)
+				margin-right: 15px 

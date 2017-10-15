@@ -4,7 +4,9 @@
 	.section__title
 		padding-left: 0
 		text-align: center 
-		margin-bottom: 70px 
+		
+		@media (min-width: 1201px)
+			margin-bottom: 70px 
 
 .advantages-block
 	border-left: 30px solid transparent
@@ -14,9 +16,21 @@
 	z-index: 1
 	position: relative
 	
+	@media (max-width: 1200px)
+		border-left: 0 
+	
 	.inner
 		padding: 65px 85px 40px
 		background-color: #EEF9FF  
+		@media (max-width: 1200px)
+			padding-left: 0
+			padding-right: 0  
+			
+		@media (max-width: 991px)
+			padding: 40px 0
+			
+		@media (max-width: 767px)
+			padding-bottom: 0 
 	
 	&:after
 		content: ''
@@ -27,6 +41,9 @@
 		top: -55px
 		background-color: #B2DFF1   
 		z-index: -1 
+		
+		@media (max-width: 1200px)
+			display: none
 
 
 
@@ -56,12 +73,20 @@
 .ab-item
 	text-align: center
 	
+	@media (max-width: 767px)
+		margin-bottom: 40px 
+	
 	&__image
-		height: 100%
+		height: 100px
 		display: flex
 		align-items: center
 		justify-content: center
 		margin-bottom: 40px 
+		
+		@media (max-width: 991px)
+			margin-bottom: 20px
+			height: 80px
+			 
 		
 		img
 			display: block
@@ -74,6 +99,11 @@
 			font-family: $v
 			color: #202020
 			text-transform: uppercase  
+			
+			@media (max-width: 991px)
+				font-size: 30px 
+
+
 
 
 
@@ -83,13 +113,22 @@
 	background-color: #000
 	color: #fff
 	
+	@media (max-width: 1200px)
+		padding: 30px 0
+	
 
 .os-title
 	padding: 0 50px
 	
+	@media (max-width: 767px)
+		padding: 0 15px
+	
 	.section__title
 		color: #fff
 		padding-left: 0 
+		
+		@media (max-width: 767px)
+			text-align: center
 		
 
 
@@ -109,6 +148,9 @@
 	padding: 0 15px
 	position: relative
 	
+	@media (max-width: 767px)
+		margin-bottom: 40px 
+	
 	&:after
 		content: ''
 		width: 95px
@@ -121,6 +163,14 @@
 		@media (max-width: 1600px)
 			width: 70px
 			right: -50px
+			
+		@media (max-width: 1200px) 
+			width: 50px
+			right: -40px
+			top: 55px
+			
+		@media (max-width: 767px)
+			display: none
 	
 	&__title
 		width: 100%
@@ -128,6 +178,9 @@
 		position: relative
 		z-index: 1 
 		margin-bottom: 20px 
+		
+		@media (max-width: 1200px)  and (min-width: 576px)
+			height: 110px
 		
 		&:before
 			content: ''
@@ -141,6 +194,10 @@
 			border-radius: 50%
 			border: 1px dashed #808080
 			transition: all 0.3s ease
+			
+			@media (max-width: 1200px) and (min-width: 576px)
+				width: 110px
+				height: 110px
 			
 		&:after
 			content: ''
@@ -158,12 +215,19 @@
 			background-repeat: no-repeat 
 			background-position: 50% 50% 
 			
+			@media (max-width: 1200px)  and (min-width: 576px)
+				width: 180px
+			
 		.num
 			position: absolute
 			top: 12px
 			left: 50%
 			transform: translateX(-50%) 
 			font-size: 20px 
+			
+			@media (max-width: 1200px)  and (min-width: 576px)
+				font-size: 18px
+				top: 5px 
 			
 		h3
 			position: absolute
@@ -177,12 +241,20 @@
 			transition: all 0.3s ease
 			font-weight: normal 
 			background-color: transparent 
+			
+			@media (max-width: 1200px)  and (min-width: 576px)
+				font-size: 20px
+				width: 200px 
+				transform: translate(-50%, -15px)  
 	
 	&__content
 		font-family: $os
 		width: 200px
 		margin: 0 auto
 		max-width: 100%  
+		
+		@media (max-width: 1200px)  and (min-width: 576px)
+			font-size: 12px 
 		
 
 	&.active

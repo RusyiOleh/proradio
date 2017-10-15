@@ -279,18 +279,17 @@
 			font-size: 18px  
 		
 
-	&.is-playing
-		.play-button
+	.pause.play-button
+		background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
+		
+		.fa-play
+			display: none
+			
+		.fa-pause
+			display: block
+		
+		&:after
 			background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
-			
-			.fa-play
-				display: none
-				
-			.fa-pause
-				display: block
-			
-			&:after
-				background: linear-gradient(225deg, rgba(214,37,149,1) 0%, rgba(174,0,255,1) 50%, rgba(64,17,126,1) 100%);
 
 
 

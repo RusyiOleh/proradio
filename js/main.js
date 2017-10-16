@@ -471,33 +471,41 @@ jQuery(document).ready(function($) {
     });
 
     // create songs objects
-    $('.audioGroup__songs li').each(function(){
+    $('.audioGroup__songs .song').each(function(){
         var playerId = $(this).closest('.audioGroup').attr('id');
             audioId = $(this).attr('id'),
             song = $(this).attr('song'),
-            title = $(this).text(),
+            songtitle = $(this).find('.audio-title').text(),
             cover = $(this).attr('cover');
 
         players[playerId][audioId] = {};
-        players[playerId][audioId].songObject = new Audio(song);
-        players[playerId][audioId].songObject.volume = 0.5,
-        players[playerId][audioId].name = title;
+        players[playerId][audioId].name = songtitle;
         players[playerId][audioId].cover = cover;
-        players[playerId][audioId].file = song;
+        players[playerId][audioId].file = song,
+        players[playerId][audioId].songObject = new Audio(song);
+        players[playerId][audioId].songObject.volume = 0.5;
+    });
 
+
+
+    $('.audioGroup__songs.hidden .song').each(function(){
         if($(this).is(':first-child')) {
             $(this).addClass('active');
         }
     });
 
+
     // INITIATE OBJECT WITH REQUIRED PROPERTIES
-    function initVars(group) {
+    function initVars(group, songId) {
         var s = this;
         s.audioGroupId = group.attr('id'),
         s.audioGroup = players[s.audioGroupId],
         s.volume = parseFloat($('.audioPlayer__volume').attr('data-loud') / 10);
 
-        s.activeLi =  $('#' + s.audioGroupId + ' .audioGroup__songs li.active'),
+        if(songId){
+            $('#' + s.audioGroupId + ' .audioGroup__songs #' + songId +  '').addClass('active');
+        }
+        s.activeLi =  $('#' + s.audioGroupId + ' .audioGroup__songs .song.active')
         s.activeLiId = s.activeLi.attr('id'),
         s.activeSong = players[s.audioGroupId][s.activeLiId],
         s.activeSongObject = s.activeSong.songObject;
@@ -516,12 +524,12 @@ jQuery(document).ready(function($) {
             s.prevLiSongOb = s.prevLiSong.songObject;
         }
 
-        s.firstLi = $('#' + s.audioGroupId + ' .audioGroup__songs li:first-child'),
+        s.firstLi = $('#' + s.audioGroupId + ' .audioGroup__songs .song:first-child'),
         s.firstLiId = s.firstLi.attr('id'),
         s.firstSong = s.audioGroup[s.firstLiId],
         s.firstSongOb = s.firstSong.songObject,
 
-        s.lastLi = $('#' + s.audioGroupId + ' .audioGroup__songs li:last-child'),
+        s.lastLi = $('#' + s.audioGroupId + ' .audioGroup__songs .song:last-child'),
         s.lastLiId = s.lastLi.attr('id'),
         s.lastSong = s.audioGroup[s.lastLiId],
         s.lastSongOb = s.lastSong.songObject;
@@ -529,20 +537,29 @@ jQuery(document).ready(function($) {
     }
 
     var showNextTitle = function(group) {
-        var active = group.find('.audioGroup__songs li.active'),
+        var active = group.find('.audioGroup__songs .song.active'),
             nextTitle = '';
         if(active.next().length > 0){
-            nextTitle = active.next('li').text();
+            nextTitle = active.next('.song').find('.audio-title').text();
         } else {
-            nextTitle = group.find('.audioGroup__songs li:first-child').text();
+            nextTitle = group.find('.audioGroup__songs .song:first-child').find('.audio-title').text();
         }
         $('.audioPlayer__next__title').text(nextTitle);
     };
 
     // PLAY / PAUSE SONG
     $('.play').click(function(){
-        var au = new initVars( $(this).closest('.audioGroup') );
-            showNextTitle($(this).closest('.audioGroup'));
+    
+        var songId = null;
+            if ($(this).hasClass('play-button')) {
+                $('.song').removeClass('active');
+                $(this).closest('.song').addClass('active');
+                songId = $(this).closest('.song').attr('id');
+                $('.audioGroup--multi .audioGroup__songs .song').removeClass('active');
+            }
+            var au = new initVars( $(this).closest('.audioGroup'), songId );
+            showNextTitle($(this).closest('.audioGroup'));  
+
         if ($(this).hasClass('pause')) { // if song is playing
             au.activeSongObject.pause();
             $(this).removeClass('pause');
@@ -566,21 +583,20 @@ jQuery(document).ready(function($) {
             au = new initVars(activeGroup);
 
         au.activeSongObject.pause();
-        au.activeLi.removeClass('active');
+        au.activeLi.removeClass('active').find('.play').removeClass('pause');
         au.activeSongObject.currentTime = 0;
 
         if(au.nextLi){ // if have next song/li
             // new active li
-            au.nextLi.addClass('active');
+            au.nextLi.addClass('active').find('.play').addClass('pause');
             // set new song info
             setSongInfo(au.nextLiSong, au.audioGroupId, au.nextLiId);
             // new song time and duration
             showSongTime(au.nextLiSongOb); showDuration(au.nextLiSongOb);
-
             au.nextLiSongOb.play();
         } else {
             // first li become active
-            au.firstLi.addClass('active');
+            au.firstLi.addClass('active').find('.play').addClass('pause');
             // set first song info
             setSongInfo(au.firstSong, au.audioGroupId, au.firstLiId, au);
             // first song time and duration
@@ -597,12 +613,12 @@ jQuery(document).ready(function($) {
             au = new initVars(activeGroup);
 
         au.activeSongObject.pause();
-        au.activeLi.removeClass('active');
+        au.activeLi.removeClass('active').find('.play').removeClass('pause');
         au.activeSongObject.currentTime = 0;
 
         if(au.prevLi){ // if have prev song / li
             // new active li
-            au.prevLi.addClass('active');
+            au.prevLi.addClass('active').find('.play').addClass('pause');
             // set new song info
             setSongInfo(au.prevLiSong, au.audioGroupId, au.prevLiId);
             // new song time and duration
@@ -611,7 +627,7 @@ jQuery(document).ready(function($) {
             $('.audioPlayer__next__title').text(au.prevLiSong.name);
         } else {
             // last li become active
-            au.lastLi.addClass('active');
+            au.lastLi.addClass('active').find('.play').addClass('pause');
             // set last song info
             setSongInfo(au.lastSong, au.audioGroupId, au.lastLiId, au);
             // last song time and duration

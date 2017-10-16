@@ -1,17 +1,39 @@
 .offer
 	min-height: 600px 
 	+flex($d: column, $ai: center, $j: center)
-	
+	padding: 100px 0 
 	background-image: url("../images/first-section-bg.jpg")
 	background-position: 50% 50%
 	background-size: cover
 	background-color: #000
 	color: 	#fff 
+	
+	@media (max-width: 991px)
+		min-height: 550px
+		
+	@media (max-width: 767px)
+		min-height: 500px
+		padding: 80px 0
+		
+	@media (max-width: 575px)
+		min-height: 420px  
+		
 
 	h1
-		font-size: 	102px
-		font-family: 	$v
+		font-size: 102px
+		font-family: $v
 		text-transform: uppercase
+		
+		@media (max-width: 1200px)
+			font-size: 80px
+			
+		@media (max-width: 991px)
+			font-size: 60px
+			padding: 20px 0
+			
+		@media (max-width: 767px)
+			font-size: 45px
+			  
 		span
 			color: 	$blue 
 			display: inline-block	
@@ -19,110 +41,197 @@
 	
 	&__info
 		font-size: 	24px 
-		padding-left: 30px 
+		padding: 0 30px
+		
+		@media (max-width: 1200px)
+			font-size: 22px
+			text-align: center
+			
+			.button
+				margin-left: auto 
+				margin-right: auto 
+		
+		@media (max-width: 991px)
+			font-size: 20px
+			
+		@media (max-width: 767px)
+			font-size: 18px  
+			
 		small
 			font-style: italic
 		button
 			display: block	
 			margin-top: 30px 
-    
+	
 .offer
-    position: fixed
-    left: 0
-    top: 0
-    width: 100% 
-    height: 100%
-    padding: 100px 0 
-    .wrapper
-        position: relative
-        z-index: 2 
-    img
-        display: block
-    small
-        display: block
-        font-size: 100% 
-    h1
-        display: inline-block
-        position: relative
-        &:before
-            content: ''
-    .rounded
-        box-shadow: 0 0 30px rgba(0,0,0,.8)  
-        width: 160px
-        height: 160px  
-        margin-bottom: 40px 
-    &--main
-        h1
-            &:before
-                content: ''
-                display: block
-                position: absolute
-                left: 86.5%
-                top: 0
-                bottom: 0
-                margin: auto 
-                width: 410px
-                height: 560px
-                background-image: url("../images/microphone.png")
-                background-size: cover
-                background-repeat: no-repeat
-                background-position: 50% 50%
-    &--center
-        height: auto 
-        text-align: center
-        background-position: 50% 0%
-        h1 + *
-            margin-top: 20px 
-        img
-            margin: 10px auto 20px
-        .button
-            margin-left: auto
-            margin-right: auto
-            margin-top: 30px 
-    &--small
-        position: static
-        padding-bottom: 70px 
-        h1
-            font-size: 72px   
-        .offer__info
-            font-size: 18px 
+	position: fixed
+	left: 0
+	top: 0
+	width: 100% 
+	height: 100%
+	.wrapper
+		position: relative
+		z-index: 2 
+	img
+		display: block
+	small
+		display: block
+		font-size: 100% 
+	h1
+		display: inline-block
+		position: relative
+		&:before
+			content: ''
+	.rounded
+		box-shadow: 0 0 30px rgba(0,0,0,.8)  
+		width: 160px
+		height: 160px  
+		margin-bottom: 40px 
+	&--main
+		h1
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 86.5%
+				top: 0
+				bottom: 0
+				margin: auto 
+				width: 410px
+				height: 560px
+				background-image: url("../images/microphone.png")
+				background-size: cover
+				background-repeat: no-repeat
+				background-position: 50% 50%
+	&--center
+		height: auto 
+		text-align: center
+		background-position: 50% 0%
+		h1 + *
+			margin-top: 20px 
+		img
+			margin: 10px auto 20px
+			max-width: 100% 
+			display: block
+			
+		.button
+			margin-left: auto
+			margin-right: auto
+			margin-top: 30px 
+			
+	&--small
+		position: relative
+		padding-bottom: 70px 
+		h1
+			font-size: 72px   
+			
+			@media (max-width: 1200px)
+				font-size: 60px
+				
+			@media (max-width: 991px)
+				font-size: 50px
+				padding: 20px 0
+				
+			@media (max-width: 767px)
+				font-size: 40px
+				
+		.offer__info
+			font-size: 18px 
+			
+	&--filter
+		padding-bottom: 20px
+		align-items: flex-start
+		justify-content: flex-start
+		min-height: 0 
+		position: relative
+		background-position: 50% 50% 
+		
+		@media (max-width: 767px)
+			.social
+				left: 5px
+				
+		.offer__info
+			padding-top: 105px  
+			
+			@media (max-width: 1600px)
+				padding-top: 60px 
+				padding-left: 10px
+				padding-right: 10px  
+				
+			@media (max-width: 991px)
+				padding-top: 50px
+				
+			@media (max-width: 767px)
+				padding-top: 40px
+				
+				h1
+					padding-bottom: 0 
+				 
+		
 
 .rounded
-    border-radius: 50%
-    display: block
+	border-radius: 50%
+	display: block
 
 #waves-circle
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    margin: auto        
-    path
-        animation: colorchange 12s infinite 
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	margin: auto		
+	path
+		animation: colorchange 12s infinite 
+		
+	@media (max-width: 1600px)
+		width: 600px
+		top: 50%
+		left: 50%
+		bottom: auto
+		right: auto
+		transform: translate(-50%, -50%) 
+		
+	@media (max-width: 1200px)
+		width: 500px
+		
+	@media (max-width: 991px)
+		width: 400px
+		
+	@media (max-width: 767px)
+		width: 350px
+		
+	@media (max-width: 575px)
+		width: 280px
+		opacity: 0.75
 
 @keyframes colorchange
-    20
-        fill: #41117d
-    50%
-        fill: #25A2D6
-    80%
-        fill: #CC238E
-    
+	20
+		fill: #41117d
+	50%
+		fill: #25A2D6
+	80%
+		fill: #CC238E
+	
 .fix-over
-    background-color: #FFF
-    position: relative
-    z-index: 2
-    margin-top: 100vh  
-    &--waves
-        margin-top: 112vh 
-    .waves-img
-        position: absolute
-        left: 0
-        top: 0
-        width: 100% 
-        z-index: 2 
-        transform: translateY(-50%)
-        & + .section
-            padding-top: 160px 
-    
+	background-color: #FFF
+	position: relative
+	z-index: 2
+	margin-top: 100vh  
+	&--waves
+		margin-top: 112vh 
+	.waves-img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100% 
+		z-index: 2 
+		transform: translateY(-50%)
+		& + .section
+			padding-top: 160px 
+			
+			@media (max-width: 991px)
+				padding-top: 100px
+				
+			@media (max-width: 767px)
+				padding-top: 60px 
+	

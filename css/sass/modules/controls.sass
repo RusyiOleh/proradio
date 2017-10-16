@@ -1,6 +1,6 @@
 .button
 	min-width: 260px
-	padding:	0 40px 
+	padding: 0 40px 
 	text-transform: uppercase
 	font-family: $v
 	font-size: 30px
@@ -12,6 +12,20 @@
 	cursor: pointer
 	position: relative
 	z-index: 1 
+	
+	@media (max-width: 991px)
+		min-width: 220px 
+		padding: 0 30px
+		height: 60px
+		line-height: 60px
+		font-size: 26px  
+		
+	@media (max-width: 767px)
+		min-width: 200px 
+		padding: 0 25px
+		height: 54px
+		line-height: 54px
+		font-size: 22px  
 	
 	&:after
 		content: ''
@@ -47,6 +61,12 @@
 	&--centered
 		display: block
 		margin: 75px auto 0 
+		
+		@media (max-width: 1200px)
+			margin-top: 60px
+		
+		@media (max-width: 991px)
+			margin-top: 50px  
 		
 	&--blue
 		background-color: $blue
@@ -91,12 +111,27 @@
 	left: 40px
 	width: 20px
 	text-align: center 
+	top: 50%
+	z-index: 3 
+	transform: translateY(-50%)
+	
+	@media (max-width: 991px)
+		left: 20px
+		
+	@media (max-width: 575px)
+		left: 10px
+		
 	a
 		display: block
 		color: #FFF
 		margin: 20px 0  
 		opacity: .25
 		transition: all .2s 
+		
+		@media (max-width: 575px)
+			margin: 15px 0
+			opacity: 0.5
+			
 		&:hover
 			opacity: 1 
 			
@@ -104,13 +139,28 @@
 .page-links
 	position: absolute
 	right: 40px
+	top: 50%
+	z-index: 3 
+	transform: translateY(-50%)
 	text-align: right 
+	
+	@media (max-width: 991px)
+		right: 20px
+		
+	@media (max-width: 767px)
+		display: none
+		
 	a
 		display: block
 		color: #FFF
 		margin: 36px 0  
 		transition: all .2s 
 		font-size: 18px 
+		
+		@media (max-width: 991px)
+			font-size: 16px
+			margin: 15px 0
+			 
 		&.active,
 		&:hover
 			opacity: .25
@@ -272,8 +322,10 @@ textarea.form-control
 	padding-top: 14px
 	padding-bottom: 14px  
 		
-.button-group
-	margin-top: 50px 
+
+@media (min-width: 768px)
+	.button-group
+		margin-top: 50px 
 	
 	
 
@@ -301,3 +353,71 @@ textarea.form-control
 	&:hover:after
 		opacity: 1
 		visibility: visible
+		
+
+
+
+
+
+.radio-square
+	display: inline-block
+	font-family: $os 
+	cursor: pointer
+	
+	@media (max-width: 1200px)
+		margin: 5px
+	
+	@media (max-width: 1750px)
+		font-size: 12px 
+
+	& + .radio-square
+		margin-left: 4px 
+		
+		@media (max-width: 1750px)
+			margin-left: 2px 
+			
+		@media (max-width: 1200px)
+			margin-right: 5px 
+	
+	input
+		display: none
+		
+	> span
+		display: inline-flex
+		flex-wrap: wrap
+		align-items: center
+		border: 1px dashed #fff
+		border-radius: 5px
+		height: 35px
+		transition: all 0.3s ease
+		
+		@media (max-width: 1750px)
+			height: 30px
+		
+		&.complex
+			padding: 0 8px
+			
+			@media (max-width: 1750px)
+				padding: 0 6px
+			
+			img
+				width: 22px
+				margin: 0 8px 0 0
+				
+				@media (max-width: 1750px)
+					width: 18px
+					margin-right: 6px 
+				
+		&.simple
+			padding: 0 20px
+			
+			@media (max-width: 1750px)
+				padding: 0 10px
+				
+	input:checked + span
+		background-color: #fff
+		color: $text
+		border-style: solid  
+		
+	input:checked + span.simple
+		background-color: #F1F4FF 

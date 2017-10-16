@@ -312,9 +312,20 @@
 		max-width: 100% 
 		align-items: center
 		
+		@media (max-width: 991px)
+			align-items: flex-start
+		
 		&__text
 			padding-top: 0 
-			padding-left: 150px
+			padding-right: 0
+			padding-left: 30px  
+			
+			@media (min-width: 1201px)
+				padding-left: 150px
+				
+			@media (max-width: 575px)
+				padding-top: 40px
+				padding-left: 0  
 			
 			p:not(:last-child)
 				margin-bottom: 1.6em 

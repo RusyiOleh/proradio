@@ -56,7 +56,7 @@
 
         <!--=================================================================================================-->
                                                     <!-- OFFER SECTION -->
-        <section class="offer offer--center offer--small">
+        <section class="offer offer--center offer--small offer--filter">
 
             <div class="wrapper"><!-- start offerInfo -->
                 <div class="offer__info">
@@ -64,6 +64,91 @@
                     <p>Найдите того, кто Вам нужен</p>
                 </div>
             </div><!-- end wrapper -->
+
+            <div class="offer__filters">
+                <form action="" class="filter-form">
+                    <div class="row between-md">
+                        <div class="language-col">
+                            <div class="form-group">
+                                <label class="label">Языки:</label>
+
+                                <label class="radio-square">
+                                    <input type="radio" name="language" value="">
+                                    <span class="complex">
+                                        <img src="images/flags/248-russia.svg" alt="">
+                                        <span>Русский</span>
+                                    </span>
+                                </label>
+                                <label class="radio-square">
+                                    <input type="radio" name="language" value="">
+                                    <span class="complex">
+                                        <img src="images/flags/260-united-kingdom.svg" alt="">
+                                        <span>Английский</span>
+                                    </span>
+                                </label>
+                                <label class="radio-square">
+                                    <input type="radio" name="language" value="">
+                                    <span class="complex">
+                                        <img src="images/flags/141-azerbaijan.svg" alt="">
+                                        <span>Азербайджанский</span>
+                                    </span>
+                                </label>
+                                <label class="radio-square">
+                                    <input type="radio" name="language" value="">
+                                    <span class="complex">
+                                        <img src="images/flags/218-turkey.svg" alt="">
+                                        <span>Турецкий</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="voice-col">
+                            <div class="form-group">
+                                <label class="label">Голоса:</label>
+
+                                <label class="radio-square">
+                                    <input type="radio" name="voice" value="">
+                                    <span class="simple">
+                                        <span>Мужские</span>
+                                    </span>
+                                </label>
+                                <label class="radio-square">
+                                    <input type="radio" name="voice" value="">
+                                    <span class="simple">
+                                        <span>Женские</span>
+                                    </span>
+                                </label>
+                                <label class="radio-square">
+                                    <input type="radio" name="voice" value="">
+                                    <span class="simple">
+                                        <span>Детские</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div> <!-- end voice-col -->
+
+                        <div class="price-col">
+                            <div class="form-group">
+                                <div class="slider">
+                                    <label class="label">Диапазон цен: <span class="audio-length" data-label="AZN" data-more="более 40 AZN">10 - 30 AZN</span></label>
+                                    <div class="range-slider" data-min="0" data-max="50" data-step="10"></div>
+                                    <div class="labels">
+                                        <span class="ls-label" data-val="0">0 AZN</span>
+                                        <span class="ls-label" data-val="10">10 AZN</span>
+                                        <span class="ls-label" data-val="20">20 AZN</span>
+                                        <span class="ls-label" data-val="30">30 AZN</span>
+                                        <span class="ls-label" data-val="40">40 AZN</span>
+                                        <span class="ls-label" data-val="50">более 40 AZN</span>
+                                    </div>
+                                    <input type="hidden" name="price-range" value="10|30">
+                                </div>    
+                            </div>
+                        </div> <!-- end price-col -->
+
+                    </div>
+                </form>
+            </div> <!-- end offer__filters -->
 
             <div class="social">
                 <a href="#" class="social__item" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -81,63 +166,58 @@
             <div class="wrapper wrapper--wide">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="speaker-card speaker-card--male audioGroup" id="johndoe">
+                        <!-- AUDIO GENERAL MARKUP
+
+                        single play button with hidden playlist
+
+                            class="audioGroup" id="..."
+                                class="play"
+                                class="audioGroup__songs hidden"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+
+                        if each song has own play button
+
+                            class="audioGroup" id="..."
+                                class="audioGroup__songs"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+                                        class="play-button play"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+                                        class="play-button play"
+                                    class="song" id="..." song="path to file" cover="path to cover image"
+                                        class="play-button play"
+                        -->
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe"> 
                             <div class="speaker-card__image">
                                 <div class="play">
-                                    <img src="images/male-no-photo.jpg" alt="">
+                                    <img src="images/spaeker-2.jpg" alt="">
                                     <i class="fa fa-play" aria-hidden="true"></i>
                                     <i class="fa fa-pause" aria-hidden="true"></i>
                                 </div>
                                 <div class="flags">
-                                    <img src="images/flags/008-estonia.svg" alt="">
+                                    <img src="images/flags/162-germany.svg" alt="">
+                                    <img src="images/flags/260-united-kingdom.svg" alt="">
                                 </div>
                             </div>
                             <div class="speaker-card__price">
                                 <p>от $400</p>
                             </div>
                             <div class="speaker-card__name">
-                                <span class="first-name">John</span>
+                                <span class="first-name">Jane 111</span>
                                 <span class="last-name">Doe</span>
                             </div>
                             <div class="speaker-card__order">
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/dave.mp3" id="johndoe-1">John 1</li>
+                                <li class="song" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg"><span class="audio-title">Jane Doe (song 1)</span></li>
+                                <li class="song"  id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg"><span class="audio-title">Jane Doe (song 2)</span></li>
+                                <li class="song" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg"><span class="audio-title">Jane Doe (song 3)</span></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="speaker-card speaker-card--female audioGroup" id="janedoe">
-                                <div class="speaker-card__image">
-                                    <div class="play">
-                                        <img src="images/spaeker-2.jpg" alt="">
-                                        <i class="fa fa-play" aria-hidden="true"></i>
-                                        <i class="fa fa-pause" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="flags">
-                                        <img src="images/flags/162-germany.svg" alt="">
-                                        <img src="images/flags/260-united-kingdom.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="speaker-card__price">
-                                    <p>от $400</p>
-                                </div>
-                                <div class="speaker-card__name">
-                                    <span class="first-name">Jane 111</span>
-                                    <span class="last-name">Doe</span>
-                                </div>
-                                <div class="speaker-card__order">
-                                    <button>Make order</button>
-                                </div>
-                                <ul class="audioGroup__songs hidden">
-                                    <li song="media/dave.mp3" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg">Jane Doe (song 1)</li>
-                                    <li song="media/oscar.mp3" id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg">Jane Doe (song 2)</li>
-                                    <li song="media/dire.mp3" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg">Jane Doe (song 3)</li>
-                                </ul>
-                            </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="speaker-card speaker-card--male audioGroup" id="johndoe">
                             <div class="speaker-card__image">
                                 <div class="play">
@@ -160,7 +240,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/dave.mp3" id="johndoe-1">John 1</li>
+                                <li class="song" song="media/dave.mp3" id="johndoe-1"><span class="audio-title">John 1</span></li>
                             </ul>
                         </div>
                     </div>
@@ -188,7 +268,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/dire.mp3" id="janedoe2-1">Jane</li>
+                                <li class="song" song="media/dire.mp3" id="janedoe2-1"><span class="audio-title">Jane</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -216,7 +296,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe2-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe2-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -244,7 +324,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe3-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe3-1"><span class="audio-title">Jane</span></li>
                             </ul>
                         </div>
                     </div>
@@ -271,7 +351,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe3-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe3-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -299,7 +379,37 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe4-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe4-1"><span class="audio-title">Jane</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="speaker-card speaker-card--female audioGroup" id="janedoe"> 
+                            <div class="speaker-card__image">
+                                <div class="play">
+                                    <img src="images/spaeker-2.jpg" alt="">
+                                    <i class="fa fa-play" aria-hidden="true"></i>
+                                    <i class="fa fa-pause" aria-hidden="true"></i>
+                                </div>
+                                <div class="flags">
+                                    <img src="images/flags/162-germany.svg" alt="">
+                                    <img src="images/flags/260-united-kingdom.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="speaker-card__price">
+                                <p>от $400</p>
+                            </div>
+                            <div class="speaker-card__name">
+                                <span class="first-name">Jane 111</span>
+                                <span class="last-name">Doe</span>
+                            </div>
+                            <div class="speaker-card__order">
+                                <button>Make order</button>
+                            </div>
+                            <ul class="audioGroup__songs hidden">
+                                <li class="song" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg"><span class="audio-title">Jane Doe (song 1)</span></li>
+                                <li class="song"  id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg"><span class="audio-title">Jane Doe (song 2)</span></li>
+                                <li class="song" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg"><span class="audio-title">Jane Doe (song 3)</span></li>
                             </ul>
                         </div>
                     </div>
@@ -326,64 +436,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/dave.mp3" id="johndoe-1">John 1</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="speaker-card speaker-card--female audioGroup" id="janedoe">
-                                <div class="speaker-card__image">
-                                    <div class="play">
-                                        <img src="images/spaeker-2.jpg" alt="">
-                                        <i class="fa fa-play" aria-hidden="true"></i>
-                                        <i class="fa fa-pause" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="flags">
-                                        <img src="images/flags/162-germany.svg" alt="">
-                                        <img src="images/flags/260-united-kingdom.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="speaker-card__price">
-                                    <p>от $400</p>
-                                </div>
-                                <div class="speaker-card__name">
-                                    <span class="first-name">Jane 111</span>
-                                    <span class="last-name">Doe</span>
-                                </div>
-                                <div class="speaker-card__order">
-                                    <button>Make order</button>
-                                </div>
-                                <ul class="audioGroup__songs hidden">
-                                    <li song="media/dave.mp3" id="song-janedoe1" song="media/oscar.mp3" cover="images/covers/cover3.jpg">Jane Doe (song 1)</li>
-                                    <li song="media/oscar.mp3" id="song-janedoe2" song="media/dire.mp3" cover="images/covers/cover2.jpg">Jane Doe (song 2)</li>
-                                    <li song="media/dire.mp3" id="song-janedoe3" song="media/dave.mp3" cover="images/covers/cover1.jpg">Jane Doe (song 3)</li>
-                                </ul>
-                            </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="speaker-card speaker-card--male audioGroup" id="johndoe">
-                            <div class="speaker-card__image">
-                                <div class="play">
-                                    <img src="images/male-no-photo.jpg" alt="">
-                                    <i class="fa fa-play" aria-hidden="true"></i>
-                                    <i class="fa fa-pause" aria-hidden="true"></i>
-                                </div>
-                                <div class="flags">
-                                    <img src="images/flags/008-estonia.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="speaker-card__price">
-                                <p>от $400</p>
-                            </div>
-                            <div class="speaker-card__name">
-                                <span class="first-name">John</span>
-                                <span class="last-name">Doe</span>
-                            </div>
-                            <div class="speaker-card__order">
-                                <button>Make order</button>
-                            </div>
-                            <ul class="audioGroup__songs hidden">
-                                <li song="media/dave.mp3" id="johndoe-1">John 1</li>
+                                <li class="song" song="media/dave.mp3" id="johndoe-1"><span class="audio-title">John 1</span></li>
                             </ul>
                         </div>
                     </div>
@@ -411,7 +464,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/dire.mp3" id="janedoe2-1">Jane</li>
+                                <li class="song" song="media/dire.mp3" id="janedoe2-1"><span class="audio-title">Jane</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -439,7 +492,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe2-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe2-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -467,7 +520,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe3-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe3-1"><span class="audio-title">Jane</span></li>
                             </ul>
                         </div>
                     </div>
@@ -494,7 +547,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe3-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe3-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -522,7 +575,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe4-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe4-1"><span class="audio-title">Jane</span></li>
                             </ul>
                         </div>
                     </div>
@@ -550,7 +603,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe2-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe2-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -578,7 +631,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe3-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe3-1"><span class="audio-title">Jane</span></li>
                             </ul>
                         </div>
                     </div>
@@ -605,7 +658,7 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="johndoe3-1">John</li>
+                                <li class="song" song="media/oscar.mp3" id="johndoe3-1"><span class="audio-title">John</span></li>
                             </ul>
                         </div>
                     </div>
@@ -633,11 +686,11 @@
                                 <button>Make order</button>
                             </div>
                             <ul class="audioGroup__songs hidden">
-                                <li song="media/oscar.mp3" id="janedoe4-1">Jane</li>
+                                <li class="song" song="media/oscar.mp3" id="janedoe4-1"><span class="audio-title">Jane</span></li>
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> <!-- end row -->
 
 
                 <div class="pagination">

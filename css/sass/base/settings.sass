@@ -34,12 +34,33 @@ body
     background-size: cover
     background-repeat: no-repeat
     background-position: 50% 50%  
+    
+    @media (max-width: 1200px)
+        padding: 60px 0
+        
+    @media (max-width: 991px)
+        padding: 50px 0
+        
     &__title
         font-size: 36px
         color: #040404
         margin-bottom: 40px
         padding-left: 60px
         font-weight: normal  
+        
+        @media (max-width: 991px)
+            padding-left: 0
+            text-align: center
+            font-size: 32px
+            
+        @media (max-width: 767px)
+            font-size: 28px
+            
+        @media (max-width: 575px)
+            font-size: 24px 
+            
+
+
     &--bg
         color: #FFF
         background-color: $velvet
@@ -60,22 +81,45 @@ body
             top: 0
             bottom: 0
             margin: auto      
+            
+            @media (max-width: 767px)
+                width: 340px
+                height: 340px
+                
+            @media (max-width: 575px)
+                width: 240px
+                height: 240px
 .corners
     i
         display: block
         width: 85px
         height: 85px  
         position: absolute
+        
+        @media (max-width: 1200px)
+            width: 40px
+            height: 40px
+        
         &:first-child
             left: 80px
             top: 80px
             border-left: 2px solid #fff 
             border-top: 2px solid #fff 
+            
+            @media (max-width: 1200px)
+                top: 10px
+                left: 10px
+            
         &:nth-child(2)
             right: 80px
             top: 80px
             border-right: 2px solid #fff 
             border-top: 2px solid #fff
+            
+            @media (max-width: 1200px)
+                top: 10px
+                right: 10px
+                
             &:after
                 content: ""
                 display: block
@@ -95,11 +139,20 @@ body
             bottom: 80px
             border-right: 2px solid #fff 
             border-bottom: 2px solid #fff
+            
+            @media (max-width: 1200px)
+                bottom: 10px
+                right: 10px
+                
         &:nth-child(4)
             left: 80px
             bottom: 80px
             border-left: 2px solid #fff 
             border-bottom: 2px solid #fff
+            
+            @media (max-width: 1200px)
+                left: 10px
+                bottom: 10px
             
 @keyframes pulse
     0%

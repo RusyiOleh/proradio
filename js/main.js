@@ -103,20 +103,6 @@ jQuery(document).ready(function($) {
         focusOnSelect: true,
         arrows: false,
         dots: false,
-        responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 5
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 3
-              }
-            }
-        ]
     });
 
     /*---------------------------

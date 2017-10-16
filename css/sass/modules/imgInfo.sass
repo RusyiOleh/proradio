@@ -8,14 +8,41 @@
     justify-content: flex-start 
     font-family: $os 
     position: relative
+    
+    @media (max-width: 991px)
+        align-items: center
+        
+    @media (max-width: 575px)
+        flex-wrap: wrap
+        justify-content: center
+        
     .img-info__bg
         position: absolute
         top: 40px
         right: 0
+        
+        @media (max-width: 991px)
+            display: none
+        
     &__text
         padding-top: 230px 
         padding-right: 30px
         line-height: 1.6  
+        
+        @media (max-width: 991px)
+            width: -webkit-calc(100% - 250px)
+            width: calc(100% - 250px)
+            padding: 0 
+            padding-left: 30px 
+            
+        @media (max-width: 767px)
+            width: -webkit-calc(100% - 180px)
+            width: calc(100% - 180px)
+            
+        @media (max-width: 575px)
+            width: 100%
+            padding-top: 40px 
+            padding-left: 0 
        
     &--type2
         .img-info__bg
@@ -24,15 +51,29 @@
             right: 0
             top: auto
         .img-info__text
-            padding-top: 60px 
+            @media (min-width: 992px)
+                padding-top: 60px 
 
 .img-decorated
     padding-top: 30px
     padding-left: 30px  
     position: relative
+    
+    @media (max-width: 991px)
+        width: 250px
+        padding-left: 0
+        padding-top: 0  
+        
+    @media (max-width: 767px)
+        width: 180px
+        
     img
         position: relative
         z-index: 2 
+        
+        @media (max-width: 991px)
+            max-width: 100% 
+            
     &__shape
         width: 60px
         height: calc(100% - 30px)   
@@ -40,3 +81,6 @@
         position: absolute
         left: 0
         top: 0
+        
+        @media (max-width: 991px)
+            display: none

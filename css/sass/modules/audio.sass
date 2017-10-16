@@ -2,7 +2,8 @@
   display: none
 
 .audioPlayer
-    opacity: 1 
+    opacity: 0
+    visibility: hidden 
     font-size: 14px 
     position: fixed
     left: 0
@@ -12,13 +13,18 @@
     background-color: #FFF  
     transform: translateY(100%) 
     transition: all .4s ease-out 
+    
     &.pause
         transform: translateY(0%) 
+        visibility: visible
+        opacity: 1
+        
     &--wide
         width: 100% 
         display: flex
         flex-wrap: wrap 
         align-items: stretch
+        
     &__current
         width: 61.5% 
         display: flex
@@ -88,6 +94,11 @@
 .audioPlayer__image
   width: 85px
   height: 85px 
+  background-image: url(../images/no_cover.png)
+  background-size: 80% auto
+  background-position: 50% 50%
+  background-repeat: no-repeat  
+  
   .cover
     width: 100%
     

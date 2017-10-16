@@ -15,6 +15,32 @@
     </head>
     <body>
 
+        <style>
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 120;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-color: #000;
+                transition: all 0.6s ease
+            }
+            .loader.complete {
+                opacity: 0;
+                visibility: hidden;
+            }
+        </style>
+
+        <div class="loader" style="background-image: url(images/first-section-bg.jpg); ">
+            <div class="preloader">
+                <span class="holder" data-label="ON AIR"></span>
+            </div>
+        </div>
+
 
        
         <!--=================================================================================================-->

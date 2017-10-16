@@ -25,6 +25,50 @@ function exist(el){
 
 jQuery(document).ready(function($) {
 
+
+    /*---------------------------
+                                  Preloading
+    ---------------------------*/
+    if ( exist('.loader') ) {
+        function randomIntFromInterval( min, max ) {
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        var loader = $('.loader');
+        var preloader = $('.preloader');
+        var holder = $('.preloader .holder');
+        var p = 0;
+        function timeout_trigger() {
+            if ( p <= 100 ) {
+                holder.text( p+" %" );
+                setTimeout(timeout_trigger, randomIntFromInterval(80, 200));
+            } else {
+                setTimeout(function(){
+                    if ( document.readyState == 'complete' ) {
+                        triggerLoader();
+                    } else {
+                        $(window).on('load', function(event) {
+                            triggerLoader();
+                        });
+                    }
+                }, 500);
+            }
+            p += randomIntFromInterval(1, 6);
+        }
+        timeout_trigger();
+
+        function removeLoader(){
+            loader.addClass('complete');
+        }
+
+        function triggerLoader(){
+            holder.text( holder.data('label') );
+            loader.addClass('is-loaded');
+            setTimeout(removeLoader, 1500);
+        }   
+    }
+    
+
+
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/

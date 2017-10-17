@@ -1,7 +1,7 @@
 .hidden
   display: none
 
-.audioPlayer
+.audioPlayer--styled
     opacity: 1 
     font-size: 14px 
     position: fixed
@@ -12,20 +12,34 @@
     background-color: #FFF  
     transform: translateY(100%) 
     transition: all .4s ease-out 
+    width: 100% 
+    display: flex
+    flex-wrap: wrap 
+    align-items: stretch
     &.pause
         transform: translateY(0%) 
-    &--wide
-        width: 100% 
-        display: flex
-        flex-wrap: wrap 
-        align-items: stretch
-    &__current
+    .audioPlayer__current
         width: 61.5% 
         display: flex
         align-items: center
         justify-content: space-between
         padding: 0 24px 
         height: 80px 
+        @media (max-width: 1400px)
+            width: 50%
+        @media (max-width: 1200px)
+            width: calc(100% - 250px) 
+        @media (max-width: 900px)
+            width: 100% 
+            height: 40px 
+        @media (max-width: 600px)
+            padding: 0 15px 
+        @media (max-width: 500px)
+            padding: 0 5px 
+            font-size: 12px
+        @media (max-width: 500px)
+            div:last-child
+                display: none !important 
         div
             *
                 display: inline-block
@@ -33,22 +47,63 @@
         .title
             font-size: 21px
             margin-left: 20px  
-    &__next
+            @media (max-width: 1300px)
+                font-size: 18px 
+                margin-right: 10px 
+            @media (max-width: 600px)
+                margin-left: 10px
+                margin-right: 0
+                font-size: 16px  
+            @media (max-width: 500px)
+                font-size: 14px
+                margin-left: 2px  
+    .audioPlayer__next
         width: 24.5%
         display: flex
         align-items: center
         justify-content: flex-start
         background-color: #F1F4FF 
         padding: 0 30px 
+        @media (max-width: 1400px)
+            width: 36% 
+        @media (max-width: 1200px)
+            width: 100px
+        @media (max-width: 900px)
+            padding: 5px 0
+            width: 88px
+            justify-content: center
+            background-color: #FFF   
+        @media (max-width: 600px)
+            width: 55px 
+        @media (max-width: 500px)
+            width: 45px 
         .next
             margin-left: 16px
+            @media (max-width: 1200px)
+                margin-left: 1px 
         &__title
             margin-left: 24px 
-    &__volumeControls
+            @media (max-width: 1200px)
+                display: none
+            @media (max-width: 600px)
+                margin-left: 15px 
+    .audioPlayer__volumeControls
         width: 14%
         display: flex
         align-items: center
         justify-content: center 
+        @media (max-width: 1200px)
+            width: 150px 
+        @media (max-width: 900px)
+            width: calc(100% - 88px);
+            justify-content: flex-end;
+            padding-right: 25px;
+        @media (max-width: 600px)
+            padding-right: 15px 
+            width: calc(100% - 55px) 
+        @media (max-width: 500px)
+            padding-right: 10px 
+            width: calc(100% - 45px) 
         .silence
             margin-right: 12px 
             cursor: pointer
@@ -64,6 +119,10 @@
         transition: all .2s 
         &:hover
             color: #41117d 
+        @media (max-width: 1400px)
+            margin-left: 30px 
+        @media (max-width: 600px)
+            margin-left: 10px 
     .prev,
     .next
         background: transparent 
@@ -74,13 +133,17 @@
         color: #41117d 
         background-size: 100% 100% 
         cursor: pointer
-    &__play
+    .audioPlayer__play
         width: 40px
         height: 40px
         background-image: url(../images/play.png)
         background-color: transparent
         border: none
         cursor: pointer 
+        @media (max-width: 600px)
+            width: 25px
+            height: 25px  
+            background-size: 100% 100% 
     &.pause
         .audioPlayer__play
             background-image: url(../images/pause.png)
@@ -107,6 +170,10 @@
         transition: all .2s 
         &:last-child
             margin-right: 0
+        @media (max-width: 600px)
+            height: 15px 
+        @media (max-width: 500px)
+            margin-right: 2px 
              
     &[data-loud="0"],
     &.disabled

@@ -518,12 +518,11 @@ jQuery(document).ready(function($) {
 
 
 
-    $('.audioGroup__songs.hidden .song').each(function(){
+    $('.audioGroup__songs.hidden .song, .service-item .song').each(function(){
         if($(this).is(':first-child')) {
             $(this).addClass('active');
         }
     });
-
 
     // INITIATE OBJECT WITH REQUIRED PROPERTIES
     function initVars(group, songId) {
@@ -582,7 +581,7 @@ jQuery(document).ready(function($) {
     
         var songId = null;
             if ($(this).hasClass('play-button')) {
-                $('.song').removeClass('active');
+                $('.audioGroup__songs:not(.hidden) .song').removeClass('active');
                 $(this).closest('.song').addClass('active');
                 songId = $(this).closest('.song').attr('id');
                 $('.audioGroup--multi .audioGroup__songs .song').removeClass('active');
@@ -599,6 +598,7 @@ jQuery(document).ready(function($) {
             // set  active li-song info
             setSongInfo(au.activeSong, au.audioGroupId, au.activeLiId, au);
             // play active li-song 
+            au.activeSongObject.volume = au.volume;
             au.activeSongObject.play();
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
@@ -623,6 +623,7 @@ jQuery(document).ready(function($) {
             setSongInfo(au.nextLiSong, au.audioGroupId, au.nextLiId);
             // new song time and duration
             showSongTime(au.nextLiSongOb); showDuration(au.nextLiSongOb);
+            au.nextLiSongOb.volume = au.volume;
             au.nextLiSongOb.play();
         } else {
             // first li become active
@@ -631,7 +632,7 @@ jQuery(document).ready(function($) {
             setSongInfo(au.firstSong, au.audioGroupId, au.firstLiId, au);
             // first song time and duration
             showSongTime(au.firstSongOb); showDuration(au.firstSongOb);
-
+            au.firstSongOb.volume = au.volume;
             au.firstSongOb.play();
         }
         showNextTitle(activeGroup);
@@ -653,6 +654,7 @@ jQuery(document).ready(function($) {
             setSongInfo(au.prevLiSong, au.audioGroupId, au.prevLiId);
             // new song time and duration
             showSongTime(au.prevLiSongOb); showDuration(au.prevLiSongOb);
+            au.prevLiSongOb.volume = au.volume;
             au.prevLiSongOb.play();
             $('.audioPlayer__next__title').text(au.prevLiSong.name);
         } else {
@@ -662,6 +664,7 @@ jQuery(document).ready(function($) {
             setSongInfo(au.lastSong, au.audioGroupId, au.lastLiId, au);
             // last song time and duration
             showSongTime(au.lastSongOb); showDuration(au.lastSongOb);
+            au.lastSongOb.volume = au.volume;
             au.lastSongOb.play();
         }
         showNextTitle(activeGroup);
@@ -752,6 +755,7 @@ jQuery(document).ready(function($) {
         $('.audioPlayer__volume').removeClass('disabled');
         $('.silence').removeClass('active');
     });
+
     $('.silence').click(function(){
         var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
             au = new initVars(activeGroup);

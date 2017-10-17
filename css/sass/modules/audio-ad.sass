@@ -234,11 +234,16 @@
 		background-color: #fff
 		display: flex
 		align-items: center
-		padding: 25px 65px 25px 30px
+		padding: 25px 15px 25px 25px
 		position: relative
 		text-align: left
-		
-		.play-button
+		.audioGroup__songs.hidden
+			display: block
+		.song
+			display: none
+			&.active
+				display: block
+		.play
 			width: 22px
 			height: 22px
 			background-color: transparent
@@ -259,11 +264,17 @@
 				background-image: url(../images/blue-play.svg)
 				background-repeat: no-repeat 
 				background-size: 100% 
+				margin-left: 2px 
 				&:before
 					display: none
-				
+			
 			.fa-pause
 				display: none
+			&.pause
+				.fa-play
+					display: none
+				.fa-pause
+					display: block
 				
 		.title
 			width: -webkit-calc(100% - 22px)

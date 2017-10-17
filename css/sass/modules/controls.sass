@@ -8,7 +8,10 @@
 	height: 70px
 	line-height: 70px  
 	background: $gray
-	border: 1px solid $gray
+	border: none
+	box-shadow: none
+	outline: none  
+	border: 1px solid transparent
 	cursor: pointer
 	position: relative
 	z-index: 1 
@@ -32,31 +35,45 @@
 		position: absolute
 		top: 0
 		bottom: 0
-		left: 50%
-		width: 0
+		left: 0
+		right: 0
+		margin: auto 
+		width: 100%
+		max-width: 0 
 		height: 100%
 		opacity: 0
 		visibility: hidden
-		transform: translateX(-50%) 
 		transition: all 0.3s ease
 		z-index: -1 
 		
 	&:hover:after
-		width: 100%
+		max-width: 100%
 		opacity: 1
 		visibility: visible
+		
+	&:after
+		background-color:  #fff
+	&:hover
+		color: $gray
 	
 
 	&--transparent
-		border-color: $rose
+		border: 1px solid $rose
 		background-color: transparent  
 		
 		&:after
 			background-color: $rose 
+		&:hover
+			color: #fff	
 		
 	&--white
 		color: $velvet
 		background-color: #fff  
+		
+		&:after
+			background-color:  $gray
+		&:hover
+			color: #fff
 		
 	&--centered
 		display: block
@@ -80,6 +97,8 @@
 		
 		&:after
 			background-color: $rose 
+		&:hover
+			color: #fff
 			
 	&--blue-border
 		background-color: transparent

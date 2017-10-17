@@ -81,7 +81,7 @@
 
         
         <section class="section speaker-section">
-            <div class="wrapper wrapper--styled">
+            <div class="wrapper wrapper--wide">
                 <div class="row">
 
                     <main class="speaker-content">
@@ -107,14 +107,16 @@
                                     </p>
                                 </div>
 
-                                <div class="content-block__body__demo">
-                                    <div class="audio">
-                                        <button class="play-button">
-                                            <i class="fa fa-play" aria-hidden="true"></i>
-                                            <i class="fa fa-pause" aria-hidden="true"></i>
-                                        </button>
+                                <div class="audioGroup" id="dictor-demo">
+                                    <div class="content-block__body__demo audioGroup__songs">
+                                        <div class="audio song" id="1" song="media/oscar.mp3" cover="images/covers/cover2.jpg">
+                                            <button class="play-button play">
+                                                <i class="fa fa-play" aria-hidden="true"></i>
+                                                <i class="fa fa-pause" aria-hidden="true"></i>
+                                            </button>
 
-                                        <p class="audio-title">Демо диктора</p>
+                                            <p class="audio-title">Демо диктора</p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -154,37 +156,37 @@
 
                     <aside class="speaker-sidebar">
                         
-                        <div class="play-list">
+                        <div class="play-list audioGroup" id="dictor-examples">
                             <div class="play-list__header">
                                 <h4>Примеры аудиороликов:</h4>
                             </div>
-                            <div class="play-list__body">
-                                <div class="audio is-playing">
-                                    <button class="play-button">
+                            <div class="play-list__body audioGroup__songs">
+                                <div class="audio song" id="1" song="media/oscar.mp3" cover="images/covers/cover2.jpg">
+                                    <button class="play-button play">
                                         <i class="fa fa-play hidden" aria-hidden="true"></i>
                                         <i class="fa fa-pause" aria-hidden="true"></i>
                                     </button>
 
                                     <p class="audio-title">Louis Vuitton Presents Small Is Beautiful</p>
                                 </div>
-                                <div class="audio">
-                                    <button class="play-button">
+                                <div class="audio song" id="2" song="media/dire.mp3" cover="images/covers/cover1.jpg">
+                                    <button class="play-button play">
                                         <i class="fa fa-play" aria-hidden="true"></i>
                                         <i class="fa fa-pause" aria-hidden="true"></i>
                                     </button>
 
                                     <p class="audio-title">The Spirit Of Travel from Louis Vuitton</p>
                                 </div>
-                                <div class="audio">
-                                    <button class="play-button">
+                                <div class="audio song" id="3" song="media/dave.mp3" cover="images/covers/cover3.jpg">
+                                    <button class="play-button play">
                                         <i class="fa fa-play" aria-hidden="true"></i>
                                         <i class="fa fa-pause" aria-hidden="true"></i>
                                     </button>
 
                                     <p class="audio-title">Mercedes SLS AMG 2013</p>
                                 </div>
-                                <div class="audio">
-                                    <button class="play-button">
+                                <div class="audio song" id="4" song="media/dire.mp3" cover="images/covers/cover3.jpg">
+                                    <button class="play-button play">
                                         <i class="fa fa-play" aria-hidden="true"></i>
                                         <i class="fa fa-pause" aria-hidden="true"></i>
                                     </button>
@@ -208,7 +210,7 @@
                 <h2 class="section__title">Similar Speakers</h2>
             </div>
 
-            <div class="wrapper wrapper--styled wrapper--wide">
+            <div class="wrapper wrapper--wide wrapper--wide">
                 <div class="speakers-slider">
                         
                         <div class="slide">
@@ -439,7 +441,7 @@
 
         <section class="calculator">
 
-            <div class="wrapper wrapper--styled">
+            <div class="wrapper wrapper--wide">
                 <h2>Калькулятор</h2>
             </div>
 
@@ -620,7 +622,7 @@
         <footer class="footer">
 
             <div class="footer-top">
-                <div class="wrapper wrapper--styled">
+                <div class="wrapper wrapper--wide">
                     <div class="row middle-xs">
                         <div class="col-xs-12 col-sm-12 col-md-6">
                             <nav class="footer-menu">
@@ -650,6 +652,56 @@
             </div> <!-- end footer-bottom -->
 
         </footer> <!-- end footer -->
+
+
+        <!-- start audio player-->
+        <div class="audioPlayer audioPlayer--styled">
+            <div class="audioPlayer__image">
+                <img class="cover">
+            </div>
+            <!-- end song cover-->
+            <div class="audioPlayer__info">
+                <div class="audioPlayer__tracker">
+                    <div class="progress-bar"></div>
+                </div>
+                <!-- current song progress line-->
+                <div class="audioPlayer__current">
+                    <div>
+                        <button class="audioPlayer__play"></button>
+                        <span class="title"></span>
+                        <a href="#" download> <i class="fa fa-long-arrow-down" aria-hidden="true"></i> </a>
+                    </div>
+                    <div>
+                        <span class="audioPlayer__current__duration">0:00</span> /
+                        <span class="audioPlayer__current__time">0:00</span>
+                    </div>
+                </div>
+                <!-- current song title + time-->
+                <div class="audioPlayer__next">
+                    <button class="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                    <button class="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                    <span class="audioPlayer__next__title">Next Song Name</span>
+                </div>
+                <!-- controls + next song title-->
+                <div class="audioPlayer__volumeControls">
+                    <div class="silence"><img src="images/sound-off.svg" alt=""></div>
+                    <div class="audioPlayer__volume" data-loud='5'>
+                        <div data-volume='1'></div>
+                        <div data-volume='2'></div>
+                        <div data-volume='3'></div>
+                        <div data-volume='4'></div>
+                        <div data-volume='5'></div>
+                        <div data-volume='6'></div>
+                        <div data-volume='7'></div>
+                        <div data-volume='8'></div>
+                        <div data-volume='9'></div>
+                        <div data-volume='10'></div>
+                    </div>
+                </div>
+                <!-- end songs volume controls-->
+            </div>
+            <!-- end songs info-->
+        </div>
 
 
 

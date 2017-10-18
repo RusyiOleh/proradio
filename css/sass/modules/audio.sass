@@ -42,6 +42,9 @@
             padding: 0 5px 
             font-size: 12px
         @media (max-width: 500px)
+            div:first-child
+                width: 100% 
+                text-align: center
             div:last-child
                 display: none !important 
         div
@@ -78,12 +81,11 @@
             justify-content: center
             background-color: #FFF   
         @media (max-width: 600px)
-            width: 55px 
+            width: 100%
+            text-align: center 
             padding-left: 10px
             padding-right: 10px  
-            justify-content: center
-        @media (max-width: 500px)
-            width: 45px 
+            display: block
         .next
             margin-left: 16px
             @media (max-width: 1200px)

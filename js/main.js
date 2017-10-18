@@ -740,7 +740,7 @@ jQuery(document).ready(function($) {
         player.attr('data-songId', asongId);
 
         player.find('.title').text(song.name);
-        player.find('.cover').attr('src', song.cover);
+        player.find('.cover').attr('src', '' + song.cover);
         player.find('a[download]').attr('href', song.file);
     };
 

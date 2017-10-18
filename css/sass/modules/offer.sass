@@ -6,7 +6,12 @@
 	background-position: 50% 50%
 	background-size: cover
 	background-color: #000
-	color: 	#fff 
+	color: #fff 
+	position: fixed
+	left: 0
+	top: 0
+	width: 100% 
+	height: 100%
 	
 	@media (max-width: 991px)
 		min-height: 550px
@@ -17,6 +22,7 @@
 		
 	@media (max-width: 575px)
 		min-height: 420px  
+		position: relative
 		
 
 	h1
@@ -64,11 +70,6 @@
 			margin-top: 30px 
 	
 .offer
-	position: fixed
-	left: 0
-	top: 0
-	width: 100% 
-	height: 100%
 	.wrapper
 		position: relative
 		z-index: 2 
@@ -218,9 +219,12 @@
 	background-color: #FFF
 	position: relative
 	z-index: 2
-	margin-top: 100vh  
-	&--waves
-		margin-top: 112vh 
+	
+	@media (min-width: 576px)
+		margin-top: 100vh  
+		&--waves
+			margin-top: 112vh 
+			
 	.waves-img
 		position: absolute
 		left: 0

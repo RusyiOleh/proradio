@@ -145,6 +145,7 @@
 		
 		&__languages
 			font-family: $os
+			max-width: 600px 
 			
 			@media (max-width: 767px)
 				font-size: 12px 
@@ -183,6 +184,7 @@
 				
 		&__demo
 			padding: 40px 0 35px
+			max-width: 600px 
 			
 			@media (max-width: 767px)
 				padding: 25px 0
@@ -193,6 +195,7 @@
 			font-size: 14px
 			line-height: 1.7em
 			margin-bottom: 60px 
+			max-width: 600px 
 			
 			p:not(:last-of-type),
 			.projects-list
@@ -202,8 +205,8 @@
 				margin-bottom: 25px 
 				
 			.projects-list
-				p
-					margin-bottom: 0
+				&__title
+					margin-bottom: 5px
 					color: #d62595  
 					font-weight: 600
 					
@@ -434,6 +437,6 @@
 				&:nth-child(4n-3)
 					background-color: #1A1A1A
 				
-			&.is-playing
+			&.active
 				border-radius: 40px
 				background-color: #000 

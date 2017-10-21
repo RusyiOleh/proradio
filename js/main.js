@@ -113,11 +113,11 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                 PAGE ANCHORS
     ---------------------------*/
-    $('.page-links a, .anchor').click(function() {
+    $('.page-links a, .anchor').on('click', function(event) {
+        event.preventDefault();
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - 50
+            scrollTop: $($(this).attr('href')).offset().top - $('.header').outerHeight()
         }, 800);
-        return false;
     });
 
     /*---------------------------

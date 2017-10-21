@@ -22,7 +22,9 @@
 		
 	@media (max-width: 575px)
 		min-height: 420px  
+		height: auto
 		position: relative
+		padding-bottom: 50px 
 		
 
 	h1
@@ -169,6 +171,61 @@
 				
 				h1
 					padding-bottom: 0 
+					
+	.scroll-down
+		position: absolute
+		z-index: 3 
+		left: 50%
+		bottom: 60px
+		transform: translateX(-50%)
+		width: 15px
+		height: 50px
+		background-color: transparent
+		overflow: hidden
+		border: 0
+		cursor: pointer
+		
+		@media (max-width: 575px)
+			display: block
+			margin: 25px auto 0
+			position: relative
+			transform: none
+			left: auto
+			bottom: auto
+		
+		&:after
+			content: ''
+			width: 1px
+			height: 100%
+			position: absolute
+			left: 50%
+			top: 0
+			transform: translateY(-100%)
+			margin-left: -0.5px 
+			background-color: #fff 
+			animation: animateline 2s infinite 
+			
+		&:before
+			content: ''
+			width: 8px
+			height: 8px
+			border-bottom: 1px solid #fff
+			border-right: 1px solid #fff
+			transform: rotate(45deg)
+			position: absolute
+			bottom: 2px
+			left: 3px
+		
+@keyframes animateline
+	0
+		transform: translateY(-100%)
+		
+	60%
+		transform: translateY(0)
+		
+	100%
+		transform: translateY(100%)
+		
 				 
 		
 
@@ -182,7 +239,8 @@
 	top: 0
 	right: 0
 	bottom: 0
-	margin: auto		
+	margin: auto	
+	opacity: 0.8	
 	path
 		animation: colorchange 12s infinite 
 		
@@ -209,11 +267,11 @@
 
 @keyframes colorchange
 	20
-		fill: #41117d
+		fill: #2F0C59
 	50%
-		fill: #25A2D6
+		fill: #1B749A
 	80%
-		fill: #CC238E
+		fill: #971A69
 	
 .fix-over
 	background-color: #FFF

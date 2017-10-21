@@ -17,7 +17,7 @@
     flex-wrap: wrap 
     align-items: stretch
 
-    &.pause
+    &.open
         transform: translateY(0%) 
         visibility: visible
         opacity: 1
@@ -246,9 +246,11 @@
     background: url(../images/progress.png) 
     background-size: 100% 100%
     background-repeat: no-repeat 
+    cursor: pointer
     .progress-bar 
         background-color: #000 
         height: 100%
         width: 100%
         margin: 0 0 0 auto  
-        transition: all 3s ease
+        transition: all 1s ease
+        pointer-events: none

@@ -603,7 +603,7 @@ jQuery(document).ready(function($) {
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
             $(this).addClass('pause');
-            $('.audioPlayer').addClass('pause');
+            $('.audioPlayer').addClass('pause').addClass('open');
         }
     });    
 
@@ -687,7 +687,7 @@ jQuery(document).ready(function($) {
             au.activeSongObject.play();
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
-            $('.audioPlayer').addClass('pause');
+            $('.audioPlayer').addClass('pause').addClass('pause');
             activeGroup.find('.play').addClass('pause');
         }
     });      
@@ -717,8 +717,9 @@ jQuery(document).ready(function($) {
             $('.audioPlayer__current__duration').html(m + ':'+ s);
             var value = 0;
             if(song.currentTime > 0){
-                value = Math.floor((100 / song.duration) * song.currentTime);
+                value = Math.floor(song.currentTime / (song.duration / 100));
             }
+            console.log('current time = ' + song.currentTime)
             $('.audioPlayer__tracker .progress-bar').css('width', (100 - value) + '%');
         });
     };
@@ -769,6 +770,19 @@ jQuery(document).ready(function($) {
             $(this).addClass('active');
             $('.audioPlayer__volume').addClass('disabled');
         }
+    });
+
+    // SOng position on tracker click
+    $(".audioPlayer__tracker").click(function(e){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        var perc = Math.floor(e.offsetX / $(this).width() * 100),
+            value = Math.floor((au.activeSongObject.duration / 100) * perc);
+        au.activeSongObject.currentTime = value;
+        au.activeSongObject.play();
+        $('.audioPlayer__tracker .progress-bar').css('width', (100 - perc) + '%');
+
     });
 
 

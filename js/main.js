@@ -687,7 +687,7 @@ jQuery(document).ready(function($) {
             au.activeSongObject.play();
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
-            $('.audioPlayer').addClass('pause').addClass('pause');
+            $('.audioPlayer').addClass('pause').addClass('open');
             activeGroup.find('.play').addClass('pause');
         }
     });      
@@ -718,8 +718,11 @@ jQuery(document).ready(function($) {
             var value = 0;
             if(song.currentTime > 0){
                 value = Math.floor(song.currentTime / (song.duration / 100));
+            } 
+            if (song.currentTime === song.duration) {
+                $('.audioPlayer').removeClass('pause');
+                $('.play').removeClass('pause');
             }
-            console.log('current time = ' + song.currentTime)
             $('.audioPlayer__tracker .progress-bar').css('width', (100 - value) + '%');
         });
     };
@@ -780,7 +783,6 @@ jQuery(document).ready(function($) {
         var perc = Math.floor(e.offsetX / $(this).width() * 100),
             value = Math.floor((au.activeSongObject.duration / 100) * perc);
         au.activeSongObject.currentTime = value;
-        au.activeSongObject.play();
         $('.audioPlayer__tracker .progress-bar').css('width', (100 - perc) + '%');
 
     });

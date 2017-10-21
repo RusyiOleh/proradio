@@ -2218,7 +2218,7 @@ html, body { height: 100%; width: 100%; font-family: 'Baskerville'; color: #3737
 
 .pink { color: #d62595; }
 
-.preloader { width: 600px; padding-top: 15px; padding-bottom: 15px; background-color: #000; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border: 15px solid #26080D; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-shadow: 0px 34px 31.36px 0.64px rgba(0, 0, 0, 0.45); box-shadow: 0px 34px 31.36px 0.64px rgba(0, 0, 0, 0.45); -webkit-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease; }
+.preloader { width: 600px; padding-top: 15px; padding-bottom: 15px; background-color: #000; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border: 15px solid #26080D; -webkit-box-shadow: 0px 34px 31.36px 0.64px rgba(0, 0, 0, 0.45); box-shadow: 0px 34px 31.36px 0.64px rgba(0, 0, 0, 0.45); -webkit-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease; }
 
 @media (max-width: 1600px) { .preloader { width: 320px; border-width: 10px; } }
 
@@ -3690,9 +3690,9 @@ textarea.form-control { height: 230px; resize: none; padding-top: 14px; padding-
 
 .audioPlayer__volume[data-loud="10"] div:nth-child(n + 11) { background-color: #ffc8eb; }
 
-.audioPlayer__tracker { position: relative; width: 100%; display: block; height: 5px; background-color: #000; background: url(../images/progress.png); background-size: 100% 100%; background-repeat: no-repeat; cursor: pointer; }
+.audioPlayer__tracker { position: relative; width: 100%; display: block; height: 5px; background-color: transparent; background: url(../images/progress.png); background-size: 100% 100%; background-repeat: no-repeat; cursor: pointer; }
 
-.audioPlayer__tracker .progress-bar { background-color: #000; height: 100%; width: 100%; margin: 0 0 0 auto; -webkit-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; pointer-events: none; }
+.audioPlayer__tracker .progress-bar { background-color: #f1f4ff; height: 100%; width: 100%; margin: 0 0 0 auto; -webkit-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; pointer-events: none; }
 
 .quoteSlider { padding: 90px 0; background-color: #4aaee8; color: #fff; position: relative; }
 

@@ -3656,13 +3656,13 @@ textarea.form-control { height: 230px; resize: none; padding-top: 14px; padding-
 
 .audioPlayer__info { width: calc(100% - 85px); display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-.audioPlayer__volume div { float: left; width: 3px; height: 20px; background-color: #d62595; margin: 0 3px 0 0; cursor: pointer; -webkit-transition: all .2s; -o-transition: all .2s; transition: all .2s; }
+.audioPlayer__volume div { float: left; width: 5px; height: 20px; border-left: 1px solid #fff; border-right: 1px solid #fff; background-color: #d62595; margin: 0 1px 0 0; cursor: pointer; -webkit-transition: all .2s; -o-transition: all .2s; transition: all .2s; }
 
 .audioPlayer__volume div:last-child { margin-right: 0; }
 
 @media (max-width: 600px) { .audioPlayer__volume div { height: 15px; } }
 
-@media (max-width: 500px) { .audioPlayer__volume div { margin-right: 2px; } }
+@media (max-width: 500px) { .audioPlayer__volume div { margin-right: 1px; } }
 
 .audioPlayer__volume[data-loud="0"] div:nth-child(n + 1), .audioPlayer__volume.disabled div:nth-child(n + 1) { background-color: #ffc8eb; }
 

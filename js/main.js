@@ -635,6 +635,8 @@ jQuery(document).ready(function($) {
             au.firstSongOb.volume = au.volume;
             au.firstSongOb.play();
         }
+        $('.audioPlayer').addClass('pause');
+        activeGroup.find('.play').addClass('pause');
         showNextTitle(activeGroup);
     });    
 
@@ -667,6 +669,8 @@ jQuery(document).ready(function($) {
             au.lastSongOb.volume = au.volume;
             au.lastSongOb.play();
         }
+        $('.audioPlayer').addClass('pause');
+        activeGroup.find('.play').addClass('pause');
         showNextTitle(activeGroup);
     });    
 

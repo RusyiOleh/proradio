@@ -483,13 +483,13 @@ jQuery(document).ready(function($) {
             topDif = initialTop - e.pageY;
 
         $(this).removeClass('notActive').find('.layer-1').css({
-            transform:'translateX(' + leftDif / 24 + 'px) translateY(' + topDif / 10 + 'px)'
+            transform:'translateX(' + leftDif / 40 + 'px) translateY(' + topDif / 10 + 'px)'
         });
         $(this).find('.layer-2').css({
-            transform:'translateX(' + leftDif / 48 + 'px) translateY(' + topDif / 10 + 'px)'
+            transform:'translateX(' + leftDif / 60 + 'px) translateY(' + topDif / 20 + 'px)'
         });
         $(this).find('.layer-3').css({
-            transform:'translateX(' + leftDif / 72 + 'px) translateY(' + topDif / 10 + 'px)'
+            transform:'translateX(' + leftDif / 90 + 'px) translateY(' + topDif / 30 + 'px)'
         });
 
     });
@@ -723,7 +723,7 @@ jQuery(document).ready(function($) {
             $('.audioPlayer__current__duration').html(m + ':'+ s);
             var value = 0;
             if(song.currentTime > 0){
-                value = Math.floor(song.currentTime / (song.duration / 100));
+                value = song.currentTime / (song.duration / 100);
             } 
             if (song.currentTime === song.duration) {
                 $('.audioPlayer').removeClass('pause');

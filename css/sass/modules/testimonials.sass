@@ -31,22 +31,27 @@
         letter-spacing: .5em
         position: relative
         z-index: 1 
-        
+        @media (max-width: 1400px)
+            font-size: 28px 
         @media (max-width: 991px)
             letter-spacing: 0.4em
-            font-size: 28px
+            font-size: 26px
             
         @media (max-width: 767px)
             letter-spacing: 0.3em
-            font-size: 26px
+            font-size: 24px
             
         @media (max-width: 575px)
             letter-spacing: 0.2em
-            font-size: 24px     
+            font-size: 22px     
         
     .wrapper
         width: 1300px 
-        max-width: 100%
+        max-width: 90%
+        @media (max-width: 1600px)
+            width: 1200px 
+        @media (max-width: 1400px)
+            width: 1100px 
         
     &__slider
         margin-top: 50px 
@@ -100,15 +105,19 @@
                 transform: translateY(80px)
                 opacity: 0
                 transition: all .4s ease-out 
-                
-                @media (max-width: 991px)
+                @media (max-width: 1400px)
                     font-size: 60px
                     
-                @media (max-width: 767px)
+                @media (max-width: 991px)
                     font-size: 50px
                     
+                @media (max-width: 767px)
+                    font-size: 40px
+                    
                 @media (max-width: 575px)
-                    font-size: 40px 
+                    font-size: 32px 
+                @media (max-width: 400px)
+                    font-size: 26px 
                     
                       
                 &:before
@@ -124,6 +133,14 @@
                     left: -70px
                     top: -10px
                     transform:  rotate(180deg) 
+                    @media (max-width: 991px)
+                        width: 80px
+                        height: 90px  
+                        left: -40px
+                    @media (max-width: 500px)
+                        width: 50px
+                        height: 60px  
+                        left: -25px
                 &:after
                     display: block
                     content: ""
@@ -136,17 +153,15 @@
                     position: absolute  
                     right: -70px
                     top: -10px
-
-                &:after,
-                &:before
                     @media (max-width: 991px)
-                        width: 100px
-
-                    @media (max-width: 767px)
                         width: 80px
+                        height: 90px  
+                        right: -40px
+                    @media (max-width: 500px)
+                        width: 50px
+                        height: 60px  
+                        right: -25px
 
-                    @media (max-width: 575px)
-                        width: 60px
                         
 
             small
@@ -156,6 +171,10 @@
                 font-family: $os 
                 opacity: 0
                 transition: all .4s ease-out 
+                @media (max-width: 575px)
+                    font-size: 12px 
+                @media (max-width: 400px)
+                    font-size: 10px 
             
             &.slick-current
                 p,

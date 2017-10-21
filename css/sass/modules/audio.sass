@@ -17,7 +17,7 @@
     flex-wrap: wrap 
     align-items: stretch
 
-    &.pause
+    &.open
         transform: translateY(0%) 
         visibility: visible
         opacity: 1
@@ -51,9 +51,11 @@
             *
                 display: inline-block
                 vertical-align: middle
+                font-family: 'Open Sans'
         .title
             font-size: 21px
             margin-left: 20px  
+            font-family: 'Baskerville' 
             @media (max-width: 1300px)
                 font-size: 18px 
                 margin-right: 10px 
@@ -71,6 +73,7 @@
         justify-content: flex-start
         background-color: #F1F4FF 
         padding: 0 30px 
+        font-family: 'Open Sans' 
         @media (max-width: 1400px)
             width: 36% 
         @media (max-width: 1200px)
@@ -125,14 +128,10 @@
     a[download]
         color: #cfc3de 
         display: inline-block
-        margin-left: 40px 
+        margin-left: 4px 
         transition: all .2s 
         &:hover
             color: #41117d 
-        @media (max-width: 1400px)
-            margin-left: 30px 
-        @media (max-width: 600px)
-            margin-left: 10px 
     .prev,
     .next
         background: transparent 
@@ -177,10 +176,12 @@
 .audioPlayer__volume 
     div
         float: left
-        width: 3px
-        height: 20px  
+        width: 5px
+        height: 20px 
+        border-left: 1px solid #fff  
+        border-right: 1px solid #fff  
         background-color: #d62595 
-        margin: 0 3px 0 0
+        margin: 0 1px 0 0
         cursor: pointer
         transition: all .2s 
         &:last-child
@@ -188,7 +189,7 @@
         @media (max-width: 600px)
             height: 15px 
         @media (max-width: 500px)
-            margin-right: 2px 
+            margin-right: 1px 
              
     &[data-loud="0"],
     &.disabled
@@ -242,13 +243,15 @@
     width: 100%
     display: block
     height: 5px 
-    background-color: #000 
+    background-color: transparent 
     background: url(../images/progress.png) 
     background-size: 100% 100%
     background-repeat: no-repeat 
+    cursor: pointer
     .progress-bar 
-        background-color: #000 
+        background-color: #f1f4ff
         height: 100%
         width: 100%
         margin: 0 0 0 auto  
-        transition: all 3s ease
+        transition: all 1s ease
+        pointer-events: none

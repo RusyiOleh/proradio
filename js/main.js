@@ -603,7 +603,7 @@ jQuery(document).ready(function($) {
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
             $(this).addClass('pause');
-            $('.audioPlayer').addClass('pause');
+            $('.audioPlayer').addClass('pause').addClass('open');
         }
     });    
 
@@ -635,6 +635,8 @@ jQuery(document).ready(function($) {
             au.firstSongOb.volume = au.volume;
             au.firstSongOb.play();
         }
+        $('.audioPlayer').addClass('pause');
+        activeGroup.find('.play').addClass('pause');
         showNextTitle(activeGroup);
     });    
 
@@ -667,6 +669,8 @@ jQuery(document).ready(function($) {
             au.lastSongOb.volume = au.volume;
             au.lastSongOb.play();
         }
+        $('.audioPlayer').addClass('pause');
+        activeGroup.find('.play').addClass('pause');
         showNextTitle(activeGroup);
     });    
 
@@ -687,7 +691,7 @@ jQuery(document).ready(function($) {
             au.activeSongObject.play();
             // show active li-song time and duration
             showSongTime(au.activeSongObject); showDuration(au.activeSongObject);
-            $('.audioPlayer').addClass('pause');
+            $('.audioPlayer').addClass('pause').addClass('open');
             activeGroup.find('.play').addClass('pause');
         }
     });      
@@ -717,7 +721,11 @@ jQuery(document).ready(function($) {
             $('.audioPlayer__current__duration').html(m + ':'+ s);
             var value = 0;
             if(song.currentTime > 0){
-                value = Math.floor((100 / song.duration) * song.currentTime);
+                value = Math.floor(song.currentTime / (song.duration / 100));
+            } 
+            if (song.currentTime === song.duration) {
+                $('.audioPlayer').removeClass('pause');
+                $('.play').removeClass('pause');
             }
             $('.audioPlayer__tracker .progress-bar').css('width', (100 - value) + '%');
         });
@@ -769,6 +777,18 @@ jQuery(document).ready(function($) {
             $(this).addClass('active');
             $('.audioPlayer__volume').addClass('disabled');
         }
+    });
+
+    // SOng position on tracker click
+    $(".audioPlayer__tracker").click(function(e){
+        var activeGroup = $('#' + $(this).closest('.audioPlayer').attr('data-playerId') + ''), // get active audio group
+            au = new initVars(activeGroup);
+
+        var perc = Math.floor(e.offsetX / $(this).width() * 100),
+            value = Math.floor((au.activeSongObject.duration / 100) * perc);
+        au.activeSongObject.currentTime = value;
+        $('.audioPlayer__tracker .progress-bar').css('width', (100 - perc) + '%');
+
     });
 
 

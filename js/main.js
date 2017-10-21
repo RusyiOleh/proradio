@@ -721,7 +721,7 @@ jQuery(document).ready(function($) {
             $('.audioPlayer__current__duration').html(m + ':'+ s);
             var value = 0;
             if(song.currentTime > 0){
-                value = Math.floor(song.currentTime / (song.duration / 100));
+                value = song.currentTime / (song.duration / 100);
             } 
             if (song.currentTime === song.duration) {
                 $('.audioPlayer').removeClass('pause');

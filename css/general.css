@@ -3688,7 +3688,7 @@ textarea.form-control { height: 230px; resize: none; padding-top: 14px; padding-
 
 .audioPlayer__tracker { position: relative; width: 100%; display: block; height: 5px; background-color: transparent; background: url(../images/progress.png); background-size: 100% 100%; background-repeat: no-repeat; cursor: pointer; }
 
-.audioPlayer__tracker .progress-bar { background-color: #f1f4ff; height: 100%; width: 100%; margin: 0 0 0 auto; -webkit-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; pointer-events: none; }
+.audioPlayer__tracker .progress-bar { background-color: #f1f4ff; height: 100%; width: 100%; margin: 0 0 0 auto; -webkit-transition: all 1s; -o-transition: all 1s; transition: all 1s; pointer-events: none; }
 
 .quoteSlider { padding: 90px 0; background-color: #4aaee8; color: #fff; position: relative; }
 

@@ -256,24 +256,16 @@
 			align-items: center
 			justify-content: center
 			cursor: pointer
+			background-image: url(../images/blue-play.svg)
+			background-repeat: no-repeat 
+			background-size: 140% 
+			background-position: 50% 50% 
 			
-			.fa-play
-				display: block
-				width: 8px
-				height: 11px
-				background-image: url(../images/blue-play.svg)
-				background-repeat: no-repeat 
-				background-size: 100% 
-				&:before
-					display: none
-			
-			.fa-pause
+			.fa
 				display: none
+				
 			&.pause
-				.fa-play
-					display: none
-				.fa-pause
-					display: block
+				background-image: url(../images/blue-pause.svg)
 				
 		.title
 			width: -webkit-calc(100% - 22px)

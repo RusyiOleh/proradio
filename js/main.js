@@ -77,8 +77,10 @@ jQuery(document).ready(function($) {
             $element = $('.toggle-menu'),
             $element2 = $('header'),
             className = 'hasScrolled';
-
-        $document.scroll(function() {
+            
+        $(window).on('load scroll', function(event) {
+            event.preventDefault();
+            /* Act on the event */
             $element.toggleClass(className, $document.scrollTop() >= 1);
             $element2.toggleClass(className, $document.scrollTop() >= 1);
         });

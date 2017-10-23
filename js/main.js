@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
-        $(this).toggleClass('is-active');
+        $('.js-toggle-menu').toggleClass('is-active');
         $('.site-navigation').toggleClass('open');
     });
 

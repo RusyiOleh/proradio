@@ -579,8 +579,9 @@ jQuery(document).ready(function($) {
     };
 
     // PLAY / PAUSE SONG
-    $('.play').click(function(){
-    
+    $('.play').click(function(event){
+        event.preventDefault();
+        event.stopPropagation();
         var songId = null;
             if ($(this).hasClass('play-button')) {
                 $('.audioGroup__songs:not(.hidden) .song').removeClass('active');
@@ -793,5 +794,13 @@ jQuery(document).ready(function($) {
 
     });
 
+    $('.audio-control').click(function(){
+        $(this).toggleClass('pause');
+        if($(this).hasClass('pause')) {
+            $(this).find('audio')[0].play();
+        } else {
+            $(this).find('audio')[0].pause();
+        }
+    });
 
 }); // end file

@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
-        $(this).toggleClass('is-active');
+        $('.js-toggle-menu').toggleClass('is-active');
         $('.site-navigation').toggleClass('open');
     });
 
@@ -149,6 +149,13 @@ jQuery(document).ready(function($) {
         focusOnSelect: true,
         arrows: false,
         dots: false,
+    });
+
+
+    $('.quoteSlider__slider p').each(function(){
+        if($(this).text().length > 185) {
+            $(this).addClass('smaller');
+        }
     });
 
     /*---------------------------
@@ -579,8 +586,9 @@ jQuery(document).ready(function($) {
     };
 
     // PLAY / PAUSE SONG
-    $('.play').click(function(){
-    
+    $('.play').click(function(event){
+        event.preventDefault();
+        event.stopPropagation();
         var songId = null;
             if ($(this).hasClass('play-button')) {
                 $('.audioGroup__songs:not(.hidden) .song').removeClass('active');
@@ -793,5 +801,13 @@ jQuery(document).ready(function($) {
 
     });
 
+    $('.audio-control').click(function(){
+        $(this).toggleClass('pause');
+        if($(this).hasClass('pause')) {
+            $(this).find('audio')[0].play();
+        } else {
+            $(this).find('audio')[0].pause();
+        }
+    });
 
 }); // end file

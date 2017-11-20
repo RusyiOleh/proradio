@@ -39,12 +39,16 @@
         @media (max-width: 600px)
             padding: 0 15px 
         @media (max-width: 500px)
-            padding: 0 5px 
+            padding: 0 4px 
             font-size: 12px
         @media (max-width: 500px)
+            width: 75%
+            float: left 
             div:first-child
                 width: 100% 
                 text-align: center
+                @media (max-width: 500px)
+                    text-align: left
             div:last-child
                 display: none !important 
         div
@@ -66,6 +70,12 @@
             @media (max-width: 500px)
                 font-size: 14px
                 margin-left: 2px  
+                max-width: 140px
+                text-overflow: ellipsis 
+            @media (max-width: 400px)
+                max-width: 120px
+                text-overflow: ellipsis 
+                font-size: 12px 
     .audioPlayer__next
         width: 24.5%
         display: flex
@@ -89,6 +99,13 @@
             padding-left: 10px
             padding-right: 10px  
             display: block
+        @media (max-width: 500px)
+            width: 25%
+            float: left 
+            font-size: 16px 
+            margin-top: 6px 
+            padding-left: 0
+            padding-right: 0  
         .next
             margin-left: 16px
             @media (max-width: 1200px)
@@ -132,6 +149,8 @@
         transition: all .2s 
         &:hover
             color: #41117d 
+        @media (max-width: 1200px)
+            display: none
     .prev,
     .next
         background: transparent 
@@ -142,6 +161,8 @@
         color: #41117d 
         background-size: 100% 100% 
         cursor: pointer
+        @media (max-width: 500px)
+            padding: 0 6px 
     .audioPlayer__play
         width: 40px
         height: 40px
@@ -153,6 +174,9 @@
             width: 25px
             height: 25px  
             background-size: 100% 100% 
+        @media (max-width: 500px)
+            width: 30px
+            height: 30px  
     &.pause
         .audioPlayer__play
             background-image: url(../images/pause.png)
@@ -164,7 +188,9 @@
   background-size: 80% auto
   background-position: 50% 50%
   background-repeat: no-repeat  
-  
+  @media (max-width: 500px)
+    width: 65px
+    height: 65px  
   .cover
     width: 100%
     
@@ -172,6 +198,10 @@
     width: calc(100% - 85px) 
     display: flex
     flex-wrap: wrap
+    @media (max-width: 500px)
+        justify-content: flex-start 
+        align-items: flex-start
+        width: calc(100% - 65px) 
 
 .audioPlayer__volume 
     div
@@ -253,5 +283,8 @@
         height: 100%
         width: 100%
         margin: 0 0 0 auto  
-        transition: all 1s
         pointer-events: none
+
+
+.fa.fa-play
+    padding-left: 2px 

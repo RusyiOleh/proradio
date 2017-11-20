@@ -11,23 +11,32 @@
 	
 	@media (max-width: 1200px)
 		padding: 15px
+		overflow: auto
 		
 	@media (max-width: 575px)
-		padding: 5px 10px
+		height: 60px
+		padding-top: 0
+		padding-bottom: 0   
 
 	.row
 		text-align: center
+		height: 100% 
 		& > div:first-of-type
 			text-align: left
-
+			justify-content: flex-start 
 		& > div:last-of-type 
 			text-align: right
-			
+			justify-content: flex-end 
+		@media (max-width: 575px)
+			& > div:nth-child(2)
+				padding: 0 
 	@media (max-width: 767px)
 		.row
 			margin: 0 -5px
 		.col-xs-4
 			padding: 0 5px
+			display: flex
+			align-items: center
 	
 	.tel
 		display: inline-block
@@ -38,6 +47,7 @@
 			
 		@media (max-width: 575px)
 			font-size: 12px 
+			display: none
 			
 		@media (max-width: 480px)
 			font-size: 10px 
@@ -51,6 +61,8 @@
 		img
 			display: block
 			max-width: 100% 
+			position: relative
+			top: 4px
 			
 		@media (max-width: 991px)
 			width: 140px
@@ -81,7 +93,7 @@
 	font-family: $v
 	font-size: 24px  
 	margin-left: 30px 
-	
+	line-height: .9 
 
 	@media (max-width: 991px)
 		font-size: 22px
@@ -131,14 +143,11 @@
 /* ------------------------------------ */
 /*  SITE NAV  */
 .menu-toggle
-	position: absolute
 	z-index: 101 
 	cursor: pointer
-	top: 50%
-	transform: translateY(-50%)
 	
 	@media (max-width: 575px)
-		font-size: 12px 
+		font-size: 15px 
 	
 .site-navigation
 	position: fixed
@@ -149,14 +158,15 @@
 	background-color: #000 
 	padding: 0 10.5% 
 	transform: translateX(-100%)
-	opacity: 0
+	opacity: 1
 	visibility: hidden
 	transition: all .8s cubic-bezier(.77,0,.175,1)
 	background-image: url(../images/menu-bg-full.jpg)
 	background-size: cover 
 	background-position: 50% 50% 
 	background-repeat: no-repeat 
-	
+	@media (max-width: 991px)
+		z-index: 1000 
 	&:before,
 	&:after
 		content: ''
@@ -204,12 +214,19 @@
 			background-position: 50% 50%  
 			background-repeat: no-repeat 
 			
+			&.js-toggle-menu
+				display: none
+				height: 10% 
+				img
+					margin: 10px 
 			
 			@media (max-width: 991px)
 				width: 100%
 				height: 20%
 				display: flex
 				background-image: none!important 
+				&.js-toggle-menu
+					display: flex
 				
 				&:not(:last-child)
 					border-bottom: 1px solid #1E1E1E
@@ -280,7 +297,9 @@
 					
 					@media (max-width: 991px)
 						padding-left: 0 
-
+				
+				img
+					max-width: 20px 
 			
 			/*@media (min-width: 992px)
 				&:nth-of-type(1)

@@ -11,16 +11,22 @@
 	
 	@media (max-width: 1200px)
 		padding: 15px
+		overflow: auto
 		
 	@media (max-width: 575px)
-		padding: 5px 10px
+		height: 60px
+		padding-top: 0
+		padding-bottom: 0   
 
 	.row
 		text-align: center
+		height: 100% 
 		& > div:first-of-type
 			text-align: left
+			justify-content: flex-start 
 		& > div:last-of-type 
 			text-align: right
+			justify-content: flex-end 
 		@media (max-width: 575px)
 			& > div:nth-child(2)
 				padding: 0 
@@ -29,6 +35,8 @@
 			margin: 0 -5px
 		.col-xs-4
 			padding: 0 5px
+			display: flex
+			align-items: center
 	
 	.tel
 		display: inline-block
@@ -53,6 +61,8 @@
 		img
 			display: block
 			max-width: 100% 
+			position: relative
+			top: 4px
 			
 		@media (max-width: 991px)
 			width: 140px
@@ -83,7 +93,7 @@
 	font-family: $v
 	font-size: 24px  
 	margin-left: 30px 
-	
+	line-height: .9 
 
 	@media (max-width: 991px)
 		font-size: 22px
@@ -133,11 +143,8 @@
 /* ------------------------------------ */
 /*  SITE NAV  */
 .menu-toggle
-	position: absolute
 	z-index: 101 
 	cursor: pointer
-	top: 50%
-	transform: translateY(-50%)
 	
 	@media (max-width: 575px)
 		font-size: 15px 

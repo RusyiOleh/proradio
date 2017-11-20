@@ -151,6 +151,13 @@ jQuery(document).ready(function($) {
         dots: false,
     });
 
+
+    $('.quoteSlider__slider p').each(function(){
+        if($(this).text().length > 185) {
+            $(this).addClass('smaller');
+        }
+    });
+
     /*---------------------------
                                   Fancybox
     ---------------------------*/

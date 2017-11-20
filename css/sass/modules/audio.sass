@@ -39,7 +39,7 @@
         @media (max-width: 600px)
             padding: 0 15px 
         @media (max-width: 500px)
-            padding: 0 5px 
+            padding: 0 4px 
             font-size: 12px
         @media (max-width: 500px)
             width: 75%
@@ -48,7 +48,7 @@
                 width: 100% 
                 text-align: center
                 @media (max-width: 500px)
-                    text-align-last: left
+                    text-align: left
             div:last-child
                 display: none !important 
         div
@@ -103,7 +103,7 @@
             width: 25%
             float: left 
             font-size: 16px 
-            margin-top: 5px 
+            margin-top: 6px 
             padding-left: 0
             padding-right: 0  
         .next
@@ -161,6 +161,8 @@
         color: #41117d 
         background-size: 100% 100% 
         cursor: pointer
+        @media (max-width: 500px)
+            padding: 0 6px 
     .audioPlayer__play
         width: 40px
         height: 40px
@@ -197,6 +199,7 @@
     display: flex
     flex-wrap: wrap
     @media (max-width: 500px)
+        justify-content: flex-start 
         align-items: flex-start
         width: calc(100% - 65px) 
 
@@ -280,5 +283,8 @@
         height: 100%
         width: 100%
         margin: 0 0 0 auto  
-        transition: all 1s
         pointer-events: none
+
+
+.fa.fa-play
+    padding-left: 2px 

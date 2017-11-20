@@ -83,7 +83,17 @@ jQuery(document).ready(function($) {
             /* Act on the event */
             $element.toggleClass(className, $document.scrollTop() >= 1);
             $element2.toggleClass(className, $document.scrollTop() >= 1);
+
+            $('.js-scroll-top').toggleClass('active', $document.scrollTop() >= $(window).height() );
         });
+    });
+
+
+    $('.js-scroll-top').on('click', function(event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
     });
 
 
